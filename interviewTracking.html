@@ -3,354 +3,295 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mike Dube – Job Search Dashboard (Sep 15 – Nov 14, 2025)</title>
+  <title>Mike Dube – Job Search Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
   <style>
-    :root {
-      --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --accent:#38bdf8;
-      --active:#10b981; --to-be-interviewed:#f59e0b; --ghosted:#94a3b8; --failed:#ef4444;
-    }
-    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-    header{background:linear-gradient(135deg,#1e3a8a,#7c3aed);padding:4rem 1rem;text-align:center;color:white;}
-    h1{margin:0;font-size:2.8rem;font-weight:700;}
-    .linkedin{margin-top:1rem;font-size:1.4rem;}
-    .linkedin a{color:#38bdf8;text-decoration:none;font-weight:600;}
-    .linkedin a:hover{text-decoration:underline;}
-    .container{max-width:1400px;margin:0 auto;padding:1rem;}
-    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:2rem 0;}
-    .stat{background:var(--card);padding:1.5rem;border-radius:16px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-    .stat i{font-size:2.5rem;color:var(--accent);}
-    .stat-num{font-size:2.5rem;font-weight:700;}
-    .chart-box{background:var(--card);border-radius:16px;padding:2rem;margin:3rem 0;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-    .section{margin:4rem 0;}
-    .section-title{color:var(--accent);font-size:1.8rem;text-align:center;margin-bottom:2rem;}
-    .grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
-    @media (min-width:768px){.grid{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));}}
-    .card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-    .card-header{
-      color:white;padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;
-    }
+    :root{--bg:#0a0e17;--card:#141924;--text:#e2e8f0;--accent:#38bdf8;--active:#10b981;--tbi:#f59e0b;--ghosted:#94a3b8;--failed:#ef4444;--border:#1e293b;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+    header{background:linear-gradient(135deg,#1e3a8a,#7c3aed);padding:3rem 1rem;text-align:center;color:white;}
+    h1{font-size:2.4rem;font-weight:700;}
+    h1 a{color:white;text-decoration:none;}
+    .linkedin a{color:#38bdf8;font-weight:600;}
+    .container{max-width:1300px;margin:0 auto;padding:0 1rem;}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:2rem 0;}
+    .stat{background:var(--card);border-radius:12px;padding:1rem;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,0.4);}
+    .stat i{font-size:1.8rem;color:var(--accent);margin-bottom:0.4rem;display:block;}
+    .stat-num{font-size:1.8rem;font-weight:700;}
+    .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2.5rem 0;align-items:stretch;}
+    @media(max-width:768px){.chart-row{grid-template-columns:1fr;}}
+    .chart-box{background:var(--card);border-radius:14px;padding:1.5rem;box-shadow:0 8px 24px rgba(0,0,0,0.4);height:320px;display:flex;align-items:center;justify-content:center;}
+    .chart-box canvas{width:100%!important;height:100%!important;}
+    .section{margin:3rem 0;}
+    .section-title{color:var(--accent);font-size:1.7rem;text-align:center;margin-bottom:1.8rem;font-weight:600;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.2rem;}
+    .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.4);transition:all 0.3s;}
+    .card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(0,0,0,0.5);}
+    .card-header{color:white;padding:1rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:1.15rem;}
     .card-header.active{background:var(--active);}
-    .card-header.tbi{background:var(--to-be-interviewed);}
+    .card-header.tbi{background:var(--tbi);}
     .card-header.ghosted{background:var(--ghosted);}
     .card-header.failed{background:var(--failed);}
-    .card-header h3{margin:0;font-size:1.4rem;}
-    .card-header i{margin-left:10px;transition:transform 0.3s;}
-    .card-body{padding:2rem;background:#18212f;display:none;}
+    .card-header i{margin-left:10px;transition:transform 0.3s;font-size:1.1rem;}
+    .card-body{padding:1.6rem;background:#0f172a;display:none;border-top:1px solid var(--border);}
     .card-body.active{display:block;}
-    .position{font-size:1.1rem;font-weight:600;color:#38bdf8;margin-bottom:1rem;}
-    .event{font-size:0.95rem;margin:0.4rem 0;color:#e2e8f0;}
+    .card-body.active ~ .card-header i{transform:rotate(180deg);}
+    .position{font-size:1.1rem;color:#38bdf8;margin-bottom:1rem;font-weight:600;}
+    .event{font-size:0.96rem;margin:0.5rem 0;color:#cbd5e1;line-height:1.55;}
     .event strong{color:var(--accent);}
-    .timeline-mini{height:140px;margin:1.5rem 0;background:#0f172a;padding:1rem;border-radius:8px;}
-    footer{text-align:center;padding:3rem;background:#0f172a;color:#94a3b8;margin-top:5rem;}
+    .comment{font-style:italic;color:#a0aec0;margin-top:1rem;padding:0.9rem;background:#1a2332;border-radius:8px;border-left:4px solid #38bdf8;}
+    .interviews-badge{display:inline-block;background:#334155;color:#e2e8f0;padding:0.25rem 0.6rem;border-radius:8px;font-size:0.8rem;margin-left:0.5rem;}
+    .timeline-mini{height:120px;margin:1.2rem 0;background:#0a0e17;padding:0.8rem;border-radius:10px;overflow:hidden;}
+
+    table{width:100%;border-collapse:collapse;margin-top:3rem;background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+    th{background:#1e293b;color:white;padding:1.1rem 1.2rem;text-align:left;font-weight:600;cursor:pointer;font-size:0.95rem;}
+    th:hover{background:#334155;}
+    th:after{content:" Up/Down";font-size:0.8rem;opacity:0.7;}
+    td{padding:1.1rem 1.2rem;border-bottom:1px solid var(--border);font-size:0.94rem;}
+    tr:hover td{background:#18212f;}
+    .status-badge{padding:0.35rem 0.8rem;border-radius:50px;font-size:0.82rem;font-weight:600;}
+    .active-badge{background:#064e3b;color:#6ee7b7;}
+    .tbi-badge{background:#78350f;color:#fde68a;}
+    .ghost-badge{background:#334155;color:#cbd5e1;}
+    .fail-badge{background:#7f1d1d;color:#fca5a5;}
+    footer{text-align:center;padding:3rem;color:#64748b;font-size:0.9rem;}
   </style>
 </head>
 <body>
 
 <header>
-  <h1><a href="https://www.linkedin.com/in/mike-dube-m-s-0694b467/" target="_blank" style="color:white;text-decoration:none;">Mike Dube</a></h1>
-  <p style="font-size:1.6rem;opacity:0.9;margin-top:1rem;">Job Search Dashboard – Sep 15 – Nov 14, 2025</p>
+
+  <div class="linkedin"><a href="https://www.linkedin.com/in/mike-dube-m-s-0694b467/" target="_blank">linkedin.com/in/mike-dube-m-s-0694b467</a></div>
+  <p style="font-size:1.5rem;opacity:0.9;margin-top:0.8rem;">Job Search Dashboard – Sep 15 – Nov 15, 2025</p>
   <p>Last updated: November 14, 2025</p>
 </header>
 
 <div class="container">
 
   <div class="stats">
-    <div class="stat"><i class="fas fa-briefcase"></i><div class="stat-num">35</div><div>Interviews</div></div>
-    <div class="stat"><i class="fas fa-building"></i><div class="stat-num">19</div><div>Companies</div></div>
-    <div class="stat"><i class="fas fa-handshake"></i><div class="stat-num">38+</div><div>People Met</div></div>
-    <div class="stat"><i class="fas fa-clock"></i><div class="stat-num">~50</div><div>Hours</div></div>
+    <div class="stat">Interviews<br><strong>35</strong></div>
+    <div class="stat">Companies<br><strong>19</strong></div>
+    <div class="stat">People Met<br><strong>38+</strong></div>
+    <div class="stat">Hours<br><strong>~50</strong></div>
   </div>
 
-  <div class="chart-box">
-    <canvas id="outcomeChart"></canvas>
+  <div class="chart-row">
+    <div class="chart-box"><canvas id="outcomeChart"></canvas></div>
+    <div class="chart-box"><canvas id="overallTimeline"></canvas></div>
   </div>
 
-  <div class="chart-box">
-    <canvas id="overallTimeline"></canvas>
-  </div>
-
-  <!-- ACTIVE / INTERVIEWING -->
+  <!-- ACTIVE / INTERVIEWING (5) -->
   <div class="section">
     <h2 class="section-title">ACTIVE / INTERVIEWING (5)</h2>
     <div class="grid">
 
       <div class="card">
         <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Converge</h3><i class="fas fa-chevron-down"></i>
+          <h3>Converge <span class="interviews-badge">3 interviews</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Senior Backend Engineer (Python / AI)</div>
           <div class="timeline-mini"><canvas id="tl-converge"></canvas></div>
-          <div class="event"><strong>Nov 10:</strong> Ivana Gargiulo – Recruiter</div>
-          <div class="event"><strong>Nov 11:</strong> Ryan Lecha – Hiring Manager</div>
-          <div class="event"><strong>Nov 11:</strong> Coding Assessment submitted</div>
-          <div class="event"><strong>Nov 12:</strong> Follow-up email sent</div>
-          <div class="event"><strong>TBD:</strong> 4 panels</div>
+          <div class="event">Nov 10 – Ivana Gargiulo – Recruiter</div>
+          <div class="event">Nov 11 – Ryan Lecha – Hiring Manager</div>
+          <div class="event">Nov 11 – Coding Assessment</div>
+          <div class="event">Nov 12 – Follow-up email sent</div>
+          <div class="event">TBD – 4 panels</div>
+          <div class="event"><a href="https://gitlab.com/MD-AI-Bot-Optimus/converge-backend-test-md.git" target="_blank">GitLab Repo</a></div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>eSimplicity</h3><i class="fas fa-chevron-down"></i>
+          <h3>eSimplicity <span class="interviews-badge">5 interviews</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Senior Solutions Architect</div>
           <div class="timeline-mini"><canvas id="tl-esimplicity"></canvas></div>
-          <div class="event"><strong>Oct 17:</strong> Benjamin Nelson – Screen</div>
-          <div class="event"><strong>Oct 22:</strong> Coderbyte Assessment</div>
-          <div class="event"><strong>Oct 27:</strong> Bruno Botvinik & Dan Cathcart</div>
-          <div class="event"><strong>Oct 30:</strong> Chris Delling & Andy Wolt</div>
-          <div class="event"><strong>Nov 14:</strong> Follow-up email sent (today)</div>
+          <div class="event">Oct 17 – Benjamin Nelson – Screen</div>
+          <div class="event">Oct 22 – Coderbyte Assessment</div>
+          <div class="event">Oct 27 – Bruno Botvinik & Dan Cathcart</div>
+          <div class="event">Oct 30 – Chris Delling & Andy Wolt</div>
+          <div class="event">Nov 14 – Follow-up email sent (today)</div>
+          <div class="comment">Benjamin Nelson (Nov 7): “We are still in the process of making our final decisions… We expect to have an update shortly.”</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Quantiphi</h3><i class="fas fa-chevron-down"></i>
+          <h3>Quantiphi <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
-          <div class="position">Platform Architect – Generative AI</div>
+          <div class="position">Platform Architect GA</div>
           <div class="timeline-mini"><canvas id="tl-quantiphi"></canvas></div>
-          <div class="event"><strong>Nov 13:</strong> Devvarat Kanojia – R1</div>
+          <div class="event">Nov 13 – Devvarat Kanojia</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Incedo</h3><i class="fas fa-chevron-down"></i>
+          <h3>Incedo <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Director – Technical Program & Delivery</div>
           <div class="timeline-mini"><canvas id="tl-incedo"></canvas></div>
-          <div class="event"><strong>Nov 6:</strong> Director call</div>
+          <div class="event">Nov 6 – Director call</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Katalon</h3><i class="fas fa-chevron-down"></i>
+          <h3>Katalon <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Test Automation Architect</div>
           <div class="timeline-mini"><canvas id="tl-katalon"></canvas></div>
-          <div class="event"><strong>Oct 31:</strong> Recruiter screen</div>
+          <div class="event">Oct 31 – Recruiter screen</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- TO BE INTERVIEWED -->
+  <!-- TO BE INTERVIEWED (2) -->
   <div class="section">
     <h2 class="section-title">TO BE INTERVIEWED (2)</h2>
     <div class="grid">
-
       <div class="card">
         <div class="card-header tbi" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Chick-fil-A</h3><i class="fas fa-chevron-down"></i>
+          <h3>Chick-fil-A <span class="interviews-badge">0 interviews</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Lead Systems Architect</div>
           <div class="timeline-mini"><canvas id="tl-chickfila"></canvas></div>
-          <div class="event"><strong>Nov 17:</strong> Patricia Schnieber – Discovery Call</div>
+          <div class="event">Nov 17 – Patricia Schnieber – Discovery Call</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header tbi" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Capgemini</h3><i class="fas fa-chevron-down"></i>
+          <h3>Capgemini <span class="interviews-badge">0 interviews</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Realtime Platform Architect</div>
           <div class="timeline-mini"><canvas id="tl-capgemini"></canvas></div>
-          <div class="event"><strong>TBD next week:</strong> Prakash Paramasivan</div>
+          <div class="event">TBD next week – Prakash Paramasivan</div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- GHOSTED -->
+  <!-- GHOSTED (6) -->
   <div class="section">
     <h2 class="section-title">GHOSTED (6)</h2>
     <div class="grid">
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>American Express</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Principal Engineer</div>
-          <div class="event"><strong>Oct 17:</strong> Hiring Manager call → Ghosted</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Sage</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Sr. Technical Solutions Architect</div>
-          <div class="event"><strong>Oct 3:</strong> Jordan Morse – 30-min Video</div>
-          <div class="event"><strong>Oct 7:</strong> Rama Ali – Technical → Ghosted</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Genpact</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Enterprise Architect</div>
-          <div class="event"><strong>Aug 28:</strong> Vibhor Saxena → Ghosted</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Iris Software</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Unknown</div>
-          <div class="event"><strong>Oct 21:</strong> Internal screening → Ghosted</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Global Payments</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Solutions Architect</div>
-          <div class="event"><strong>Oct 15:</strong> Initial screen</div>
-          <div class="event"><strong>Oct 20:</strong> Technical → Ghosted</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Sogeti</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Solutions Architect</div>
-          <div class="event"><strong>Oct 16:</strong> Peyton Van Gundy – Initial Call</div>
-          <div class="event"><strong>Oct 20:</strong> John Dragunas → Ghosted</div>
-        </div>
-      </div>
-
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>American Express <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Principal Engineer</div><div class="event">Oct 17 – Ghosted</div></div></div>
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Sage <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Sr. Technical Solutions Architect</div><div class="event">Oct 7 – Ghosted</div></div></div>
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Genpact <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Enterprise Architect</div><div class="event">Aug 28 – Ghosted</div></div></div>
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Iris Software <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="event">Oct 21 – Ghosted</div></div></div>
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Global Payments <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Solutions Architect</div><div class="event">Oct 20 – Ghosted</div></div></div>
+      <div class="card"><div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Sogeti <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Solutions Architect</div><div class="event">Oct 20 – Ghosted</div></div></div>
     </div>
   </div>
 
-  <!-- FAILED -->
+  <!-- FAILED (8) -->
   <div class="section">
     <h2 class="section-title">FAILED (8)</h2>
     <div class="grid">
-
       <div class="card">
         <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Georgia-Pacific / Koch</h3><i class="fas fa-chevron-down"></i>
+          <h3>Georgia-Pacific / Koch <span class="interviews-badge">6 interviews</span></h3><i class="fas fa-chevron-down"></i>
         </div>
         <div class="card-body">
           <div class="position">Principal AI Architect</div>
-          <div class="event"><strong>Oct 6 – Nov 14:</strong> 6 virtual rounds → #2 in line</div>
+          <div class="event">Oct 6 – Gary Miller – Recruiter screen</div>
+          <div class="event">Oct 17 – Panel 1</div>
+          <div class="event">Oct 24 – Panel 2</div>
+          <div class="event">Oct 30 – Panel 3</div>
+          <div class="event">Nov 5 – Final follow-up</div>
+          <div class="event">Nov 14 – Final decision</div>
+          <div class="comment">Stephen Carver (Nov 14): “Decision was between you and one other candidate… they did extend a verbal offer to the other candidate… you would be next to be extended an offer.”</div>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Visa</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Lead System Architect</div>
-          <div class="event"><strong>Nov 14:</strong> CodeSignal Assessment – Failed</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>CVS Health</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Senior Creative Technologist</div>
-          <div class="event"><strong>Nov 14:</strong> Panel – Failed</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Accenture</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Product Manager (Order to Cash)</div>
-          <div class="event"><strong>Sep 19:</strong> Failed second round</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Blankfactor</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Solutions Architect</div>
-          <div class="event"><strong>Sep 29:</strong> Technical – Failed</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
-          <h3>Jack Henry</h3><i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="card-body">
-          <div class="position">Technical role</div>
-          <div class="event"><strong>Oct 15:</strong> Technical – Failed</div>
-        </div>
-      </div>
-
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Visa <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Lead System Architect</div><div class="event">Nov 14 – CodeSignal – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>CVS Health <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Senior Creative Technologist</div><div class="event">Nov 14 – Panel – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Accenture <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Product Manager</div><div class="event">Sep 19 – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Blankfactor <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Solutions Architect</div><div class="event">Sep 29 – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Jack Henry <span class="interviews-badge">1 interview</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="event">Oct 15 – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Sage <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Sr. Technical Solutions Architect</div><div class="event">Oct 7 – Failed</div></div></div>
+      <div class="card"><div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')"><h3>Global Payments <span class="interviews-badge">2 interviews</span></h3><i class="fas fa-chevron-down"></i></div><div class="card-body"><div class="position">Solutions Architect</div><div class="event">Oct 20 – Failed</div></div></div>
     </div>
+  </div>
+
+  <!-- FULL SORTABLE TABLE -->
+  <div class="section">
+    <h2 class="section-title">Full Sortable Table View (35 interviews total)</h2>
+    <table id="jobTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Company</th>
+          <th onclick="sortTable(1)">Position</th>
+          <th onclick="sortTable(2)">Interviews</th>
+          <th onclick="sortTable(3)">Status</th>
+          <th onclick="sortTable(4)">Last Activity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Converge</td><td>Senior Backend Engineer (Python / AI)</td><td>3</td><td><span class="status-badge active-badge">Active</span></td><td>Nov 12</td></tr>
+        <tr><td>eSimplicity</td><td>Senior Solutions Architect</td><td>5</td><td><span class="status-badge active-badge">Active</span></td><td>Nov 14</td></tr>
+        <tr><td>Quantiphi</td><td>Platform Architect GA</td><td>1</td><td><span class="status-badge active-badge">Active</span></td><td>Nov 13</td></tr>
+        <tr><td>Incedo</td><td>Director – Technical Program & Delivery</td><td>1</td><td><span class="status-badge active-badge">Active</span></td><td>Nov 6</td></tr>
+        <tr><td>Katalon</td><td>Test Automation Architect</td><td>1</td><td><span class="status-badge active-badge">Active</span></td><td>Oct 31</td></tr>
+        <tr><td>Chick-fil-A</td><td>Lead Systems Architect</td><td>0</td><td><span class="status-badge tbi-badge">Scheduled</span></td><td>Nov 17</td></tr>
+        <tr><td>Capgemini</td><td>Realtime Platform Architect</td><td>0</td><td><span class="status-badge tbi-badge">Rescheduling</span></td><td>TBD</td></tr>
+        <tr><td>American Express</td><td>Principal Engineer</td><td>1</td><td><span class="status-badge ghost-badge">Ghosted</span></td><td>Oct 17</td></tr>
+        <tr><td>Sage</td><td>Sr. Technical Solutions Architect</td><td>2</td><td><span class="status-badge fail-badge">Failed</span></td><td>Oct 7</td></tr>
+        <tr><td>Genpact</td><td>Enterprise Architect</td><td>1</td><td><span class="status-badge ghost-badge">Ghosted</span></td><td>Aug 28</td></tr>
+        <tr><td>Iris Software</td><td>—</td><td>1</td><td><span class="status-badge ghost-badge">Ghosted</span></td><td>Oct 21</td></tr>
+        <tr><td>Global Payments</td><td>Solutions Architect</td><td>2</td><td><span class="status-badge fail-badge">Failed</span></td><td>Oct 20</td></tr>
+        <tr><td>Sogeti</td><td>Solutions Architect</td><td>2</td><td><span class="status-badge ghost-badge">Ghosted</span></td><td>Oct 20</td></tr>
+        <tr><td>Georgia-Pacific / Koch</td><td>Principal AI Architect</td><td>6</td><td><span class="status-badge fail-badge">Failed</span></td><td>Nov 14</td></tr>
+        <tr><td>Visa</td><td>Lead System Architect</td><td>1</td><td><span class="status-badge fail-badge">Failed</span></td><td>Nov 14</td></tr>
+        <tr><td>CVS Health</td><td>Senior Creative Technologist</td><td>1</td><td><span class="status-badge fail-badge">Failed</span></td><td>Nov 14</td></tr>
+        <tr><td>Accenture</td><td>Product Manager</td><td>2</td><td><span class="status-badge fail-badge">Failed</span></td><td>Sep 19</td></tr>
+        <tr><td>Blankfactor</td><td>Solutions Architect</td><td>2</td><td><span class="status-badge fail-badge">Failed</span></td><td>Sep 29</td></tr>
+        <tr><td>Jack Henry</td><td>—</td><td>1</td><td><span class="status-badge fail-badge">Failed</span></td><td>Oct 15</td></tr>
+      </tbody>
+    </table>
   </div>
 
 </div>
 
-<footer>
-  <p>© 2025 Mike Dube – 35 interviews · 7 active · 6 ghosted · 8 failed</p>
-</footer>
+<footer>© 2025 Mike Dube — 35 interviews across 19 companies</footer>
 
 <script>
   Chart.register(ChartDataLabels);
+  new Chart(document.getElementById('outcomeChart'),{type:'doughnut',data:{labels:['Active (5)','Scheduled (2)','Ghosted (6)','Failed (8)'],datasets:[{data:[5,2,6,8],backgroundColor:['#10b981','#f59e0b','#94a3b8','#ef4444']}]},options:{responsive:true,maintainAspectRatio:false,plugins:{datalabels:{color:'white',font:{weight:'bold',size:16},formatter:v=>v},legend:{position:'bottom',labels:{color:'#e2e8f0',font:{size:13}}}}}});
+  new Chart(document.getElementById('overallTimeline'),{type:'line',data:{labels:['Sep','Oct','Nov'],datasets:[{data:[4,18,13],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.15)',borderWidth:5,pointRadius:10,tension:0.4,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{display:false},x:{ticks:{color:'#94a3b8'}}}}});
+  const timelines={'tl-converge':['Nov 10','Nov 11','Nov 11','Nov 12','TBD'],'tl-esimplicity':['Oct 17','Oct 22','Oct 27','Oct 30','Nov 14'],'tl-quantiphi':['Nov 13'],'tl-incedo':['Nov 6'],'tl-katalon':['Oct 31'],'tl-chickfila':['Nov 17'],'tl-capgemini':['TBD']};
+  Object.keys(timelines).forEach(id=>{new Chart(document.getElementById(id),{type:'line',data:{labels:timelines[id],datasets:[{data:timelines[id].map((_,i)=>i+1),borderColor:'#38bdf8',borderWidth:4,pointRadius:7,tension:0.4,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{display:false},y:{display:false}}}});});
 
-  new Chart(document.getElementById('outcomeChart'), {
-    type:'doughnut',
-    data:{labels:['Active (7)','To Be Interviewed (2)','Ghosted (6)','Failed (8)'],datasets:[{data:[5,2,6,8],backgroundColor:['#10b981','#f59e0b','#94a3b8','#ef4444']}]},
-    options:{plugins:{datalabels:{color:'white',font:{weight:'bold',size:18},formatter:v=>v},legend:{position:'bottom',labels:{color:'#e2e8f0'}}}}
-  });
+  function sortTable(col) {
+    const table = document.getElementById("jobTable");
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    let dir = table.dataset.dir || "asc";
 
-  new Chart(document.getElementById('overallTimeline'), {
-    type:'line',
-    data:{labels:['Sep','Oct','Nov'],datasets:[{data:[4,18,13],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.6)',borderWidth:6,pointRadius:14,tension:0.4,fill:false}]},
-    options:{plugins:{legend:{display:false}},scales:{y:{display:false},x:{ticks:{color:'#e2e8f0'}}}}
-  });
-
-  const timelines = {
-    'tl-converge': ['Nov 10','Nov 11','Nov 11','Nov 12','TBD'],
-    'tl-esimplicity': ['Oct 17','Oct 22','Oct 27','Oct 30','Nov 14'],
-    'tl-quantiphi': ['Nov 13'],
-    'tl-incedo': ['Nov 6'],
-    'tl-katalon': ['Oct 31'],
-    'tl-chickfila': ['Nov 17'],
-    'tl-capgemini': ['TBD']
-  };
-
-  Object.keys(timelines).forEach(id => {
-    new Chart(document.getElementById(id), {
-      type:'line',
-      data:{labels:timelines[id],datasets:[{data:timelines[id].map((_,i)=>i+1),borderColor:'#38bdf8',borderWidth:5,pointRadius:8,tension:0.4,fill:false}]},
-      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#e2e8f0',font:{size:10}}},y:{display:false}}}
+    rows.sort((a, b) => {
+      let A = a.cells[col].textContent.trim();
+      let B = b.cells[col].textContent.trim();
+      if (col === 2 || col === 4) { A = isNaN(A) ? A : Number(A); B = isNaN(B) ? B : Number(B); }
+      else { A = A.toLowerCase(); B = B.toLowerCase(); }
+      return dir === "asc" ? (A > B ? 1 : -1) : (A < B ? 1 : -1);
     });
-  });
+
+    rows.forEach(r => tbody.appendChild(r));
+    table.dataset.dir = dir === "asc" ? "desc" : "asc";
+  }
 </script>
 </body>
 </html>
