@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mike Dube – Job Search Dashboard (Sep 15 – Nov 14, 2025)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --accent:#38bdf8;
+      --active:#10b981; --to-be-interviewed:#f59e0b; --ghosted:#94a3b8; --failed:#ef4444;
+    }
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    header{background:linear-gradient(135deg,#1e3a8a,#7c3aed);padding:4rem 1rem;text-align:center;color:white;}
+    h1{margin:0;font-size:2.8rem;font-weight:700;}
+    .linkedin{margin-top:1rem;font-size:1.4rem;}
+    .linkedin a{color:#38bdf8;text-decoration:none;font-weight:600;}
+    .linkedin a:hover{text-decoration:underline;}
+    .container{max-width:1400px;margin:0 auto;padding:1rem;}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin:2rem 0;}
+    .stat{background:var(--card);padding:1.5rem;border-radius:16px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+    .stat i{font-size:2.5rem;color:var(--accent);}
+    .stat-num{font-size:2.5rem;font-weight:700;}
+    .chart-box{background:var(--card);border-radius:16px;padding:2rem;margin:3rem 0;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+    .section{margin:4rem 0;}
+    .section-title{color:var(--accent);font-size:1.8rem;text-align:center;margin-bottom:2rem;}
+    .grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+    @media (min-width:768px){.grid{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));}}
+    .card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+    .card-header{
+      color:white;padding:1.2rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;
+    }
+    .card-header.active{background:var(--active);}
+    .card-header.tbi{background:var(--to-be-interviewed);}
+    .card-header.ghosted{background:var(--ghosted);}
+    .card-header.failed{background:var(--failed);}
+    .card-header h3{margin:0;font-size:1.4rem;}
+    .card-header i{margin-left:10px;transition:transform 0.3s;}
+    .card-body{padding:2rem;background:#18212f;display:none;}
+    .card-body.active{display:block;}
+    .position{font-size:1.1rem;font-weight:600;color:#38bdf8;margin-bottom:1rem;}
+    .event{font-size:0.95rem;margin:0.4rem 0;color:#e2e8f0;}
+    .event strong{color:var(--accent);}
+    .timeline-mini{height:140px;margin:1.5rem 0;background:#0f172a;padding:1rem;border-radius:8px;}
+    footer{text-align:center;padding:3rem;background:#0f172a;color:#94a3b8;margin-top:5rem;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><a href="https://www.linkedin.com/in/mike-dube-m-s-0694b467/" target="_blank" style="color:white;text-decoration:none;">Mike Dube</a></h1>
+  <p style="font-size:1.6rem;opacity:0.9;margin-top:1rem;">Job Search Dashboard – Sep 15 – Nov 14, 2025</p>
+  <p>Last updated: November 14, 2025</p>
+</header>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat"><i class="fas fa-briefcase"></i><div class="stat-num">35</div><div>Interviews</div></div>
+    <div class="stat"><i class="fas fa-building"></i><div class="stat-num">19</div><div>Companies</div></div>
+    <div class="stat"><i class="fas fa-handshake"></i><div class="stat-num">38+</div><div>People Met</div></div>
+    <div class="stat"><i class="fas fa-clock"></i><div class="stat-num">~50</div><div>Hours</div></div>
+  </div>
+
+  <div class="chart-box">
+    <canvas id="outcomeChart"></canvas>
+  </div>
+
+  <div class="chart-box">
+    <canvas id="overallTimeline"></canvas>
+  </div>
+
+  <!-- ACTIVE / INTERVIEWING -->
+  <div class="section">
+    <h2 class="section-title">ACTIVE / INTERVIEWING (5)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Converge</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Senior Backend Engineer (Python / AI)</div>
+          <div class="timeline-mini"><canvas id="tl-converge"></canvas></div>
+          <div class="event"><strong>Nov 10:</strong> Ivana Gargiulo – Recruiter</div>
+          <div class="event"><strong>Nov 11:</strong> Ryan Lecha – Hiring Manager</div>
+          <div class="event"><strong>Nov 11:</strong> Coding Assessment submitted</div>
+          <div class="event"><strong>Nov 12:</strong> Follow-up email sent</div>
+          <div class="event"><strong>TBD:</strong> 4 panels</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>eSimplicity</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Senior Solutions Architect</div>
+          <div class="timeline-mini"><canvas id="tl-esimplicity"></canvas></div>
+          <div class="event"><strong>Oct 17:</strong> Benjamin Nelson – Screen</div>
+          <div class="event"><strong>Oct 22:</strong> Coderbyte Assessment</div>
+          <div class="event"><strong>Oct 27:</strong> Bruno Botvinik & Dan Cathcart</div>
+          <div class="event"><strong>Oct 30:</strong> Chris Delling & Andy Wolt</div>
+          <div class="event"><strong>Nov 14:</strong> Follow-up email sent (today)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Quantiphi</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Platform Architect – Generative AI</div>
+          <div class="timeline-mini"><canvas id="tl-quantiphi"></canvas></div>
+          <div class="event"><strong>Nov 13:</strong> Devvarat Kanojia – R1</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Incedo</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Director – Technical Program & Delivery</div>
+          <div class="timeline-mini"><canvas id="tl-incedo"></canvas></div>
+          <div class="event"><strong>Nov 6:</strong> Director call</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header active" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Katalon</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Test Automation Architect</div>
+          <div class="timeline-mini"><canvas id="tl-katalon"></canvas></div>
+          <div class="event"><strong>Oct 31:</strong> Recruiter screen</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TO BE INTERVIEWED -->
+  <div class="section">
+    <h2 class="section-title">TO BE INTERVIEWED (2)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-header tbi" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Chick-fil-A</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Lead Systems Architect</div>
+          <div class="timeline-mini"><canvas id="tl-chickfila"></canvas></div>
+          <div class="event"><strong>Nov 17:</strong> Patricia Schnieber – Discovery Call</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header tbi" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Capgemini</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Realtime Platform Architect</div>
+          <div class="timeline-mini"><canvas id="tl-capgemini"></canvas></div>
+          <div class="event"><strong>TBD next week:</strong> Prakash Paramasivan</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GHOSTED -->
+  <div class="section">
+    <h2 class="section-title">GHOSTED (6)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>American Express</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Principal Engineer</div>
+          <div class="event"><strong>Oct 17:</strong> Hiring Manager call → Ghosted</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Sage</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Sr. Technical Solutions Architect</div>
+          <div class="event"><strong>Oct 3:</strong> Jordan Morse – 30-min Video</div>
+          <div class="event"><strong>Oct 7:</strong> Rama Ali – Technical → Ghosted</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Genpact</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Enterprise Architect</div>
+          <div class="event"><strong>Aug 28:</strong> Vibhor Saxena → Ghosted</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Iris Software</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Unknown</div>
+          <div class="event"><strong>Oct 21:</strong> Internal screening → Ghosted</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Global Payments</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Solutions Architect</div>
+          <div class="event"><strong>Oct 15:</strong> Initial screen</div>
+          <div class="event"><strong>Oct 20:</strong> Technical → Ghosted</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header ghosted" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Sogeti</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Solutions Architect</div>
+          <div class="event"><strong>Oct 16:</strong> Peyton Van Gundy – Initial Call</div>
+          <div class="event"><strong>Oct 20:</strong> John Dragunas → Ghosted</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAILED -->
+  <div class="section">
+    <h2 class="section-title">FAILED (8)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Georgia-Pacific / Koch</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Principal AI Architect</div>
+          <div class="event"><strong>Oct 6 – Nov 14:</strong> 6 virtual rounds → #2 in line</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Visa</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Lead System Architect</div>
+          <div class="event"><strong>Nov 14:</strong> CodeSignal Assessment – Failed</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>CVS Health</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Senior Creative Technologist</div>
+          <div class="event"><strong>Nov 14:</strong> Panel – Failed</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Accenture</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Product Manager (Order to Cash)</div>
+          <div class="event"><strong>Sep 19:</strong> Failed second round</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Blankfactor</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Solutions Architect</div>
+          <div class="event"><strong>Sep 29:</strong> Technical – Failed</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header failed" onclick="this.parentNode.querySelector('.card-body').classList.toggle('active')">
+          <h3>Jack Henry</h3><i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="card-body">
+          <div class="position">Technical role</div>
+          <div class="event"><strong>Oct 15:</strong> Technical – Failed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Mike Dube – 35 interviews · 7 active · 6 ghosted · 8 failed</p>
+</footer>
+
+<script>
+  Chart.register(ChartDataLabels);
+
+  new Chart(document.getElementById('outcomeChart'), {
+    type:'doughnut',
+    data:{labels:['Active (7)','To Be Interviewed (2)','Ghosted (6)','Failed (8)'],datasets:[{data:[5,2,6,8],backgroundColor:['#10b981','#f59e0b','#94a3b8','#ef4444']}]},
+    options:{plugins:{datalabels:{color:'white',font:{weight:'bold',size:18},formatter:v=>v},legend:{position:'bottom',labels:{color:'#e2e8f0'}}}}
+  });
+
+  new Chart(document.getElementById('overallTimeline'), {
+    type:'line',
+    data:{labels:['Sep','Oct','Nov'],datasets:[{data:[4,18,13],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.6)',borderWidth:6,pointRadius:14,tension:0.4,fill:false}]},
+    options:{plugins:{legend:{display:false}},scales:{y:{display:false},x:{ticks:{color:'#e2e8f0'}}}}
+  });
+
+  const timelines = {
+    'tl-converge': ['Nov 10','Nov 11','Nov 11','Nov 12','TBD'],
+    'tl-esimplicity': ['Oct 17','Oct 22','Oct 27','Oct 30','Nov 14'],
+    'tl-quantiphi': ['Nov 13'],
+    'tl-incedo': ['Nov 6'],
+    'tl-katalon': ['Oct 31'],
+    'tl-chickfila': ['Nov 17'],
+    'tl-capgemini': ['TBD']
+  };
+
+  Object.keys(timelines).forEach(id => {
+    new Chart(document.getElementById(id), {
+      type:'line',
+      data:{labels:timelines[id],datasets:[{data:timelines[id].map((_,i)=>i+1),borderColor:'#38bdf8',borderWidth:5,pointRadius:8,tension:0.4,fill:false}]},
+      options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#e2e8f0',font:{size:10}}},y:{display:false}}}
+    });
+  });
+</script>
+</body>
+</html>
