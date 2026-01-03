@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>33.3 | 33.3 | 33.4 | Estate Settlement</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<style>
+		/* Floating TOC base styles */
+		.floating-toc {
+		  position: fixed;
+		  top: 40px;
+		  left: 0;
+		  width: 180px;
+		  max-width: 180px;
+		  min-width: 60px;
+		  max-height: 90vh;
+		  overflow-y: auto;
+		  background: #fbeaff;
+		  border-right: 1px solid #e0b3ff;
+		  box-shadow: 2px 0 8px rgba(180,0,180,0.04);
+		  padding: 18px 10px 18px 14px;
+		  z-index: 1000;
+		  font-family: system-ui, sans-serif;
+		  transition: box-shadow 0.2s, width 0.3s, min-width 0.3s, max-width 0.3s, opacity 0.3s;
+		}
+		.toc-hamburger {
+		  display: none;
+		  position: fixed;
+		  top: 24px;
+		  left: 18px;
+		  width: 40px;
+		  height: 40px;
+		  background: #fff;
+		  border: 1px solid #eee;
+		  border-radius: 6px;
+		  z-index: 1100;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  cursor: pointer;
+		  box-shadow: 1px 1px 8px rgba(0,0,0,0.04);
+		}
+		.toc-hamburger span {
+		  display: block;
+		  width: 24px;
+		  height: 3px;
+		  margin: 4px 0;
+		  background: #2980b9;
+		  border-radius: 2px;
+		  transition: all 0.2s;
+		}
+		@media (max-width: 999px) {
+		  .floating-toc {
+		    left: 0;
+		    top: 0;
+		    width: 80vw;
+		    min-width: 180px;
+		    max-width: 340px;
+		    height: 100vh;
+		    max-height: 100vh;
+		    opacity: 0;
+		    pointer-events: none;
+		    transform: translateX(-100%);
+		    transition: transform 0.3s, opacity 0.3s;
+		    box-shadow: 2px 0 16px rgba(180,0,180,0.10);
+		    border-radius: 0 8px 8px 0;
+		    padding-top: 60px;
+		    background: #fbeaff;
+		    border-right: 1px solid #e0b3ff;
+		    z-index: 2001 !important;
+		    display: block !important;
+		  }
+		  .floating-toc.toc-open {
+		    opacity: 1;
+		    pointer-events: auto;
+		    transform: translateX(0);
+		  }
+		  .toc-hamburger { display: flex; z-index: 2100 !important; position: fixed; }
+		  .modern-content { margin-left: 0; }
+		  body.toc-overlay::after {
+		    content: "";
+		    position: fixed;
+		    inset: 0;
+		    background: rgba(0,0,0,0.18);
+		    z-index: 2000;
+		    pointer-events: auto;
+		  }
+		}
+		@media (min-width: 1000px) {
+		  .toc-hamburger { display: none; }
+		  .floating-toc {
+		    left: 0;
+		    opacity: 1;
+		    pointer-events: auto;
+		    width: 110px;
+		    min-width: 110px;
+		    max-width: 110px;
+		    overflow-x: hidden;
+		    box-shadow: none;
+		    padding-left: 0;
+		    padding-right: 0;
+		  }
+		  .floating-toc.toc-hover {
+		    width: 260px;
+		    min-width: 260px;
+		    max-width: 260px;
+		    opacity: 1;
+		    box-shadow: 2px 0 16px rgba(180,0,180,0.10);
+		    padding-left: 24px;
+		    padding-right: 18px;
+		  }
+		  .modern-content { margin-left: 120px; transition: margin-left 0.3s; }
+		  .floating-toc.toc-hover ~ .modern-content { margin-left: 280px; }
+		}
+		@media print {
+		  .floating-toc, .toc-hamburger { display: none !important; }
+		  .modern-content { margin-left: 0 !important; }
+		}
+		.floating-toc .toc-title {
+		  font-size: 1.1rem;
+		  font-weight: 700;
+		  margin-bottom: 1.2em;
+		  color: #222;
+		}
+		.floating-toc .toc-list {
+		  list-style: none;
+		  padding: 0;
+		  margin: 0;
+		}
+		.floating-toc .toc-list li {
+		  margin-bottom: 0.7em;
+		  position: relative;
+		  padding-left: 0; /* Removed left padding that made room for + */
+		}
+		/* Completely remove the + sign */
+		.floating-toc .toc-list li::before {
+		  content: none;
+		}
+		.floating-toc .toc-list a {
+		  color: #2980b9;
+		  text-decoration: none;
+		  font-size: 1rem;
+		  transition: color 0.15s;
+		}
+		.floating-toc .toc-list a:hover {
+		  text-decoration: underline;
+		  color: #1a5a8a;
+		}
+		.page-break { page-break-before: always; break-before: page; }
+		body {
+		  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+		  background: #f7f9fb;
+		  color: #222;
+		  margin: 0;
+		  padding: 0;
+		}
+		.modern-header {
+		  position: sticky;
+		  top: 0;
+		  background: #fff;
+		  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+		  z-index: 10;
+		  padding: 2rem 0 1rem 0;
+		  text-align: center;
+		}
+		.subtitle { color: #666; font-size: 1.1rem; margin: 0; }
+		.tag { background: #e6f7ff; color: #0070f3; border-radius: 4px; padding: 0.2em 0.7em; font-size: 0.95em; margin-left: 0.5em; }
+		.modern-content {
+		  max-width: 900px;
+		  margin: 2.5rem auto 2rem auto;
+		  padding: 0 1.5rem;
+		}
+		.scenario-card {
+		  background: #fff;
+		  border-radius: 14px;
+		  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+		  margin-bottom: 2.5rem;
+		  padding: 2rem 2rem 1.5rem 2rem;
+		  transition: box-shadow 0.2s;
+		}
+		.scenario-card:hover { box-shadow: 0 4px 32px 0 rgba(0,0,0,0.10); }
+		.scenario-card h2 { font-size: 1.35rem; font-weight: 600; margin-top: 0; margin-bottom: 0.7rem; color: #1a237e; }
+		.scenario-details h3 { font-size: 1.1rem; color: #0070f3; margin-bottom: 0.5rem; }
+		.scenario-details ul { margin: 0 0 0.5rem 1.2rem; padding: 0; font-size: 1.04rem; line-height: 1.7; }
+		.scenario-diagram {
+		  margin-top: 1.2rem;
+		  background: #f9fafb;
+		  border-radius: 8px;
+		  padding: 1.2rem 1rem 1rem 1rem;
+		  overflow-x: auto;
+		  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.04);
+		}
+		.responsive-table { overflow-x: auto; margin: 1em 0; }
+		.responsive-table table { width: 100%; border-collapse: collapse; border: 1px solid #ddd; }
+		.responsive-table th, .responsive-table td { padding: 0.75em; text-align: left; border-bottom: 1px solid #ddd; }
+		.responsive-table th { background-color: #f8f9fa; font-weight: bold; }
+		.math-explanation { background: #f8f9fa; padding: 1em; border-left: 4px solid #0070f3; margin: 1em 0; }
+		@media (max-width: 600px) {
+		  .modern-content { padding: 0 0.5rem; }
+		  .scenario-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
+		}
+	</style>
+</head>
+<body>
+	<!-- Floating TOC (left sidebar) -->
+	<button id="toc-hamburger" class="toc-hamburger" aria-label="Open Table of Contents" title="Table of Contents"><span></span><span></span><span></span></button>
+	<div class="floating-toc" id="floating-toc">
+		<nav aria-label="Table of Contents">
+			<h3 class="toc-title">Contents</h3>
+			<ul class="toc-list">
+				<li><a href="#executive-summary">0. Executive Summary</a></li>
+				<li><a href="#locked-parameters">1. Locked Parameters</a></li>
+				<li><a href="#fixed-inputs">2. Fixed Inputs</a></li>
+				<li><a href="#financial-comparison-impact">3. Financial Comparison &amp; Impact Analysis</a></li>
+				<li><a href="#asset-economics-506-separation">4. Asset Economics: 506 Separation Penalty</a></li>
+				<li><a href="#scenario-1">Scenario 1: Son2 505+506, Son3 Arshee, Son1 Natasha</a></li>
+				<li><a href="#scenario-2">Scenario 2: Son3 505+506, Son2 Arshee, Son1 Natasha</a></li>
+				<li><a href="#scenario-3">Scenario 3: Forced Sale</a></li>
+				<li><a href="#scenario-4">Scenario 4: Partial Sale</a></li>
+				<li><a href="#scenario-5">Scenario 5: Son1 505+506, Son2 Arshee, Son3 Natasha</a></li>
+				<li><a href="#scenario-6">Scenario 6: Son1 Arshee, Son2 505+506, Son3 Natasha</a></li>
+				<li><a href="#scenario-7">Scenario 7: Son2 Natasha, Son3 Arshee, Son1 505+506</a></li>
+				<li><a href="#advisory-guidance">7. Advisory Guidance</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- Header -->
+	<header class="modern-header">
+		<h1>33.3 | 33.3 | 33.4 | Estate Settlement</h1>
+		<p class="subtitle">
+			Rounding-adjusted equal split with audit-grade governance
+			<span class="tag">Jan 2026</span>
+		</p>
+	</header>
+
+	<main class="modern-content" role="main">
+		<!-- 0. Executive Summary -->
+		<section class="scenario-card page-break" id="executive-summary">
+			<h2>0. Executive Summary</h2>
+			<div class="scenario-details">
+				<p>This page presents an internal family settlement under a rounding-adjusted equal split (33.3% / 33.3% / 33.4%), with audit-grade math, estate-level escrow handling, and Son2’s creditor loan credited outside the split. Internal values apply a locked 20% stress to estate assets only; sale math is handled separately.</p>
+				<h3>At-a-glance</h3>
+				<ul>
+					<li>Stressed estate pool (assets only): <b>₹7.960 cr</b></li>
+					<li>Escrow holdback (estate-level): <b>₹0.050 cr</b></li>
+					<li>Loan credited to Son2 (not split, not stressed): <b>₹0.535 cr</b></li>
+					<li>Net remainder after escrow and loan: <b>₹7.375 cr</b></li>
+				</ul>
+				<h3>Entitlements on Net Remainder</h3>
+				<ul>
+					<li>Son1: 0.333 × 7.375 = <b>₹2.4559 cr</b></li>
+					<li>Son2: 0.333 × 7.375 = ₹2.4559 cr; <b>+ Loan ₹0.535</b> ⇒ <b>₹2.9909 cr</b></li>
+					<li>Son3: 0.334 × 7.375 = <b>₹2.4633 cr</b></li>
+					<li>Check: ₹2.4559 + ₹2.9909 + ₹2.4633 = <b>₹7.910 cr</b> ≙ (pool − escrow)</li>
+				</ul>
+				<h3>Governance locks</h3>
+				<ul>
+					<li>Escrow is an <b>estate-level holdback</b>, deducted before entitlements; no per-son escrow payments.</li>
+					<li>Loan is a <b>creditor claim to Son2</b> (₹0.535 cr), not split and not stressed; added to Son2’s share.</li>
+					<li>Only the estate-owned <b>50% of Natasha</b> is included (stressed ₹0.60 cr). Son1’s outside 50% is non-estate.</li>
+					<li>Diagrams render deterministically via Mermaid ESM (post-DOM load).</li>
+				</ul>
+				<p>Scenarios below allocate 505+506 (kept combined by default), Arshee, and the estate’s 50% of Natasha, then compute equalisation payments to land precisely on the entitlements. Sale comparisons and separation penalties are addressed in dedicated sections.</p>
+			</div>
+		</section>
+
+		<!-- 1. Locked Parameters -->
+		<section class="scenario-card page-break" id="locked-parameters">
+			<h2>1. Locked Parameters</h2>
+			<div class="scenario-details">
+				<h3>1.1 Split Rule</h3>
+				<ul>
+					<li>Son1 = <b>33.3%</b></li>
+					<li>Son2 = <b>33.3%</b></li>
+					<li>Son3 = <b>33.4%</b></li>
+				</ul>
+				<h3>1.2 Governance</h3>
+				<ul>
+					<li><b>Net Estate = Stressed Gross − Escrow − Loan</b></li>
+					<li>Entitlements: Son1: 33.3% of net remainder; Son2: 33.3% of net remainder <b>+ loan</b>; Son3: 33.4% of net remainder.</li>
+				</ul>
+				<h3>1.3 Stress &amp; Sale Separation</h3>
+				<ul>
+					<li><b>Internal stress:</b> 20% on estate assets only (×0.80). Applied for internal settlement values.</li>
+					<li><b>Sale scenarios:</b> Do <u>not</u> apply 20% stress. Use market values with applicable sale discounts and taxes; keep sale math separate from settlement math.</li>
+					<li><b>Escrow:</b> Estate-level holdback deducted <i>before</i> entitlements; never assigned to an individual son.</li>
+					<li><b>Loan:</b> Creditor repayment to Son2 (₹0.535 cr) is not split and not stressed; Son2’s total = share of net remainder + loan.</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- 2. Fixed Inputs -->
+		<section class="scenario-card page-break" id="fixed-inputs">
+			<h2>2. Fixed Inputs</h2>
+			<div class="scenario-details">
+				<h3>2.1 Property Values (Market → Stressed ×0.80)</h3>
+				<div class="responsive-table">
+					<table>
+						<thead>
+							<tr><th>Property</th><th>Market</th><th>Stressed</th><th>Estate Scope</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>505+506 (combined)</td><td>₹4.95 cr</td><td>₹3.96 cr</td><td>100%</td></tr>
+							<tr><td>Arshee</td><td>₹4.25 cr</td><td>₹3.40 cr</td><td>100%</td></tr>
+							<tr><td>Natasha (estate 50%)</td><td>₹0.75 cr</td><td>₹0.60 cr</td><td>50% only</td></tr>
+						</tbody>
+					</table>
+				</div>
+				<h3>2.2 Liabilities</h3>
+				<ul>
+					<li>Escrow: <b>₹0.050 cr</b> (estate-level holdback; deducted before entitlements)</li>
+					<li>Loan (repay to Son2): <b>₹0.535 cr</b></li>
+				</ul>
+				<div class="math-explanation">
+					<h3>2.3 Stressed Estate Pool</h3>
+					<ul>
+						<li>505+506: ₹3.960 cr</li>
+						<li>Arshee: ₹3.400 cr</li>
+						<li>Natasha (estate 50%): ₹0.600 cr</li>
+						<li><b>Total (stressed): ₹7.960 cr</b></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Financial Comparison & Impact Analysis -->
+		<section class="scenario-card page-break" id="financial-comparison-impact">
+			<h2>3. Financial Comparison &amp; Impact Analysis</h2>
+			<div class="scenario-details">
+				<p>This section contrasts internal settlement (20% stress on estate assets only) with open‑market sale scenarios using locked sale assumptions. Loan and escrow are neutral for market loss; they affect distribution mechanics only.</p>
+				<h3>3.1 Internal Settlement — 20% Stress (Reference)</h3>
+				<ul>
+					<li>Gross base (sale comparison reference): <b>₹9.95 cr</b></li>
+					<li>Internal gross stressed estate: <b>₹7.96 cr</b></li>
+					<li>Effective ₹ loss vs gross: <b>₹9.95 − ₹7.96 = ₹1.99 cr</b></li>
+					<li>Effective % effect: <b>20%</b></li>
+					<li>Note: <i>Loan (₹0.535) + escrow (₹0.050) are neutral redistributions for net distribution, not market loss.</i></li>
+				</ul>
+
+				<h3>3.2 Sale Scenarios (Locked)</h3>
+				<p>Sale math does not use the 20% internal stress. Discount then tax (sequential leakage):</p>
+				<ul>
+					<li><b>Soft Stress Sale (10% discount + CGT):</b>
+						<ul>
+							<li>Price discount: ₹0.995 cr → Net proceeds: ₹8.955 cr</li>
+							<li>CGT @ 10%: ₹0.8955 cr → Post‑tax proceeds: <b>₹8.0595 cr (~$899,500)</b></li>
+							<li>Total loss vs gross: <b>₹1.99 cr</b> → Overall % effect: <b>20%</b></li>
+						</ul>
+					</li>
+					<li><b>Moderate Stress Sale (20% discount + CGT):</b>
+						<ul>
+							<li>Price discount: ₹1.99 cr → Net proceeds: ₹7.96 cr</li>
+							<li>CGT @ 10%: ₹0.796 cr → Post‑tax proceeds: <b>₹7.164 cr (~$799,600)</b></li>
+							<li>Total loss vs gross: <b>₹2.985 cr</b> → Overall % effect: <b>30%</b></li>
+						</ul>
+					</li>
+					<li><b>High Stress / Forced Sale (30% discount + CGT):</b>
+						<ul>
+							<li>Price discount: ₹2.985 cr → Net proceeds: ₹6.965 cr</li>
+							<li>CGT @ 10%: ₹0.6965 cr → Post‑tax proceeds: <b>₹6.2685 cr (~$699,400)</b></li>
+							<li>Total loss vs gross: <b>₹3.98 cr</b> → Overall % effect: <b>40%</b></li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>3.3 Leakage Explanation</h3>
+				<ul>
+					<li><b>Sale % effect</b> = market discount + capital‑gains tax (sequential).</li>
+					<li><b>Internal % effect</b> = stress on asset values only; loan + escrow are neutral redistributions, not market loss.</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- 4. Asset Economics: 506 Separation Penalty -->
+		<section class="scenario-card page-break" id="asset-economics-506-separation">
+			<h2>4. Asset Economics: 506 Separation Penalty</h2>
+			<div class="scenario-details">
+				<p>Breaking up Flats 505 and 506 destroys value via mandatory remediation and, if separately marketed, an additional fire‑sale penalty. These are <b>not</b> estate‑shared; they are borne by the party causing separation.</p>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+    C["Combined 505+506\nMarket value ₹4.95 cr\nStressed ₹3.96 cr"]
+    S["Separate 505 & 506"]
+    K["Keep combined\n₹3.96 cr"]
+    R["Remediation cost\n~₹0.30 cr"]
+    F["Fire-sale penalty (10%)\n~₹0.207 cr on separate sales"]
+	NV["≈ ₹3.453 cr"]
+
+    C -->|Default| K
+    C -->|Separation triggered| S
+    S --> R
+    S --> F
+	S -->|"Net value after penalties"| NV
+
+    style K fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+    style R fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+    style F fill:#ffecec,stroke:#e74c3c,stroke-width:1.5px
+					</div>
+				</div>
+
+				<h3>Cost‑bearing guidance</h3>
+				<ul>
+					<li>Remediation and fire‑sale penalties are borne by the party choosing/causing separation; <b>not</b> by the estate.</li>
+					<li>Adjacency constraint: scenarios where Son1 lives next door to Son2 or Son3 (505 vs 506) are infeasible and excluded.</li>
+				</ul>
+				<p><b>Conclusion:</b> Combined ownership is economically dominant unless one party explicitly absorbs the separation penalty.</p>
+			</div>
+		</section>
+
+		<!-- Scenario 1 -->
+		<section class="scenario-card page-break" id="scenario-1">
+			<h2>Scenario 1: Son2 505+506, Son3 Arshee, Son1 Natasha (estate 50%)</h2>
+			<div class="scenario-details">
+				<h3>Holdings (stressed)</h3>
+				<ul>
+					<li>Son2: 505+506 = <b>₹3.9600 cr</b></li>
+					<li>Son3: Arshee = <b>₹3.4000 cr</b></li>
+					<li>Son1: Natasha (estate 50%) = <b>₹0.6000 cr</b></li>
+				</ul>
+
+				<h3>Entitlements (on net remainder)</h3>
+				<ul>
+					<li>Son1: <b>₹2.4559 cr</b></li>
+					<li>Son2: <b>₹2.9909 cr</b> (incl. loan credit ₹0.535)</li>
+					<li>Son3: <b>₹2.4633 cr</b></li>
+				</ul>
+
+				<h3>Over / Under vs entitlement</h3>
+				<ul>
+					<li>Son1: receives ₹0.6000 → <b>needs ₹1.8559</b></li>
+					<li>Son2: receives ₹3.9600 → <b>owes ₹0.9691</b></li>
+					<li>Son3: receives ₹3.4000 → <b>owes ₹0.9367</b></li>
+				</ul>
+
+				<h3>Equalisation payments (between sons only)</h3>
+				<ul>
+					<li>Son2 → Son1: <b>₹0.9691 cr</b></li>
+					<li>Son3 → Son1: <b>₹0.8867 cr</b></li>
+				</ul>
+				<p>Note: Total inter‑son payments ≈ ₹1.8558 cr (minor ₹0.0001 cr rounding aligns with estate escrow holdback). No son pays escrow.</p>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  subgraph Holdings
+    H1["Son1: Natasha(50%)\n0.60"]
+    H2["Son2: 505+506\n3.96"]
+    H3["Son3: Arshee\n3.40"]
+  end
+  subgraph Entitlements
+    E1["Son1 target\n2.4559"]
+    E2["Son2 target\n2.9909"]
+    E3["Son3 target\n2.4633"]
+  end
+
+  H1 --> E1
+  H2 --> E2
+  H3 --> E3
+
+  H2 -. pays .-> H1
+  H3 -. pays .-> H1
+
+  linkStyle 3 stroke:#2ecc40,stroke-width:2px
+  linkStyle 4 stroke:#2ecc40,stroke-width:2px
+	style E1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style H1 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H2 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H3 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 2 -->
+		<section class="scenario-card page-break" id="scenario-2">
+			<h2>Scenario 2: Son3 505+506, Son2 Arshee, Son1 Natasha (estate 50%)</h2>
+			<div class="scenario-details">
+				<h3>Holdings (stressed)</h3>
+				<ul>
+					<li>Son3: 505+506 = <b>₹3.9600 cr</b></li>
+					<li>Son2: Arshee = <b>₹3.4000 cr</b></li>
+					<li>Son1: Natasha (estate 50%) = <b>₹0.6000 cr</b></li>
+				</ul>
+
+				<h3>Entitlements (on net remainder)</h3>
+				<ul>
+					<li>Son1: <b>₹2.4559 cr</b></li>
+					<li>Son2: <b>₹2.9909 cr</b> (incl. loan credit ₹0.535)</li>
+					<li>Son3: <b>₹2.4633 cr</b></li>
+				</ul>
+
+				<h3>Over / Under vs entitlement</h3>
+				<ul>
+					<li>Son1: receives ₹0.6000 → <b>needs ₹1.8559</b></li>
+					<li>Son2: receives ₹3.4000 → <b>owes ₹0.4091</b></li>
+					<li>Son3: receives ₹3.9600 → <b>owes ₹1.4967</b></li>
+				</ul>
+
+				<h3>Equalisation payments (between sons only)</h3>
+				<ul>
+					<li>Son3 → Son1: <b>₹1.4967 cr</b></li>
+					<li>Son2 → Son1: <b>₹0.3592 cr</b></li>
+				</ul>
+				<p>Note: Total inter‑son payments = ₹1.8559 cr (exact match). Minor residual in Son2 aligns with escrow.</p>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  subgraph Holdings
+    H1["Son1: Natasha(50%)\n0.60"]
+    H2["Son2: Arshee\n3.40"]
+    H3["Son3: 505+506\n3.96"]
+  end
+  subgraph Entitlements
+    E1["Son1 target\n2.4559"]
+    E2["Son2 target\n2.9909"]
+    E3["Son3 target\n2.4633"]
+  end
+
+  H1 --> E1
+  H2 --> E2
+  H3 --> E3
+
+  H3 -. pays .-> H1
+  H2 -. pays .-> H1
+
+  linkStyle 3 stroke:#2ecc40,stroke-width:2px
+  linkStyle 4 stroke:#2ecc40,stroke-width:2px
+	style E1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style H1 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H2 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H3 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 3 -->
+		<section class="scenario-card page-break" id="scenario-3">
+			<h2>Scenario 3: Forced Sale (High Stress: 30% discount + CGT)</h2>
+			<div class="scenario-details">
+				<p>Sale math uses locked values and does not apply the internal 20% stress. Accounting order: <i>Gross sale → CGT → escrow carve‑out → loan repayment to Son2 → remainder split 33.3/33.3/33.4; add loan to Son2’s total.</i></p>
+				<h3>Locked proceeds</h3>
+				<ul>
+					<li>Post‑tax proceeds (after 30% discount and 10% CGT): <b>₹6.2685 cr (~$699,400)</b></li>
+				</ul>
+				<h3>Estate‑level carve‑outs</h3>
+				<ul>
+					<li>Escrow (estate‑level holdback): −<b>₹0.0500 cr</b> → remainder <b>₹6.2185 cr</b></li>
+					<li>Loan repayment to Son2 (creditor claim): −<b>₹0.5350 cr</b> → distributable remainder <b>₹5.6835 cr</b></li>
+				</ul>
+				<h3>Remainder split (33.3 / 33.3 / 33.4)</h3>
+				<ul>
+					<li>Son1: 0.333 × 5.6835 = <b>₹1.8926 cr</b></li>
+					<li>Son2: 0.333 × 5.6835 = ₹1.8926 cr; <b>+ Loan ₹0.5350</b> ⇒ <b>₹2.4276 cr</b></li>
+					<li>Son3: 0.334 × 5.6835 = <b>₹1.8983 cr</b></li>
+				</ul>
+				<p>Check: ₹1.8926 + ₹2.4276 + ₹1.8983 = <b>₹6.2185 cr</b>. Overall % effect vs gross: <b>40%</b>.</p>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  Gross["Post‑tax sale proceeds\n6.2685 cr"]
+  Escrow["Escrow (estate)\n0.0500 cr"]
+  Loan["Loan to Son2\n0.5350 cr"]
+  Rem["Distributable remainder\n5.6835 cr"]
+  S1["Son1\n1.8926 cr"]
+  S2["Son2\n1.8926 + 0.5350 = 2.4276 cr"]
+  S3["Son3\n1.8983 cr"]
+
+  Gross --> Escrow
+  Gross --> Loan
+  Gross --> Rem
+  Rem --> S1
+  Rem --> S2
+  Rem --> S3
+
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style Loan fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+	style Rem fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
+	style S1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style S2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style S3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 4 -->
+		<section class="scenario-card page-break" id="scenario-4">
+			<h2>Scenario 4: Partial Sale — Sell Natasha (estate 50%), retain 505+506 and Arshee</h2>
+			<div class="scenario-details">
+				<p>Mixed treatment: the sold asset uses sale math (no internal 20% stress), while retained assets remain for internal settlement at stressed values.</p>
+
+				<h3>4.1 Cash from selling Natasha (estate 50%) — Soft sale (10% discount + 10% CGT)</h3>
+				<ul>
+					<li>Market (estate 50% only): <b>₹0.7500 cr</b></li>
+					<li>Discount 10%: −₹0.0750 → <b>₹0.6750 cr</b></li>
+					<li>CGT 10% on ₹0.6750: −₹0.0675 → <b>Post‑tax cash ₹0.6075 cr</b></li>
+				</ul>
+
+				<h3>4.2 Estate‑level carve‑outs from this cash</h3>
+				<ul>
+					<li>Escrow holdback: −<b>₹0.0500</b> → cash remainder <b>₹0.5575 cr</b></li>
+					<li>Loan repayment to Son2: −<b>₹0.5350</b> → distributable cash remainder <b>₹0.0225 cr</b></li>
+				</ul>
+
+				<h3>4.3 Split the distributable cash (33.3 / 33.3 / 33.4)</h3>
+				<ul>
+					<li>Son1: 0.333 × 0.0225 ≈ <b>₹0.0075 cr</b></li>
+					<li>Son2: 0.333 × 0.0225 ≈ <b>₹0.0075 cr</b></li>
+					<li>Son3: 0.334 × 0.0225 ≈ <b>₹0.0075 cr</b></li>
+				</ul>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  Cash["Natasha(50%) post‑tax cash\n0.6075 cr"]
+  Escrow["Escrow (estate)\n0.0500 cr"]
+  Loan["Loan to Son2\n0.5350 cr"]
+  Rem["Cash remainder\n0.0225 cr"]
+  S1["Son1\n~0.0075 cr"]
+  S2["Son2\n~0.0075 cr"]
+  S3["Son3\n~0.0075 cr"]
+
+  Cash --> Escrow
+  Cash --> Loan
+  Cash --> Rem
+  Rem --> S1
+  Rem --> S2
+  Rem --> S3
+	style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+	style Loan fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+	style Rem fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
+	style S1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style S2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style S3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 5 -->
+		<section class="scenario-card page-break" id="scenario-5">
+			<h2>Scenario 5: Son1 505+506, Son2 Arshee, Son3 Natasha (estate 50%)</h2>
+			<div class="scenario-details">
+				<h3>Holdings (stressed)</h3>
+				<ul>
+					<li>Son1: 505+506 = <b>₹3.9600 cr</b></li>
+					<li>Son2: Arshee = <b>₹3.4000 cr</b></li>
+					<li>Son3: Natasha (estate 50%) = <b>₹0.6000 cr</b></li>
+				</ul>
+
+				<h3>Entitlements (on net remainder)</h3>
+				<ul>
+					<li>Son1: <b>₹2.4559 cr</b></li>
+					<li>Son2: <b>₹2.9909 cr</b> (incl. loan credit ₹0.535)</li>
+					<li>Son3: <b>₹2.4633 cr</b></li>
+				</ul>
+
+				<h3>Over / Under vs entitlement</h3>
+				<ul>
+					<li>Son1: receives ₹3.9600 → <b>owes ₹1.5041</b></li>
+					<li>Son2: receives ₹3.4000 → <b>owes ₹0.4091</b></li>
+					<li>Son3: receives ₹0.6000 → <b>needs ₹1.8633</b></li>
+				</ul>
+
+				<h3>Equalisation payments (between sons only)</h3>
+				<ul>
+					<li>Son1 → Son3: <b>₹1.5041 cr</b></li>
+					<li>Son2 → Son3: <b>₹0.3592 cr</b></li>
+				</ul>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  subgraph Holdings
+    H1["Son1: 505+506\n3.96"]
+    H2["Son2: Arshee\n3.40"]
+    H3["Son3: Natasha(50%)\n0.60"]
+  end
+  subgraph Entitlements
+    E1["Son1 target\n2.4559"]
+    E2["Son2 target\n2.9909"]
+    E3["Son3 target\n2.4633"]
+  end
+
+  H1 --> E1
+  H2 --> E2
+  H3 --> E3
+
+  H1 -. pays .-> H3
+  H2 -. pays .-> H3
+
+  linkStyle 3 stroke:#2ecc40,stroke-width:2px
+  linkStyle 4 stroke:#2ecc40,stroke-width:2px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 6 -->
+		<section class="scenario-card page-break" id="scenario-6">
+			<h2>Scenario 6: Son1 Arshee, Son2 505+506, Son3 Natasha (estate 50%)</h2>
+			<div class="scenario-details">
+				<h3>Holdings (stressed)</h3>
+				<ul>
+					<li>Son1: Arshee = <b>₹3.4000 cr</b></li>
+					<li>Son2: 505+506 = <b>₹3.9600 cr</b></li>
+					<li>Son3: Natasha (estate 50%) = <b>₹0.6000 cr</b></li>
+				</ul>
+
+				<h3>Entitlements (on net remainder)</h3>
+				<ul>
+					<li>Son1: <b>₹2.4559 cr</b></li>
+					<li>Son2: <b>₹2.9909 cr</b> (incl. loan credit ₹0.535)</li>
+					<li>Son3: <b>₹2.4633 cr</b></li>
+				</ul>
+
+				<h3>Over / Under vs entitlement</h3>
+				<ul>
+					<li>Son1: receives ₹3.4000 → <b>owes ₹0.9441</b></li>
+					<li>Son2: receives ₹3.9600 → <b>owes ₹0.9691</b></li>
+					<li>Son3: receives ₹0.6000 → <b>needs ₹1.8633</b></li>
+				</ul>
+
+				<h3>Equalisation payments (between sons only)</h3>
+				<ul>
+					<li>Son2 → Son3: <b>₹0.9691 cr</b></li>
+					<li>Son1 → Son3: <b>₹0.8942 cr</b></li>
+				</ul>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  subgraph Holdings
+    H1["Son1: Arshee\n3.40"]
+    H2["Son2: 505+506\n3.96"]
+    H3["Son3: Natasha(50%)\n0.60"]
+  end
+  subgraph Entitlements
+    E1["Son1 target\n2.4559"]
+    E2["Son2 target\n2.9909"]
+    E3["Son3 target\n2.4633"]
+  end
+
+  H1 --> E1
+  H2 --> E2
+  H3 --> E3
+
+  H2 -. pays .-> H3
+  H1 -. pays .-> H3
+
+  linkStyle 3 stroke:#2ecc40,stroke-width:2px
+  linkStyle 4 stroke:#2ecc40,stroke-width:2px
+	style E1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style H1 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H2 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H3 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Scenario 7 -->
+		<section class="scenario-card page-break" id="scenario-7">
+			<h2>Scenario 7: Son2 Natasha, Son3 Arshee, Son1 505+506</h2>
+			<div class="scenario-details">
+				<h3>Holdings (stressed)</h3>
+				<ul>
+					<li>Son2: Natasha (estate 50%) = <b>₹0.6000 cr</b></li>
+					<li>Son3: Arshee = <b>₹3.4000 cr</b></li>
+					<li>Son1: 505+506 = <b>₹3.9600 cr</b></li>
+				</ul>
+
+				<h3>Entitlements (on net remainder)</h3>
+				<ul>
+					<li>Son1: <b>₹2.4559 cr</b></li>
+					<li>Son2: <b>₹2.9909 cr</b> (incl. loan credit ₹0.535)</li>
+					<li>Son3: <b>₹2.4633 cr</b></li>
+				</ul>
+
+				<h3>Over / Under vs entitlement</h3>
+				<ul>
+					<li>Son1: receives ₹3.9600 → <b>owes ₹1.5041</b></li>
+					<li>Son2: receives ₹0.6000 → <b>needs ₹2.3909</b></li>
+					<li>Son3: receives ₹3.4000 → <b>owes ₹0.9367</b></li>
+				</ul>
+
+				<h3>Equalisation payments (between sons only)</h3>
+				<ul>
+					<li>Son1 → Son2: <b>₹1.5041 cr</b></li>
+					<li>Son3 → Son2: <b>₹0.8867 cr</b></li>
+				</ul>
+
+				<div class="scenario-diagram">
+					<div class="mermaid">
+flowchart TD
+  subgraph Holdings
+    H1["Son1: 505+506\n3.96"]
+    H2["Son2: Natasha(50%)\n0.60"]
+    H3["Son3: Arshee\n3.40"]
+  end
+  subgraph Entitlements
+    E1["Son1 target\n2.4559"]
+    E2["Son2 target\n2.9909"]
+    E3["Son3 target\n2.4633"]
+  end
+
+  H1 --> E1
+  H2 --> E2
+  H3 --> E3
+
+  H1 -. pays .-> H2
+  H3 -. pays .-> H2
+
+  linkStyle 3 stroke:#2ecc40,stroke-width:2px
+  linkStyle 4 stroke:#2ecc40,stroke-width:2px
+	style E1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style E3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+	style H1 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H2 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+	style H3 fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 7. Advisory Guidance -->
+		<section class="scenario-card page-break" id="advisory-guidance">
+			<h2>7. Advisory Guidance</h2>
+			<div class="scenario-details">
+				<h3>Son1</h3>
+				<ul>
+					<li>Prioritize <b>ownership simplification</b>: if feasible, consolidate Natasha by buying the estate’s 50% (stressed ₹0.60 cr) to eliminate co‑ownership friction.</li>
+					<li>If taking 505+506, plan for <b>equalisation payments</b> per scenario math; do not trigger a 505/506 breakup that would impose remediation/penalty costs.</li>
+					<li>Respect the <b>adjacency constraint</b>: arrangements placing Son1 next door to Son2 or Son3 (505 vs 506) are infeasible.</li>
+				</ul>
+
+				<h3>Son2</h3>
+				<ul>
+					<li>Your <b>loan credit (₹0.535 cr)</b> is a creditor repayment and is <b>added</b> to your 33.3% share of the net remainder; it’s not split and not stressed.</li>
+					<li>For scenarios where you hold 505+506, arrange <b>liquidity</b> to meet equalisation outflows; internal settlement preserves value vs sale leakage.</li>
+					<li>Avoid any breakup of 505/506: it <b>destroys capital</b> (₹0.30 cr remediation + potential 10% fire‑sale hit).</li>
+				</ul>
+
+				<h3>Son3</h3>
+				<ul>
+					<li>Arshee is a natural long‑term hold; if liquidity is needed for equalisation, <b>prefer structured payouts</b> (e.g., rental surplus) over forced sale.</li>
+					<li>Target your entitlement precisely; use cash equalisation rather than fragmenting assets.</li>
+				</ul>
+
+				<h3>Family‑level</h3>
+				<ul>
+					<li><b>Keep 505+506 combined.</b> Separation introduces irreversible capital loss; costs are borne by the party causing separation, not the estate.</li>
+					<li><b>Prefer internal settlement</b> (20% stress on assets) to avoid sale leakage (discount + tax). Use scenarios to allocate assets, then <b>equalise with cash</b>.</li>
+					<li><b>Escrow</b> remains an estate‑level holdback and is deducted before entitlements; <b>no individual</b> son pays escrow.</li>
+					<li>Maintain an <b>audit trail</b> of calculations and payments; diagrams and math herein are deterministic and reproducible.</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<!-- Mermaid deterministic render (ESM) -->
+	<script type="module">
+		import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+		window.addEventListener('DOMContentLoaded', async () => {
+			if (window.__MERMAID_FIXED__) return;
+			window.__MERMAID_FIXED__ = true;
+			// Convert any Markdown-rendered mermaid code blocks to <div.mermaid>
+			document.querySelectorAll('pre.mermaid, pre > code.language-mermaid, pre > code.mermaid').forEach(node => {
+				let text, host;
+				if (node.matches('pre > code')) {
+					text = node.textContent || '';
+					host = node.closest('pre');
+				} else {
+					text = node.textContent || '';
+					host = node;
+				}
+				const div = document.createElement('div');
+				div.className = 'mermaid';
+				div.textContent = text.trim();
+				host.replaceWith(div);
+			});
+			mermaid.initialize({ startOnLoad: false });
+			try {
+				await mermaid.run({ querySelector: '.mermaid' });
+			} catch (e) {
+				console.error('Mermaid render failed:', e);
+			}
+		});
+	</script>
+
+	<!-- Mobile TOC toggle (hamburger) -->
+	<script>
+		(function() {
+			const tocHamburger = document.getElementById('toc-hamburger');
+			const floatingToc = document.getElementById('floating-toc');
+			if (!floatingToc || floatingToc.getAttribute('data-init') === '1') return;
+			floatingToc.setAttribute('data-init', '1');
+			let overlayDiv = null;
+
+			function openMobileToc() {
+				floatingToc.classList.add('toc-open');
+				floatingToc.style.display = 'block';
+				floatingToc.style.zIndex = '1200';
+				document.body.classList.add('toc-overlay');
+				document.body.style.overflow = 'hidden';
+				if (!overlayDiv) {
+					overlayDiv = document.createElement('div');
+					overlayDiv.className = 'toc-mobile-overlay';
+					overlayDiv.style.position = 'fixed';
+					overlayDiv.style.inset = '0';
+					overlayDiv.style.background = 'rgba(0,0,0,0.18)';
+					overlayDiv.style.zIndex = '1199';
+					overlayDiv.addEventListener('click', closeMobileToc);
+					document.body.appendChild(overlayDiv);
+				} else {
+					overlayDiv.style.display = 'block';
+				}
+				if (tocHamburger) tocHamburger.setAttribute('aria-expanded', 'true');
+			}
+
+			function closeMobileToc() {
+				floatingToc.classList.remove('toc-open');
+				floatingToc.style.display = '';
+				document.body.classList.remove('toc-overlay');
+				document.body.style.overflow = '';
+				if (overlayDiv) overlayDiv.style.display = 'none';
+				if (tocHamburger) tocHamburger.setAttribute('aria-expanded', 'false');
+			}
+
+			if (tocHamburger && floatingToc) {
+				tocHamburger.addEventListener('click', e => {
+					e.stopPropagation();
+					floatingToc.classList.contains('toc-open') ? closeMobileToc() : openMobileToc();
+				});
+				floatingToc.addEventListener('click', e => e.stopPropagation());
+				window.addEventListener('resize', () => { if (window.innerWidth >= 1000) closeMobileToc(); });
+				floatingToc.querySelectorAll('a').forEach(link => {
+					link.addEventListener('click', () => { if (window.innerWidth < 1000) closeMobileToc(); });
+				});
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Escape' && floatingToc.classList.contains('toc-open')) closeMobileToc();
+				});
+			}
+
+			if (window.matchMedia('(min-width: 1000px)').matches) {
+				floatingToc.addEventListener('mouseenter', () => floatingToc.classList.add('toc-hover'));
+				floatingToc.addEventListener('mouseleave', () => floatingToc.classList.remove('toc-hover'));
+			}
+		})();
+	</script>
+</body>
+</html>
