@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scenario 4 Baseline (Arshee 50% earmark to Son3) | Estate Settlement: All Combinations</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+
+<body>
+  <!-- Floating TOC -->
+  <div class="floating-toc" id="floating-toc">
+    <nav aria-label="Table of Contents">
+      <h3 class="toc-title">Contents</h3>
+      <ul class="toc-list">
+        <li><a href="#executive-summary">0. Executive Summary</a></li>
+        <li><a href="#locked-parameters-section">1. Locked Parameters</a></li>
+        <li><a href="#fixed-inputs">2. Fixed Inputs</a></li>
+        <li><a href="#financial-comparison">3. Financial Comparison &amp; Impact Analysis</a></li>
+        <li><a href="#section-4-asset-economics">4. Asset Economics: 506 Separation Penalty</a></li>
+        <li><a href="#scenario-1">Scenario 1: Son2 505+506, Son3 Arshee, Son1 Natasha</a></li>
+        <li><a href="#scenario-2">Scenario 2: Son3 505+506, Son2 Arshee, Son1 Natasha</a></li>
+        <li><a href="#scenario-3">Scenario 3: Forced Sale</a></li>
+        <li><a href="#scenario-4">Scenario 4: Partial Sale</a></li>
+        <li><a href="#scenario-5">Scenario 5: Son1 505+506, Son2 Arshee, Son3 Natasha</a></li>
+        <li><a href="#scenario-6">Scenario 6: Son1 Arshee, Son2 505+506, Son3 Natasha</a></li>
+        <li><a href="#scenario-7">Scenario 7: Son2 Natasha, Son3 Arshee, Son1 505+506</a></li>
+        <li><a href="#advisory-guidance">7. Advisory Guidance</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Optional hamburger control (if your styles.css supports it) -->
+  <button class="toc-hamburger" id="toc-hamburger" aria-label="Open Table of Contents">
+    <span></span><span></span><span></span>
+  </button>
+
+  <header class="modern-header">
+    <div class="modern-header-inner">
+      <h1>Scenario 4 Baseline | Estate Settlement</h1>
+      <p class="subtitle">
+        Earmark-only uplift: <b>50% of Arshee to Son3</b>, remainder split 1/3 each (including remaining 50% Arshee),
+        with <b>Model-B loan protection</b> for Son2.
+        <span class="tag">Dec 2025</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="modern-content" role="main">
+
+    <!-- 0. EXECUTIVE SUMMARY -->
+    <section class="scenario-card page-break" id="executive-summary">
+      <h2 id="executive-summary-title">0. Executive Summary</h2>
+      <div class="scenario-details">
+        <p>
+          This document provides a clean “Estate Pool + Ledger” settlement model for a single baseline rule-set:
+          <b>Scenario 4 (baseline)</b> where <b>only 50% of Arshee is earmarked to Son3</b> (elder-care uplift),
+          and <b>all remaining estate value is split equally (1/3 each)</b> — including the remaining 50% of Arshee.
+          Son2’s loan protection is preserved using <b>Model B</b>.
+        </p>
+
+        <h3>What this changes vs the Elder-care uplift file</h3>
+        <ul>
+          <li>Uplift is <b>only</b> the earmark of 50% of Arshee to Son3.</li>
+          <li>The remaining 50% of Arshee is treated as part of the shared pool (1/3 each), not pre-split 25/25/50.</li>
+          <li>Loan to Son2 is preserved via <b>Model B</b>: Son1 and Son3 each fund half of the credit.</li>
+          <li>Escrow is always an estate-level holdback (not paid by any individual son).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 1. LOCKED PARAMETERS -->
+    <section class="scenario-card page-break" id="locked-parameters-section">
+      <h2 id="locked-parameters-title">1. Locked Parameters</h2>
+      <div class="scenario-details">
+        <h3>1.1 Model Structure</h3>
+        <ul>
+          <li><b>Estate Pool + Ledger:</b> Each scenario assigns each property to exactly one son, then uses ledger equalisation cash to reach entitlements.</li>
+          <li><b>Scenario 4 baseline uplift:</b> Earmark <b>50% of Arshee</b> to Son3; split the remaining pool <b>1/3 each</b>.</li>
+          <li><b>Loan protection (Model B):</b> Son1 −₹0.2675cr, Son2 +₹0.5350cr, Son3 −₹0.2675cr.</li>
+          <li><b>Escrow:</b> ₹0.05cr held at estate level before entitlements (no individual payer).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. FIXED INPUTS -->
+    <section class="scenario-card page-break" id="fixed-inputs">
+      <h2 id="fixed-inputs-title">2. Fixed Inputs</h2>
+      <div class="scenario-details">
+        <h3>2.1 Estate Pool (Stressed / Internal)</h3>
+        <ul>
+          <li><b>Horizon (505+506):</b> ₹3.96cr</li>
+          <li><b>Arshee:</b> ₹3.40cr</li>
+          <li><b>Natasha (estate 50% only):</b> ₹0.60cr</li>
+          <li><b>Total Estate Pool:</b> ₹7.96cr</li>
+        </ul>
+
+        <h3>2.2 Escrow & Loan</h3>
+        <ul>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback)</li>
+          <li><b>Loan owed to Son2:</b> ₹0.5350cr (protected via Model B adjustment)</li>
+        </ul>
+
+        <div class="math-explanation">
+          <h4>Baseline Entitlement Math (Scenario 4 Baseline)</h4>
+          <ul>
+            <li><b>Step A (Earmark uplift):</b> 50% of Arshee → Son3 = 0.50 × 3.40 = <b>₹1.70cr</b></li>
+            <li><b>Step B (Remaining pool):</b> Total 7.96 − 1.70 = <b>₹6.26cr</b></li>
+            <li><b>Step C (Equal split of remaining pool):</b> 6.26 ÷ 3 = <b>₹2.0867cr</b> each (rounded)</li>
+            <li><b>Pre-loan subtotals:</b>
+              Son1 = 2.0867; Son2 = 2.0867; Son3 = 2.0867 + 1.70 = 3.7867
+            </li>
+            <li><b>Loan adjustment (Model B):</b>
+              Son1: −0.2675; Son2: +0.5350; Son3: −0.2675
+            </li>
+            <li><b>Final entitlements (rounded to 4dp):</b>
+              Son1 = <b>₹1.8192cr</b>;
+              Son2 = <b>₹2.6217cr</b>;
+              Son3 = <b>₹3.5192cr</b>
+            </li>
+          </ul>
+          <p class="note">
+            Note: Rounding is displayed at 4 decimals. Totals may show a ~₹0.0001cr rounding difference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENARIO TEMPLATE NOTES:
+         - Entitlements are fixed for all scenarios under this baseline:
+           Son1: 1.8192, Son2: 2.6217, Son3: 3.5192
+         - Holdings change by allocation.
+         - Over/(Under) = Holding - Entitlement
+         - Equalisation: payers (positive) pay receivers (negative) to eliminate deficits.
+    -->
+
+    <!-- Scenario 1 -->
+    <section class="scenario-card page-break" id="scenario-1">
+      <h2 id="scenario-1-title">Scenario 1: Son2 505+506, Son3 Arshee, Son1 Natasha</h2>
+      <div class="scenario-details">
+        <div class="property-allocation">
+          <h4>Property Allocation</h4>
+          <ul>
+            <li><b>Son2:</b> Horizon (505+506) — ₹3.96cr</li>
+            <li><b>Son3:</b> Arshee — ₹3.40cr</li>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+          </ul>
+        </div>
+
+        <h3>Stepwise Calculation</h3>
+        <ul>
+          <li><b>Final entitlements (Scenario 4 baseline):</b> Son1 ₹1.8192cr; Son2 ₹2.6217cr; Son3 ₹3.5192cr</li>
+          <li><b>Holdings:</b> Son2 ₹3.96cr; Son3 ₹3.40cr; Son1 ₹0.60cr</li>
+          <li><b>Over/(Under) vs entitlement:</b>
+            Son2 +₹1.3383cr; Son3 −₹0.1192cr; Son1 −₹1.2192cr
+          </li>
+          <li><b>Equalisation payments:</b>
+            Son2 → Son1: <b>₹1.2192cr</b>;
+            Son2 → Son3: <b>₹0.1192cr</b>
+          </li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback; deducted before entitlements)</li>
+          <li><b>Loan protection:</b> Embedded in entitlements via Model B (not a separate payment line)</li>
+        </ul>
+
+        <div class="scenario-diagram">
+<pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr (Model B)"]
+
+  EstatePool -- "Horizon\n3.96cr" --> S2Prop["Son2: Horizon\n3.96cr"]
+  EstatePool -- "Arshee\n3.40cr" --> S3Prop["Son3: Arshee\n3.40cr"]
+  EstatePool -- "Natasha(50%)\n0.60cr" --> S1Prop["Son1: Natasha\n0.60cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+
+  S1Ent["Son1 Entitlement\n1.8192cr"]
+  S2Ent["Son2 Entitlement\n2.6217cr"]
+  S3Ent["Son3 Entitlement\n3.5192cr"]
+
+  LoanBox -- "+0.5350" --> S2Ent
+  LoanBox -- "-0.2675" --> S1Ent
+  LoanBox -- "-0.2675" --> S3Ent
+
+  S1Prop -- "holds" --> S1Ent
+  S2Prop -- "holds" --> S2Ent
+  S3Prop -- "holds" --> S3Ent
+
+  %% Equalisation (who pays whom)
+  S2Prop -. "pays 1.2192" .-> S1Prop
+  S2Prop -. "pays 0.1192" .-> S3Prop
+
+  style S1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style S1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario 2 -->
+    <section class="scenario-card page-break" id="scenario-2">
+      <h2 id="scenario-2-title">Scenario 2: Son3 505+506, Son2 Arshee, Son1 Natasha</h2>
+      <div class="scenario-details">
+        <div class="property-allocation">
+          <h4>Property Allocation</h4>
+          <ul>
+            <li><b>Son3:</b> Horizon (505+506) — ₹3.96cr</li>
+            <li><b>Son2:</b> Arshee — ₹3.40cr</li>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+          </ul>
+        </div>
+
+        <h3>Stepwise Calculation</h3>
+        <ul>
+          <li><b>Final entitlements:</b> Son1 ₹1.8192cr; Son2 ₹2.6217cr; Son3 ₹3.5192cr</li>
+          <li><b>Holdings:</b> Son3 ₹3.96cr; Son2 ₹3.40cr; Son1 ₹0.60cr</li>
+          <li><b>Over/(Under):</b>
+            Son3 +₹0.4408cr; Son2 +₹0.7783cr; Son1 −₹1.2192cr
+          </li>
+          <li><b>Equalisation payments:</b>
+            Son2 → Son1: <b>₹0.7783cr</b>;
+            Son3 → Son1: <b>₹0.4408cr</b>
+          </li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback)</li>
+        </ul>
+
+        <div class="scenario-diagram">
+<pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr (Model B)"]
+
+  EstatePool -- "Horizon\n3.96cr" --> S3Prop["Son3: Horizon\n3.96cr"]
+  EstatePool -- "Natasha(50%)\n0.60cr" --> S1Prop["Son1: Natasha\n0.60cr"]
+  EstatePool -- "Arshee\n3.40cr" --> S2Prop["Son2: Arshee\n3.40cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+
+  S1Ent["Son1 Entitlement\n1.8192cr"]
+  S2Ent["Son2 Entitlement\n2.6217cr"]
+  S3Ent["Son3 Entitlement\n3.5192cr"]
+
+  LoanBox -- "+0.5350" --> S2Ent
+  LoanBox -- "-0.2675" --> S1Ent
+  LoanBox -- "-0.2675" --> S3Ent
+
+  S1Prop -- "holds" --> S1Ent
+  S2Prop -- "holds" --> S2Ent
+  S3Prop -- "holds" --> S3Ent
+
+  S2Prop -. "pays 0.7783" .-> S1Prop
+  S3Prop -. "pays 0.4408" .-> S1Prop
+
+  style S1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style S1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario 3: Forced Sale -->
+    <section class="scenario-card page-break" id="scenario-3">
+      <h2 id="scenario-3-title">Scenario 3: Forced Sale</h2>
+      <div class="scenario-details">
+        <h3>Sale Economics (reference vs gross ₹9.95cr)</h3>
+        <ul>
+          <li><b>Discount:</b> 30% → ₹2.985cr</li>
+          <li><b>Net after discount:</b> ₹6.965cr</li>
+          <li><b>CGT @10%:</b> ₹0.6965cr</li>
+          <li><b>Post-tax proceeds:</b> <b>₹6.2685cr</b> (≈ 40% loss vs gross)</li>
+        </ul>
+        <p class="note">Escrow and loan are estate-level governance items and not “market loss.” Forced sale destroys value via sequential leakage (discount then tax).</p>
+      </div>
+    </section>
+
+    <!-- Scenario 4: Partial Sale -->
+    <section class="scenario-card page-break" id="scenario-4">
+      <h2 id="scenario-4-title">Scenario 4: Partial Sale</h2>
+      <div class="scenario-details">
+        <h3>Example: Sell Natasha (estate 50%) only</h3>
+        <ul>
+          <li><b>Reference value:</b> ₹0.75cr (undiscounted)</li>
+          <li><b>Soft sale discount:</b> 10% → ₹0.675cr</li>
+          <li><b>CGT @10% on discounted price:</b> ₹0.0675cr</li>
+          <li><b>Post-tax proceeds:</b> <b>₹0.6075cr</b> vs internal stressed retention <b>₹0.60cr</b></li>
+        </ul>
+        <p class="note">Partial sales typically incur discount and tax leakage; internal retention keeps governance simple and avoids fragmentation risk.</p>
+      </div>
+    </section>
+
+    <!-- Scenario 5 -->
+    <section class="scenario-card page-break" id="scenario-5">
+      <h2 id="scenario-5-title">Scenario 5: Son1 505+506, Son2 Arshee, Son3 Natasha</h2>
+      <div class="scenario-details">
+        <div class="property-allocation">
+          <h4>Property Allocation</h4>
+          <ul>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+            <li><b>Son2:</b> Horizon (505+506) — ₹3.96cr</li>
+            <li><b>Son3:</b> Arshee — ₹3.40cr</li>
+          </ul>
+        </div>
+
+        <h3>Stepwise Calculation</h3>
+        <ul>
+          <li><b>Final entitlements:</b> Son1 ₹1.8192cr; Son2 ₹2.6217cr; Son3 ₹3.5192cr</li>
+          <li><b>Holdings:</b> Son1 ₹0.60cr; Son2 ₹3.96cr; Son3 ₹3.40cr</li>
+          <li><b>Over/(Under):</b>
+            Son1 −₹1.2192cr; Son2 +₹1.3383cr; Son3 −₹0.1192cr
+          </li>
+          <li><b>Equalisation payments:</b>
+            Son2 → Son1: <b>₹1.2192cr</b>;
+            Son2 → Son3: <b>₹0.1192cr</b>
+          </li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback)</li>
+        </ul>
+
+        <div class="scenario-diagram">
+<pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr (Model B)"]
+
+  EstatePool -- "Natasha(50%)\n0.60cr" --> S1Prop["Son1: Natasha\n0.60cr"]
+  EstatePool -- "Horizon\n3.96cr" --> S2Prop["Son2: Horizon\n3.96cr"]
+  EstatePool -- "Arshee\n3.40cr" --> S3Prop["Son3: Arshee\n3.40cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+
+  S1Ent["Son1 Entitlement\n1.8192cr"]
+  S2Ent["Son2 Entitlement\n2.6217cr"]
+  S3Ent["Son3 Entitlement\n3.5192cr"]
+
+  LoanBox -- "+0.5350" --> S2Ent
+  LoanBox -- "-0.2675" --> S1Ent
+  LoanBox -- "-0.2675" --> S3Ent
+
+  S1Prop -- "holds" --> S1Ent
+  S2Prop -- "holds" --> S2Ent
+  S3Prop -- "holds" --> S3Ent
+
+  S2Prop -. "pays 1.2192" .-> S1Prop
+  S2Prop -. "pays 0.1192" .-> S3Prop
+
+  style S1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style S1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenario 6 -->
+    <section class="scenario-card page-break" id="scenario-6">
+      <h2 id="scenario-6-title">Scenario 6: Son1 Arshee, Son2 505+506, Son3 Natasha</h2>
+      <div class="scenario-details">
+        <div class="property-allocation">
+          <h4>Property Allocation</h4>
+          <ul>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+            <li><b>Son2:</b> Arshee — ₹3.40cr</li>
+            <li><b>Son3:</b> Horizon (505+506) — ₹3.96cr</li>
+          </ul>
+        </div>
+
+        <h3>Stepwise Calculation</h3>
+        <ul>
+          <li><b>Final entitlements:</b> Son1 ₹1.8192cr; Son2 ₹2.6217cr; Son3 ₹3.5192cr</li>
+          <li><b>Holdings:</b> Son1 ₹0.60cr; Son2 ₹3.40cr; Son3 ₹3.96cr</li>
+          <li><b>Over/(Under):</b>
+            Son1 −₹1.2192cr; Son2 +₹0.7783cr; Son3 +₹0.4408cr
+          </li>
+          <li><b>Equalisation payments:</b>
+            Son2 → Son1: <b>₹0.7783cr</b>;
+            Son3 → Son1: <b>₹0.4408cr</b>
+          </li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback)</li>
+        </ul>
+
+        <div class="scenario-diagram">
+<pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr (Model B)"]
+
+  EstatePool -- "Natasha(50%)\n0.60cr" --> S1Prop["Son1: Natasha\n0.60cr"]
+  EstatePool -- "Arshee\n3.40cr" --> S2Prop["Son2: Arshee\n3.40cr"]
+  EstatePool -- "Horizon\n3.96cr" --> S3Prop["Son3: Horizon\n3.96cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+
+  S1Ent["Son1 Entitlement\n1.8192cr"]
+  S2Ent["Son2 Entitlement\n2.6217cr"]
+  S3Ent["Son3 Entitlement\n3.5192cr"]
+
+  LoanBox -- "+0.5350" --> S2Ent
+  LoanBox -- "-0.2675" --> S1Ent
+  LoanBox -- "-0.2675" --> S3Ent
+
+  S1Prop -- "holds" --> S1Ent
+  S2Prop -- "holds" --> S2Ent
+  S3Prop -- "holds" --> S3Ent
+
+  S2Prop -. "pays 0.7783" .-> S1Prop
+  S3Prop -. "pays 0.4408" .-> S1Prop
+
+  style S1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style S1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FINANCIAL COMPARISON & IMPACT ANALYSIS (placeholder to match TOC) -->
+    <section class="scenario-card page-break" id="financial-comparison">
+      <h2 id="financial-comparison-title">3. Financial Comparison &amp; Impact Analysis</h2>
+      <div class="scenario-details">
+        <p>Placeholder section to match Elder-care menu. Add comparative post-tax sale scenarios and internal settlement effects if needed.</p>
+      </div>
+    </section>
+
+    <!-- 4. ASSET ECONOMICS: 506 SEPARATION PENALTY (placeholder to match TOC) -->
+    <section class="scenario-card page-break" id="section-4-asset-economics">
+      <h2 id="section-4-asset-economics-title">4. Asset Economics: 506 Separation Penalty</h2>
+      <div class="scenario-details">
+        <p>Placeholder section to match Elder-care menu. Include remediation and fire-sale penalty narrative if applicable.</p>
+      </div>
+    </section>
+
+    <!-- Scenario 7 -->
+    <section class="scenario-card page-break" id="scenario-7">
+      <h2 id="scenario-7-title">Scenario 7: Son2 Natasha, Son3 Arshee, Son1 505+506</h2>
+      <div class="scenario-details">
+        <div class="property-allocation">
+          <h4>Property Allocation</h4>
+          <ul>
+            <li><b>Son2:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+            <li><b>Son3:</b> Arshee — ₹3.40cr</li>
+            <li><b>Son1:</b> Horizon (505+506) — ₹3.96cr</li>
+          </ul>
+        </div>
+        <h3>Stepwise Calculation</h3>
+        <ul>
+          <li><b>Final entitlements:</b> Son1 ₹1.8192cr; Son2 ₹2.6217cr; Son3 ₹3.5192cr</li>
+          <li><b>Holdings:</b> Son1 ₹3.96cr; Son2 ₹0.60cr; Son3 ₹3.40cr</li>
+          <li><b>Over/(Under):</b>
+            Son1 +₹2.1408cr; Son2 −₹2.0217cr; Son3 −₹0.1192cr
+          </li>
+          <li><b>Equalisation payments:</b>
+            Son1 → Son2: <b>₹2.0217cr</b>;
+            Son1 → Son3: <b>₹0.1192cr</b>
+          </li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback)</li>
+        </ul>
+
+        <div class="scenario-diagram">
+<pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr (Model B)"]
+
+  EstatePool -- "Natasha(50%)\n0.60cr" --> S2Prop["Son2: Natasha\n0.60cr"]
+  EstatePool -- "Arshee\n3.40cr" --> S3Prop["Son3: Arshee\n3.40cr"]
+  EstatePool -- "Horizon\n3.96cr" --> S1Prop["Son1: Horizon\n3.96cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+
+  S1Ent["Son1 Entitlement\n1.8192cr"]
+  S2Ent["Son2 Entitlement\n2.6217cr"]
+  S3Ent["Son3 Entitlement\n3.5192cr"]
+
+  LoanBox -- "+0.5350" --> S2Ent
+  LoanBox -- "-0.2675" --> S1Ent
+  LoanBox -- "-0.2675" --> S3Ent
+
+  S1Prop -- "holds" --> S1Ent
+  S2Prop -- "holds" --> S2Ent
+  S3Prop -- "holds" --> S3Ent
+
+  S1Prop -. "pays 2.0217" .-> S2Prop
+  S1Prop -. "pays 0.1192" .-> S3Prop
+
+  style S1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style S3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style S1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style S3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ADVISORY GUIDANCE (placeholder to match TOC) -->
+    <section class="scenario-card page-break" id="advisory-guidance">
+      <h2 id="advisory-guidance-title">7. Advisory Guidance</h2>
+      <div class="scenario-details">
+        <p>
+          Neutral, audit-grade guidance to maximize family value under the Scenario 4 baseline (50% Arshee earmark to Son3,
+          remainder split equally), with Model-B loan protection for Son2 and estate-level escrow governance.
+        </p>
+
+        <h3>Family-level guidance</h3>
+        <ul>
+          <li><b>Keep 505+506 combined:</b> Combined horizon preserves value. Breaking up introduces a mandatory kitchen remediation (₹0.30 cr) and an additional 10% fire-sale penalty on the post-stress value if separately marketed. These costs are borne by the party causing separation, not the estate.</li>
+          <li><b>Avoid forced/discounted sales:</b> Sale leakage is sequential — price discount followed by tax. Internal settlement using stress on asset values avoids discount+tax leakage and keeps governance simple.</li>
+          <li><b>Eliminate co-ownership early:</b> Convert partials to single-owner holdings (e.g., Natasha) via a clean buyout of the estate-owned 50% to avoid minority-holder disadvantage and litigation risk.</li>
+          <li><b>Respect adjacency constraints:</b> Son1 cannot live next to Son2 or Son3 (505 vs 506). Any allocation violating this is infeasible.</li>
+          <li><b>Escrow is estate-level:</b> Fund ₹0.05 cr from the gross estate before distribution; hold in neutral escrow (lawyer/notary). Any unused amount can be redistributed per scenario split logic.</li>
+          <li><b>Loan optics:</b> Son2’s loan creates no upside; it is credited via Model B into entitlements (Son2 +₹0.535 cr; Son1 −₹0.2675 cr; Son3 −₹0.2675 cr). Do not treat the loan as property or subject to split.</li>
+        </ul>
+
+        <h3>Guidance for Son1</h3>
+        <ul>
+          <li><b>Target single-owner outcomes:</b> Prefer owning Natasha outright (post buyout of estate 50%) or holding 505+506 as a single block with clear equalisation payments you will owe/receive per scenario math.</li>
+          <li><b>Use rental cash-flow payouts when Arshee is with Son3:</b> If you have a shortfall vs entitlement, prefer fixed monthly payouts from Arshee’s net surplus (~₹80,000/month, 0% interest) instead of forced asset sales. This provides predictable liquidity and preserves family value.</li>
+          <li><b>Avoid 505/506 separation:</b> Do not trigger the kitchen remediation or fire-sale discount; these are direct capital losses to you if you cause separation.</li>
+          <li><b>Document equalisation:</b> Agree a simple ledger schedule (amounts, dates, bank route). Include an escrow reference and a dispute-resolution clause (neutral notary/arbitration).</li>
+        </ul>
+
+        <h3>Guidance for Son2</h3>
+        <ul>
+          <li><b>Loan credit is fixed:</b> You receive ₹0.535 cr via Model B in entitlements; do not expect any profit or interest. The loan is not split and does not carry upside.</li>
+          <li><b>Match funding to equalisation:</b> If you owe equalisation or need to acquire property (e.g., Natasha 50% or Horizon), plan immediate liquidity against the schedule; avoid forced sales to raise cash.</li>
+          <li><b>Prefer clean allocations:</b> If you take Horizon, settle equalisation to Son1/Son3 promptly. If you take Natasha (estate 50%), keep documentation clear that buyout relates only to the estate-owned share.</li>
+          <li><b>Governance hygiene:</b> Keep written records for all transfers; route via bank; anchor amounts to the entitlement math in this document.</li>
+        </ul>
+
+        <h3>Guidance for Son3</h3>
+        <ul>
+          <li><b>Arshee as long-term hold:</b> Retaining Arshee while paying Son1 via rental cash-flow is the dominant structure for value preservation and liquidity predictability.</li>
+          <li><b>Pay fixed installments:</b> Use a simple schedule (monthly ₹80,000, 0% interest) until Son1’s shortfall is cleared; include annual reconciliation and an optional prepayment clause.</li>
+          <li><b>Avoid fragmentation:</b> Do not separate 505/506; if you acquire Horizon, pay equalisation promptly to eliminate co-ownership optics and minority-holder risk.</li>
+          <li><b>Keep uplift rule intact:</b> Under this baseline, 50% of Arshee is earmarked to you; maintain clarity that the remaining pool is split equally and that loan credits are handled via Model B.</li>
+        </ul>
+
+        <h3>Process & documentation</h3>
+        <ul>
+          <li><b>Open escrow:</b> Create the ₹0.05 cr escrow with a neutral lawyer/notary. Define release conditions and redistribution rules for unused amounts.</li>
+          <li><b>Freeze values:</b> Reference the stressed estate values used in this file for internal settlement; avoid mixing sale-side discount+tax math into settlement.</li>
+          <li><b>Execute a term sheet:</b> One-page ledger with property allocations, entitlements, equalisation flows, dates, bank details, and adjacency compliance.</li>
+          <li><b>Record and notarize:</b> Register transfers/buyouts; store digital and physical copies; maintain an audit trail.</li>
+          <li><b>Dispute resolution:</b> Include a neutral arbitration clause to avoid litigation; define timelines and escalation steps.</li>
+        </ul>
+
+        <h3>30 / 60 / 90 day activation checklist</h3>
+        <ul>
+          <li><b>Day 0–30:</b> Agree allocations; open escrow; sign the ledger term sheet; schedule equalisation payments.</li>
+          <li><b>Day 31–60:</b> Execute property transfers/buyouts (e.g., Natasha 50%); start rental payout schedule if applicable.</li>
+          <li><b>Day 61–90:</b> Complete equalisation flows; notarize final ownership; close or redistribute unused escrow; archive documents.</li>
+        </ul>
+
+        <h3>Hard rules (do not override)</h3>
+        <ul>
+          <li>Do not merge sale math into settlement math.</li>
+          <li>Do not double-count Natasha (only estate-owned 50% is included).</li>
+          <li>Do not add interest unless explicitly specified (rental payout uses 0%).</li>
+          <li>Respect adjacency constraints for 505/506.</li>
+          <li>Break-up penalties (₹0.30 cr remediation + 10% post-stress fire-sale discount) are borne by the party causing separation, not the estate.</li>
+        </ul>
+
+        <h3>Minimal success criteria</h3>
+        <ul>
+          <li>All entitlements met per this document’s math.</li>
+          <li>Each property has exactly one owner; co-ownership eliminated.</li>
+          <li>Escrow funded and governed neutrally.</li>
+          <li>Loan credited via Model B; no upside, no split.</li>
+          <li>Equalisation payments completed on schedule; audit trail preserved.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Hamburger menu toggle for mobile (robust version, aligned with Elder-care)
+    (function () {
+      const tocHamburger = document.getElementById('toc-hamburger');
+      const floatingToc = document.getElementById('floating-toc');
+      if (!floatingToc) return;
+      if (floatingToc.getAttribute('data-init') === '1') return; // guard duplicate init
+      floatingToc.setAttribute('data-init', '1');
+      let overlayDiv = null;
+
+      function openMobileToc() {
+        floatingToc.classList.add('toc-open');
+        document.body.classList.add('toc-overlay');
+        // create or show overlay
+        if (!overlayDiv) {
+          overlayDiv = document.createElement('div');
+          overlayDiv.className = 'toc-mobile-overlay';
+          overlayDiv.style.position = 'fixed';
+          overlayDiv.style.top = '0';
+          overlayDiv.style.left = '0';
+          overlayDiv.style.right = '0';
+          overlayDiv.style.bottom = '0';
+          overlayDiv.style.background = 'rgba(0,0,0,0.18)';
+          overlayDiv.style.zIndex = '1199';
+          overlayDiv.addEventListener('click', closeMobileToc);
+          document.body.appendChild(overlayDiv);
+        } else {
+          overlayDiv.style.display = 'block';
+        }
+        if (tocHamburger) tocHamburger.setAttribute('aria-expanded', 'true');
+        // lock scroll
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileToc() {
+        floatingToc.classList.remove('toc-open');
+        document.body.classList.remove('toc-overlay');
+        if (overlayDiv) overlayDiv.style.display = 'none';
+        if (tocHamburger) tocHamburger.setAttribute('aria-expanded', 'false');
+        // unlock scroll
+        document.body.style.overflow = '';
+      }
+
+      if (tocHamburger && floatingToc) {
+        tocHamburger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (floatingToc.classList.contains('toc-open')) {
+            closeMobileToc();
+          } else {
+            openMobileToc();
+          }
+        });
+        // prevent clicks inside TOC from closing it
+        floatingToc.addEventListener('click', function (e) { e.stopPropagation(); });
+        // close if a TOC link is clicked on mobile
+        floatingToc.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (window.innerWidth < 1000 && floatingToc.classList.contains('toc-open')) closeMobileToc();
+          });
+        });
+        // close on ESC
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && floatingToc.classList.contains('toc-open')) closeMobileToc();
+        });
+        // close on resize to desktop
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 1000 && floatingToc.classList.contains('toc-open')) closeMobileToc();
+        });
+      }
+
+      // desktop hover behavior (optional, matches Elder-care)
+      if (window.matchMedia('(min-width: 1000px)').matches) {
+        floatingToc.addEventListener('mouseenter', function () { floatingToc.classList.add('toc-hover'); });
+        floatingToc.addEventListener('mouseleave', function () { floatingToc.classList.remove('toc-hover'); });
+      }
+    })();
+  </script>
+</body>
+</html>
+```
