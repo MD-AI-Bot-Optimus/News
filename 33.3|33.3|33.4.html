@@ -241,12 +241,12 @@
 			<div class="scenario-details">
 				<p>This page presents an internal family settlement under a rounding-adjusted equal split (33.3% / 33.3% / 33.4%), with audit-grade math, estate-level escrow handling, and Son2’s creditor loan credited outside the split. Internal values apply a locked 20% stress to estate assets only; sale math is handled separately.</p>
 				<h3>At-a-glance</h3>
-				<ul>
-					<li>Stressed estate pool (assets only): <b>₹7.960 cr</b></li>
-					<li>Escrow holdback (estate-level): <b>₹0.050 cr</b></li>
-					<li>Loan credited to Son2 (not split, not stressed): <b>₹0.535 cr</b></li>
-					<li>Net remainder after escrow and loan: <b>₹7.375 cr</b></li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q1.</b> Stressed estate pool (assets only): <b>₹7.960 cr</b></li>
+							<li><b>Q2.</b> Escrow holdback (estate-level): <b>₹0.050 cr</b></li>
+							<li><b>Q3.</b> Loan credited to Son2 (not split, not stressed): <b>₹0.535 cr</b></li>
+							<li><b>Q4.</b> Net remainder after escrow and loan: <b>₹7.375 cr</b></li>
+						</ul>
 				<h3>Entitlements on Net Remainder</h3>
 				<ul>
 					<li>Son1: 0.333 × 7.375 = <b>₹2.4559 cr</b></li>
@@ -270,23 +270,23 @@
 			<h2>1. Locked Parameters</h2>
 			<div class="scenario-details">
 				<h3>1.1 Split Rule</h3>
-				<ul>
-					<li>Son1 = <b>33.3%</b></li>
-					<li>Son2 = <b>33.3%</b></li>
-					<li>Son3 = <b>33.4%</b></li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q5.</b> Son1 = <b>33.3%</b></li>
+							<li><b>Q6.</b> Son2 = <b>33.3%</b></li>
+							<li><b>Q7.</b> Son3 = <b>33.4%</b></li>
+						</ul>
 				<h3>1.2 Governance</h3>
-				<ul>
-					<li><b>Net Estate = Stressed Gross − Escrow − Loan</b></li>
-					<li>Entitlements: Son1: 33.3% of net remainder; Son2: 33.3% of net remainder <b>+ loan</b>; Son3: 33.4% of net remainder.</li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q8.</b> <b>Net Estate = Stressed Gross − Escrow − Loan</b></li>
+							<li><b>Q9.</b> Entitlements: Son1: 33.3% of net remainder; Son2: 33.3% of net remainder <b>+ loan</b>; Son3: 33.4% of net remainder.</li>
+						</ul>
 				<h3>1.3 Stress &amp; Sale Separation</h3>
-				<ul>
-					<li><b>Internal stress:</b> 20% on estate assets only (×0.80). Applied for internal settlement values.</li>
-					<li><b>Sale scenarios:</b> Do <u>not</u> apply 20% stress. Use market values with applicable sale discounts and taxes; keep sale math separate from settlement math.</li>
-					<li><b>Escrow:</b> Estate-level holdback deducted <i>before</i> entitlements; never assigned to an individual son.</li>
-					<li><b>Loan:</b> Creditor repayment to Son2 (₹0.535 cr) is not split and not stressed; Son2’s total = share of net remainder + loan.</li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q10.</b> <b>Internal stress:</b> 20% on estate assets only (×0.80). Applied for internal settlement values.</li>
+							<li><b>Q11.</b> <b>Sale scenarios:</b> Do <u>not</u> apply 20% stress. Use market values with applicable sale discounts and taxes; keep sale math separate from settlement math.</li>
+							<li><b>Q12.</b> <b>Escrow:</b> Estate-level holdback deducted <i>before</i> entitlements; never assigned to an individual son.</li>
+							<li><b>Q13.</b> <b>Loan:</b> Creditor repayment to Son2 (₹0.535 cr) is not split and not stressed; Son2’s total = share of net remainder + loan.</li>
+						</ul>
 			</div>
 		</section>
 
@@ -314,12 +314,12 @@
 				</ul>
 				<div class="math-explanation">
 					<h3>2.3 Stressed Estate Pool</h3>
-					<ul>
-						<li>505+506: ₹3.960 cr</li>
-						<li>Arshee: ₹3.400 cr</li>
-						<li>Natasha (estate 50%): ₹0.600 cr</li>
-						<li><b>Total (stressed): ₹7.960 cr</b></li>
-					</ul>
+							<ul style="list-style-type:none; padding-left:0;">
+								<li><b>Q14.</b> 505+506: ₹3.960 cr</li>
+								<li><b>Q15.</b> Arshee: ₹3.400 cr</li>
+								<li><b>Q16.</b> Natasha (estate 50%): ₹0.600 cr</li>
+								<li><b>Q17.</b> <b>Total (stressed): ₹7.960 cr</b></li>
+							</ul>
 				</div>
 			</div>
 		</section>
@@ -330,45 +330,45 @@
 			<div class="scenario-details">
 				<p>This section contrasts internal settlement (20% stress on estate assets only) with open‑market sale scenarios using locked sale assumptions. Loan and escrow are neutral for market loss; they affect distribution mechanics only.</p>
 				<h3>3.1 Internal Settlement — 20% Stress (Reference)</h3>
-				<ul>
-					<li>Gross base (sale comparison reference): <b>₹9.95 cr</b></li>
-					<li>Internal gross stressed estate: <b>₹7.96 cr</b></li>
-					<li>Effective ₹ loss vs gross: <b>₹9.95 − ₹7.96 = ₹1.99 cr</b></li>
-					<li>Effective % effect: <b>20%</b></li>
-					<li>Note: <i>Loan (₹0.535) + escrow (₹0.050) are neutral redistributions for net distribution, not market loss.</i></li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q18.</b> Gross base (sale comparison reference): <b>₹9.95 cr</b></li>
+							<li><b>Q19.</b> Internal gross stressed estate: <b>₹7.96 cr</b></li>
+							<li><b>Q20.</b> Effective ₹ loss vs gross: <b>₹9.95 − ₹7.96 = ₹1.99 cr</b></li>
+							<li><b>Q21.</b> Effective % effect: <b>20%</b></li>
+							<li><b>Q22.</b> Note: <i>Loan (₹0.535) + escrow (₹0.050) are neutral redistributions for net distribution, not market loss.</i></li>
+						</ul>
 
 				<h3>3.2 Sale Scenarios (Locked)</h3>
 				<p>Sale math does not use the 20% internal stress. Discount then tax (sequential leakage):</p>
-				<ul>
-					<li><b>Soft Stress Sale (10% discount + CGT):</b>
-						<ul>
-							<li>Price discount: ₹0.995 cr → Net proceeds: ₹8.955 cr</li>
-							<li>CGT @ 10%: ₹0.8955 cr → Post‑tax proceeds: <b>₹8.0595 cr (~$899,500)</b></li>
-							<li>Total loss vs gross: <b>₹1.99 cr</b> → Overall % effect: <b>20%</b></li>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q23.</b> <b>Soft Stress Sale (10% discount + CGT):</b>
+								<ul>
+									<li><b>Q24.</b> Price discount: ₹0.995 cr → Net proceeds: ₹8.955 cr</li>
+									<li><b>Q25.</b> CGT @ 10%: ₹0.8955 cr → Post‑tax proceeds: <b>₹8.0595 cr (~$899,500)</b></li>
+									<li><b>Q26.</b> Total loss vs gross: <b>₹1.99 cr</b> → Overall % effect: <b>20%</b></li>
+								</ul>
+							</li>
+							<li><b>Q27.</b> <b>Moderate Stress Sale (20% discount + CGT):</b>
+								<ul>
+									<li><b>Q28.</b> Price discount: ₹1.99 cr → Net proceeds: ₹7.96 cr</li>
+									<li><b>Q29.</b> CGT @ 10%: ₹0.796 cr → Post‑tax proceeds: <b>₹7.164 cr (~$799,600)</b></li>
+									<li><b>Q30.</b> Total loss vs gross: <b>₹2.985 cr</b> → Overall % effect: <b>30%</b></li>
+								</ul>
+							</li>
+							<li><b>Q31.</b> <b>High Stress / Forced Sale (30% discount + CGT):</b>
+								<ul>
+									<li><b>Q32.</b> Price discount: ₹2.985 cr → Net proceeds: ₹6.965 cr</li>
+									<li><b>Q33.</b> CGT @ 10%: ₹0.6965 cr → Post‑tax proceeds: <b>₹6.2685 cr (~$699,400)</b></li>
+									<li><b>Q34.</b> Total loss vs gross: <b>₹3.98 cr</b> → Overall % effect: <b>40%</b></li>
+								</ul>
+							</li>
 						</ul>
-					</li>
-					<li><b>Moderate Stress Sale (20% discount + CGT):</b>
-						<ul>
-							<li>Price discount: ₹1.99 cr → Net proceeds: ₹7.96 cr</li>
-							<li>CGT @ 10%: ₹0.796 cr → Post‑tax proceeds: <b>₹7.164 cr (~$799,600)</b></li>
-							<li>Total loss vs gross: <b>₹2.985 cr</b> → Overall % effect: <b>30%</b></li>
-						</ul>
-					</li>
-					<li><b>High Stress / Forced Sale (30% discount + CGT):</b>
-						<ul>
-							<li>Price discount: ₹2.985 cr → Net proceeds: ₹6.965 cr</li>
-							<li>CGT @ 10%: ₹0.6965 cr → Post‑tax proceeds: <b>₹6.2685 cr (~$699,400)</b></li>
-							<li>Total loss vs gross: <b>₹3.98 cr</b> → Overall % effect: <b>40%</b></li>
-						</ul>
-					</li>
-				</ul>
 
 				<h3>3.3 Leakage Explanation</h3>
-				<ul>
-					<li><b>Sale % effect</b> = market discount + capital‑gains tax (sequential).</li>
-					<li><b>Internal % effect</b> = stress on asset values only; loan + escrow are neutral redistributions, not market loss.</li>
-				</ul>
+						<ul style="list-style-type:none; padding-left:0;">
+							<li><b>Q35.</b> <b>Sale % effect</b> = market discount + capital‑gains tax (sequential).</li>
+							<li><b>Q36.</b> <b>Internal % effect</b> = stress on asset values only; loan + escrow are neutral redistributions, not market loss.</li>
+						</ul>
 			</div>
 		</section>
 
