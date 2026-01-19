@@ -47,16 +47,16 @@
     <h2 id="executive-summary-title">0. Executive Summary</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q1.</b> How accurate and reliable is the analysis and assessment presented in this document? What are its limitations or assumptions?</li>
-        <li><b>Q2.</b> What is the “elder-care uplift” and how does it affect the property allocation?</li>
-        <li><b>Q3.</b> Which properties are included in the estate, and are there any exclusions?</li>
-        <li><b>Q4.</b> How is the loan to Son2 treated in the settlement?</li>
-        <li><b>Q5.</b> What is the role of the escrow, and who funds it?</li>
-        <li><b>Q6.</b> Are there any key differences between this model and a standard split?</li>
-        <li><b>Q7.</b> What are the main risks or pitfalls this model is designed to avoid?</li>
-        <li><b>Q8.</b> How does this model handle minority-holder disadvantage or litigation risk?</li>
-        <li><b>Q9.</b> What is the locked exchange rate, and why is it important?</li>
-        <li><b>Q10.</b> Can you explain the “audit-grade” approach mentioned in the summary?</li>
+  <li><b>Q1.</b> How accurate and reliable is the analysis and assessment presented in this document?<br><span class="q-answer">The analysis is deterministic, step-by-step, and audit-grade, but relies on fixed inputs and assumptions as stated; accuracy depends on adherence to these parameters.</span></li>
+  <li><b>Q2.</b> What is the “elder-care uplift” and how does it affect the property allocation?<br><span class="q-answer">It is a model adjustment to reflect the economic value of elder-care provided, affecting allocation by increasing the entitlement of the caregiving party.</span></li>
+  <li><b>Q3.</b> Which properties are included in the estate, and are there any exclusions?<br><span class="q-answer">All estate-held properties are included; any property already owned by a party (e.g., Son1’s 50% of Natasha) is excluded from the estate pool.</span></li>
+  <li><b>Q4.</b> How is the loan to Son2 treated in the settlement?<br><span class="q-answer">The loan is not split, not stressed, and is credited directly to Son2’s entitlement as a creditor repayment.</span></li>
+  <li><b>Q5.</b> What is the role of the escrow, and who funds it?<br><span class="q-answer">Escrow is an estate-level holdback for final expenses, funded from the gross estate before distribution; no individual son pays escrow directly.</span></li>
+  <li><b>Q6.</b> Are there any key differences between this model and a standard split?<br><span class="q-answer">Yes, this model includes elder-care uplift, explicit loan/escrow handling, and audit-grade scenario math, unlike a simple percentage split.</span></li>
+  <li><b>Q7.</b> What are the main risks or pitfalls this model is designed to avoid?<br><span class="q-answer">It avoids forced sales, value leakage, litigation risk, and minority-holder disadvantage by using deterministic, transparent math.</span></li>
+  <li><b>Q8.</b> How does this model handle minority-holder disadvantage or litigation risk?<br><span class="q-answer">It explicitly models these risks and provides scenario math to show their economic impact, ensuring fair treatment and risk disclosure.</span></li>
+  <li><b>Q9.</b> What is the locked exchange rate, and why is it important?<br><span class="q-answer">The locked USD/INR rate ensures all calculations are consistent and auditable, preventing disputes over currency conversion.</span></li>
+  <li><b>Q10.</b> Can you explain the “audit-grade” approach mentioned in the summary?<br><span class="q-answer">Audit-grade means every calculation step is explicit, reproducible, and based on fixed, disclosed parameters for full transparency.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -71,16 +71,16 @@
         <h2 id="locked-parameters-title">1. Locked Parameters</h2>
         <details><summary>Possible clarifying questions</summary>
           <ul style="list-style-type:none; padding-left:0;">
-            <li><b>Q11.</b> What are the fixed parameters that cannot be changed in this settlement?</li>
-            <li><b>Q12.</b> How is the exchange rate applied throughout the calculations?</li>
-            <li><b>Q13.</b> What is the “Model B” loan protection, and how does it work?</li>
-            <li><b>Q14.</b> Why is the escrow always deducted at the estate level?</li>
-            <li><b>Q15.</b> How are property values “stressed” for internal settlement?</li>
-            <li><b>Q16.</b> What is the significance of the “estate pool + ledger” structure?</li>
-            <li><b>Q17.</b> Are there any scenarios where the loan is split among the sons?</li>
-            <li><b>Q18.</b> How is the 50% Arshee earmark implemented in the model?</li>
-            <li><b>Q19.</b> What happens if the fixed parameters are not followed?</li>
-            <li><b>Q20.</b> Can you clarify the difference between gross and net estate in this context?</li>
+            <li><b>Q11.</b> What are the fixed parameters that cannot be changed in this settlement?<br><span class="q-answer">The fixed parameters include the exchange rate (USD/INR = ₹89.6), property values, internal stress percentage, loan and escrow amounts, and the estate pool + ledger model. These are locked to ensure auditability and prevent post-hoc disputes.</span></li>
+            <li><b>Q12.</b> How is the exchange rate applied throughout the calculations?<br><span class="q-answer">All calculations are performed in INR using the locked exchange rate. USD figures are provided for disclosure only, ensuring consistency and transparency in all math.</span></li>
+            <li><b>Q13.</b> What is the “Model B” loan protection, and how does it work?<br><span class="q-answer">Model B ensures that Son2’s loan is repaid as a creditor claim, not split among the sons. The loan is credited to Son2’s entitlement, funded equally by Son1 and Son3, and is not subject to stress or estate division.</span></li>
+            <li><b>Q14.</b> Why is the escrow always deducted at the estate level?<br><span class="q-answer">Escrow is an estate-level holdback for final expenses, deducted from the gross estate before any distribution. This ensures no individual son is unfairly burdened and any unused balance is redistributed according to entitlements.</span></li>
+            <li><b>Q15.</b> How are property values “stressed” for internal settlement?<br><span class="q-answer">A 20% stress is applied to property values for internal settlement scenarios to reflect liquidity and negotiation realities, making internal buyouts feasible and fair. This stress is never applied to open-market sale math.</span></li>
+            <li><b>Q16.</b> What is the significance of the “estate pool + ledger” structure?<br><span class="q-answer">This structure allocates each property to a single son and uses a ledger to reconcile entitlements, loans, and equalisation payments, ensuring transparency and eliminating circular cash flows.</span></li>
+            <li><b>Q17.</b> Are there any scenarios where the loan is split among the sons?<br><span class="q-answer">No. The loan is always repaid directly to Son2 as a creditor, not split among the sons. The cost is shared by Son1 and Son3 via ledger adjustment, not by dividing the loan itself.</span></li>
+            <li><b>Q18.</b> How is the 50% Arshee earmark implemented in the model?<br><span class="q-answer">Son3 receives a 50% share of Arshee as an uplift for elder-care, with the remaining 50% split between Son1 and Son2. This is handled in the entitlement math, not as a separate cash payout.</span></li>
+            <li><b>Q19.</b> What happens if the fixed parameters are not followed?<br><span class="q-answer">Deviation from fixed parameters undermines auditability, creates ambiguity, and can lead to disputes or value leakage. The model’s integrity depends on strict adherence to these rules.</span></li>
+            <li><b>Q20.</b> Can you clarify the difference between gross and net estate in this context?<br><span class="q-answer">Gross estate is the total value of all estate-held properties before deductions. Net estate is the gross estate minus the loan and escrow, representing the amount available for distribution among the sons.</span></li>
           </ul>
         </details>
         <div class="scenario-details">
@@ -105,16 +105,16 @@
     <h2 id="fixed-inputs-title">2. Fixed Inputs</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q21.</b> What are the exact property values used in the calculations?</li>
-        <li><b>Q22.</b> How is the value of Natasha (estate 50% only) determined?</li>
-        <li><b>Q23.</b> What is the total gross estate, and how is it calculated?</li>
-        <li><b>Q24.</b> How are the loan and escrow amounts incorporated into the net estate?</li>
-        <li><b>Q25.</b> Are the property values based on market rates or internal estimates?</li>
-        <li><b>Q26.</b> Why is only 50% of Natasha included in the estate?</li>
-        <li><b>Q27.</b> How is the “internal stress” applied to property values?</li>
-        <li><b>Q28.</b> What is the impact of the loan on each son’s entitlement?</li>
-        <li><b>Q29.</b> How is rounding handled in the entitlement calculations?</li>
-        <li><b>Q30.</b> Can you provide a step-by-step breakdown of the entitlement math?</li>
+        <li><b>Q21.</b> What are the exact property values used in the calculations?<br><span class="q-answer">The property values are: Flat 505: ₹1.70 cr, Flat 506: ₹3.25 cr, 505+506 combined: ₹4.95 cr, Arshee: ₹4.25 cr, Natasha (estate 50%): ₹0.75 cr. Only the estate-held 50% of Natasha is included in the estate math.</span></li>
+        <li><b>Q22.</b> How is the value of Natasha (estate 50% only) determined?<br><span class="q-answer">Natasha’s total value is ₹1.50 cr, but only the estate-held 50% (₹0.75 cr) is included. This is because Son1 already owns the other 50%, which is excluded from the estate pool.</span></li>
+        <li><b>Q23.</b> What is the total gross estate, and how is it calculated?<br><span class="q-answer">The total gross estate is the sum of all estate-held property values: 505 + 506 + Arshee + Natasha (estate 50%) = ₹9.95 cr.</span></li>
+        <li><b>Q24.</b> How are the loan and escrow amounts incorporated into the net estate?<br><span class="q-answer">The loan (₹0.535 cr) and escrow (₹0.050 cr) are deducted from the gross estate to arrive at the net estate, which is then available for distribution among the sons.</span></li>
+        <li><b>Q25.</b> Are the property values based on market rates or internal estimates?<br><span class="q-answer">The values are based on market reference rates for sale comparison, but internal settlement uses a 20% stress to reflect practical realization value for family settlement.</span></li>
+        <li><b>Q26.</b> Why is only 50% of Natasha included in the estate?<br><span class="q-answer">Because Son1 already owns 50% of Natasha outside the estate, only the estate-held 50% is included to avoid double-counting and ensure accurate entitlements.</span></li>
+        <li><b>Q27.</b> How is the “internal stress” applied to property values?<br><span class="q-answer">A 20% reduction is applied to all estate property values for internal settlement, multiplying each by 0.80. This models a conservative, family-friendly buyout value.</span></li>
+        <li><b>Q28.</b> What is the impact of the loan on each son’s entitlement?<br><span class="q-answer">Son2’s entitlement is increased by the loan amount, while Son1 and Son3’s entitlements are reduced accordingly. The loan is not split or stressed, and is credited directly to Son2.</span></li>
+        <li><b>Q29.</b> How is rounding handled in the entitlement calculations?<br><span class="q-answer">All calculations are shown to four decimal places (₹0.0000 cr) for auditability, but final payments may be rounded to the nearest lakh or as agreed by the parties.</span></li>
+        <li><b>Q30.</b> Can you provide a step-by-step breakdown of the entitlement math?<br><span class="q-answer">Yes. Each son’s entitlement is calculated by summing their share of each asset (after stress), adjusting for the loan and escrow, and then reconciling with the property they actually receive. Any over/under is settled via equalisation payments.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -196,16 +196,16 @@
     <h2 id="financial-comparison-title">3. Financial Comparison & Impact Analysis: Internal vs. External Settlement</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q31.</b> How does internal settlement compare to an open-market sale?</li>
-        <li><b>Q32.</b> What are the different sale scenarios modeled in this section?</li>
-        <li><b>Q33.</b> How are sale discounts and capital gains tax applied in the calculations?</li>
-        <li><b>Q34.</b> What is the “sequential leakage” mentioned in the sale scenarios?</li>
-        <li><b>Q35.</b> How does the model ensure that loan and escrow are treated neutrally in sale math?</li>
-        <li><b>Q36.</b> What is the overall percentage effect of each sale scenario?</li>
-        <li><b>Q37.</b> How does the model handle partial sales versus total liquidation?</li>
-        <li><b>Q38.</b> What are the main value leakages in forced sale scenarios?</li>
-        <li><b>Q39.</b> How are the proceeds split among the sons in each sale scenario?</li>
-        <li><b>Q40.</b> Can you explain the difference between “soft,” “moderate,” and “forced” sale scenarios?</li>
+        <li><b>Q31.</b> How does internal settlement compare to an open-market sale?<br><span class="q-answer">Internal settlement preserves more estate value by avoiding market discounts and taxes. Open-market sales result in significant value leakage due to forced discounts and tax drag, while internal settlement uses a 20% stress but keeps value within the family.</span></li>
+        <li><b>Q32.</b> What are the different sale scenarios modeled in this section?<br><span class="q-answer">The scenarios include soft sale (10% discount), moderate sale (20% discount), and forced sale (30% discount), each with an additional tax drag proxy. These illustrate the range of possible outcomes if the estate is liquidated externally.</span></li>
+        <li><b>Q33.</b> How are sale discounts and capital gains tax applied in the calculations?<br><span class="q-answer">Sale discounts are applied first to the gross estate value, followed by a tax drag proxy (e.g., 10%). The result is a sequential reduction in distributable proceeds, modeling real-world sale leakage.</span></li>
+        <li><b>Q34.</b> What is the “sequential leakage” mentioned in the sale scenarios?<br><span class="q-answer">Sequential leakage refers to the compounding effect of applying a market discount and then a tax drag, which together reduce the estate’s net proceeds more than either would alone.</span></li>
+        <li><b>Q35.</b> How does the model ensure that loan and escrow are treated neutrally in sale math?<br><span class="q-answer">Loan and escrow are carved out from the post-tax proceeds before distribution. The loan is repaid directly to Son2, and escrow is held at the estate level, ensuring neither is double-counted or unfairly allocated.</span></li>
+        <li><b>Q36.</b> What is the overall percentage effect of each sale scenario?<br><span class="q-answer">Soft sale: 20% loss, moderate sale: 30% loss, forced sale: 40% loss versus gross estate value. These percentages reflect the combined impact of discounts and taxes.</span></li>
+        <li><b>Q37.</b> How does the model handle partial sales versus total liquidation?<br><span class="q-answer">Partial sales are modeled by selling only some assets (e.g., 505+506) and distributing proceeds accordingly, while the rest are retained. The model tracks value leakage and entitlements in both cases.</span></li>
+        <li><b>Q38.</b> What are the main value leakages in forced sale scenarios?<br><span class="q-answer">The main leakages are deep market discounts (up to 30%) and tax drag, which together can erode up to 40% of the estate’s value. Forced sales also risk suboptimal timing and distressed pricing.</span></li>
+        <li><b>Q39.</b> How are the proceeds split among the sons in each sale scenario?<br><span class="q-answer">After deducting loan and escrow, the remainder is split according to the model’s rules (e.g., 30:30:40 or as per Arshee uplift), with Son2 receiving the loan repayment directly.</span></li>
+        <li><b>Q40.</b> Can you explain the difference between “soft,” “moderate,” and “forced” sale scenarios?<br><span class="q-answer">A soft sale assumes a 10% discount, moderate sale 20%, and forced sale 30%, each with a tax drag. The higher the discount, the greater the value loss, modeling increasing urgency or distress in the sale process.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -288,16 +288,16 @@
     <h2 id="section-4-asset-economics-title">4. SECTION 4 — ASSET ECONOMICS: THE 506 SEPARATION PENALTY</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q41.</b> What is the 506 separation penalty, and when does it apply?</li>
-        <li><b>Q42.</b> How is the kitchen remediation cost calculated and who pays it?</li>
-        <li><b>Q43.</b> What is the fire-sale penalty, and how is it triggered?</li>
-        <li><b>Q44.</b> How do adjacency constraints affect the feasibility of certain scenarios?</li>
-        <li><b>Q45.</b> What happens if 505 and 506 are not held together?</li>
-        <li><b>Q46.</b> How are break-up penalties attributed in the settlement math?</li>
-        <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?</li>
-        <li><b>Q48.</b> How does the model ensure that the estate is not unfairly penalized by break-up costs?</li>
-        <li><b>Q49.</b> What is the impact of the separation penalty on each son’s entitlement?</li>
-        <li><b>Q50.</b> Are there any scenarios where breaking up 505 and 506 is economically justified?</li>
+        <li><b>Q41.</b> What is the 506 separation penalty, and when does it apply?<br><span class="q-answer">The 506 separation penalty is a mandatory cost (₹0.30 cr for kitchen remediation plus forced sale loss on 505) applied when 505 and 506 are not held together. It compensates for the loss of value from breaking up the combined block.</span></li>
+        <li><b>Q42.</b> How is the kitchen remediation cost calculated and who pays it?<br><span class="q-answer">The cost is ₹0.30 cr, representing the expense to make 506 a self-contained unit. It is paid solely by the son who acquires 506 individually, not shared by the estate or other sons.</span></li>
+        <li><b>Q43.</b> What is the fire-sale penalty, and how is it triggered?<br><span class="q-answer">The fire-sale penalty is an additional 10% discount applied to the post-stress value of a flat if it is sold separately after breakup. It is triggered by the act of marketing or liquidating a separated unit.</span></li>
+        <li><b>Q44.</b> How do adjacency constraints affect the feasibility of certain scenarios?<br><span class="q-answer">Adjacency constraints prohibit Son1 and Son2 or Son1 and Son3 from living next door (505 vs 506). Any scenario violating this is deemed infeasible and excluded from valid settlement options.</span></li>
+        <li><b>Q45.</b> What happens if 505 and 506 are not held together?<br><span class="q-answer">Breaking up 505 and 506 results in mandatory remediation and fire-sale penalties, reducing the net value realized and making the scenario economically inferior to keeping them combined.</span></li>
+        <li><b>Q46.</b> How are break-up penalties attributed in the settlement math?<br><span class="q-answer">Penalties are attributed solely to the party causing the breakup (the acquirer of the separated unit), not to the estate or other sons. This ensures fairness and preserves estate value for the others.</span></li>
+        <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?<br><span class="q-answer">If Son2 takes 506 individually, he pays ₹0.30 cr for kitchen remediation and absorbs the forced sale loss on 505, resulting in a net charge of ₹3.5375 cr against his entitlement for an asset worth only ₹2.60 cr.</span></li>
+        <li><b>Q48.</b> How does the model ensure that the estate is not unfairly penalized by break-up costs?<br><span class="q-answer">By charging all break-up costs to the acquirer of the separated unit, the model protects the estate pool and prevents value leakage from being shared by uninvolved parties.</span></li>
+        <li><b>Q49.</b> What is the impact of the separation penalty on each son’s entitlement?<br><span class="q-answer">The acquirer’s entitlement is reduced by the full amount of the penalty, while the other sons’ entitlements are unaffected. This can make the separated unit option unattractive compared to other allocations.</span></li>
+        <li><b>Q50.</b> Are there any scenarios where breaking up 505 and 506 is economically justified?<br><span class="q-answer">Only if a son is willing to absorb the full penalty for personal reasons. Mathematically, combined ownership is always superior due to the high cost of separation.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -350,16 +350,15 @@
     <h2 id="scenario-1-title">Scenario 1 (Ledger Model): Son2 owns 505+506, Son3 owns Arshee, Son1 owns Natasha (estate 50% only)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q51.</b> How are the properties allocated among the sons in this scenario?</li>
-        <li><b>Q52.</b> What are the final entitlements for each son, and how are they calculated?</li>
-        <li><b>Q53.</b> How are equalisation payments determined in this scenario?</li>
-        <li><b>Q54.</b> What is the role of the loan and escrow in this allocation?</li>
-        <li><b>Q55.</b> How does the mermaid diagram illustrate the cash and property flows?</li>
-        <li><b>Q56.</b> Are there any unique risks or considerations in this scenario?</li>
-        <li><b>Q57.</b> How is the 50% Arshee uplift to Son3 reflected in the math?</li>
-        <li><b>Q58.</b> What happens if Son1 wants to buy out the remaining 50% of Natasha?</li>
-        <li><b>Q59.</b> How are over/under entitlements reconciled?</li>
-        <li><b>Q60.</b> Can you explain the stepwise calculation for this scenario in detail?</li>
+        <li><b>Q51.</b> How are the properties allocated among the sons in this scenario?<br><span class="q-answer">Son2 receives 505+506 (combined), Son3 receives Arshee, and Son1 receives Natasha (estate 50% only). Each son is assigned a distinct property, with values based on stressed internal settlement figures.</span></li>
+        <li><b>Q52.</b> What are the final entitlements for each son, and how are they calculated?<br><span class="q-answer">Final entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. These are calculated by summing each son’s share of all assets (after stress), adjusting for the loan and escrow, and reconciling with the property received.</span></li>
+        <li><b>Q53.</b> How are equalisation payments determined in this scenario?<br><span class="q-answer">Equalisation payments are the difference between each son’s entitlement and the value of the property they receive. Over-entitled sons pay under-entitled sons to ensure everyone receives their fair share.</span></li>
+        <li><b>Q55.</b> How does the mermaid diagram illustrate the cash and property flows?<br><span class="q-answer">The diagram shows property flows from the estate to each son, the deduction of escrow and loan, and the direction of equalisation payments, making the settlement process transparent and auditable.</span></li>
+        <li><b>Q56.</b> Are there any unique risks or considerations in this scenario?<br><span class="q-answer">Risks are minimized by direct allocation and clear ledger reconciliation. The main consideration is ensuring timely equalisation payments to avoid liquidity issues for Son1.</span></li>
+        <li><b>Q57.</b> How is the 50% Arshee uplift to Son3 reflected in the math?<br><span class="q-answer">Son3 receives 50% of Arshee’s value, while Son1 and Son2 each receive 25%. This uplift is built into the entitlement calculation, rewarding elder-care contributions.</span></li>
+        <li><b>Q58.</b> What happens if Son1 wants to buy out the remaining 50% of Natasha?<br><span class="q-answer">Any buyout of the non-estate 50% of Natasha is a private transaction between Son1 and the other owner, outside the estate math. The estate only accounts for its 50% share.</span></li>
+        <li><b>Q59.</b> How are over/under entitlements reconciled?<br><span class="q-answer">Sons who receive property worth more than their entitlement pay the difference to those who receive less, ensuring all parties receive their exact entitlement after all adjustments.</span></li>
+        <li><b>Q60.</b> Can you explain the stepwise calculation for this scenario in detail?<br><span class="q-answer">Each asset is valued after stress, entitlements are calculated, loan and escrow are deducted, and property is allocated. Over/under amounts are settled via equalisation payments, as shown in the scenario math breakdown.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -455,16 +454,15 @@ flowchart TD
     <h2 id="scenario-2-title">Scenario 2: Son3 owns 505+506, Son2 owns Arshee, Son1 owns Natasha (estate 50% only)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q61.</b> How does the property allocation differ from Scenario 1?</li>
-        <li><b>Q62.</b> What are the entitlements and equalisation payments in this scenario?</li>
-        <li><b>Q63.</b> How is the loan to Son2 handled here?</li>
-        <li><b>Q64.</b> What is the impact of the 50% Arshee uplift on Son3’s entitlement?</li>
-        <li><b>Q65.</b> How does the escrow affect the final distribution?</li>
-        <li><b>Q66.</b> Are there any adjacency or break-up penalties in this scenario?</li>
-        <li><b>Q67.</b> How does the mermaid diagram represent the flows?</li>
-        <li><b>Q68.</b> What are the over/under entitlements for each son?</li>
-        <li><b>Q69.</b> How are disputes or disagreements resolved in this scenario?</li>
-        <li><b>Q70.</b> Can you provide a summary of the key differences between Scenario 1 and Scenario 2?</li>
+        <li><b>Q61.</b> How does the property allocation differ from Scenario 1?<br><span class="q-answer">In Scenario 2, Son3 receives 505+506, Son2 receives Arshee, and Son1 receives Natasha (estate 50% only). The allocation is rotated compared to Scenario 1, but the entitlement math and reconciliation process remain the same.</span></li>
+        <li><b>Q62.</b> What are the entitlements and equalisation payments in this scenario?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
+        <li><b>Q64.</b> What is the impact of the 50% Arshee uplift on Son3’s entitlement?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+        <li><b>Q65.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
+        <li><b>Q66.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
+        <li><b>Q67.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
+        <li><b>Q68.</b> What are the over/under entitlements for each son?<br><span class="q-answer">Over/under entitlements are calculated by comparing each son’s property received to their entitlement. Over-entitled sons pay the difference to under-entitled sons.</span></li>
+        <li><b>Q69.</b> How are disputes or disagreements resolved in this scenario?<br><span class="q-answer">Disputes are minimized by explicit, stepwise math and transparent reconciliation. Any disagreements are resolved by referring to the audit-grade calculations and fixed parameters.</span></li>
+        <li><b>Q70.</b> Can you provide a summary of the key differences between Scenario 1 and Scenario 2?<br><span class="q-answer">The main difference is the allocation of properties among the sons. The underlying math, loan and escrow treatment, and reconciliation process are consistent across both scenarios.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -559,16 +557,15 @@ flowchart TD
       <h2 id="scenario-3-title">Scenario 3: Forced Sale (Total Liquidation, All Cash)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q71.</b> What triggers a forced sale in this model?</li>
-        <li><b>Q72.</b> How are the forced sale discount and tax drag proxy calculated?</li>
-        <li><b>Q73.</b> What is the sequence of deductions from the gross estate in a forced sale?</li>
-        <li><b>Q74.</b> How is the loan to Son2 repaid in this scenario?</li>
-        <li><b>Q75.</b> How are the proceeds split among the sons after all deductions?</li>
-        <li><b>Q76.</b> What is the “Arshee uplift” in a forced sale context?</li>
-        <li><b>Q77.</b> How does the model prevent double-counting of Arshee?</li>
-        <li><b>Q78.</b> What are the final receipts for each son in a forced sale?</li>
-        <li><b>Q79.</b> How does the mermaid diagram illustrate the forced sale process?</li>
-        <li><b>Q80.</b> Are there any alternative approaches to handling forced sales in this model?</li>
+        <li><b>Q71.</b> What triggers a forced sale in this model?<br><span class="q-answer">A forced sale is triggered when the estate must liquidate all assets under distress, typically due to lack of agreement or urgent need for cash. This results in deep discounts and tax drag, eroding estate value.</span></li>
+        <li><b>Q72.</b> How are the forced sale discount and tax drag proxy calculated?<br><span class="q-answer">A 30% discount is applied to the gross estate value, followed by a tax drag proxy (e.g., 10%). These are sequentially deducted to model real-world forced sale conditions.</span></li>
+        <li><b>Q73.</b> What is the sequence of deductions from the gross estate in a forced sale?<br><span class="q-answer">First, the forced sale discount is applied, then the tax drag, followed by escrow and loan carve-outs. The remainder is distributed according to the model’s rules.</span></li>
+        <li><b>Q75.</b> How are the proceeds split among the sons after all deductions?<br><span class="q-answer">After all deductions, the remainder is split according to the model’s rules, with Arshee uplift handled as specified and Son2 receiving the loan repayment directly.</span></li>
+        <li><b>Q76.</b> What is the “Arshee uplift” in a forced sale context?<br><span class="q-answer">Arshee uplift means Son3 receives 50% of Arshee’s sale proceeds, while Son1 and Son2 each receive 25%. This reflects the elder-care contribution and is handled before the remainder is split.</span></li>
+        <li><b>Q77.</b> How does the model prevent double-counting of Arshee?<br><span class="q-answer">By allocating Arshee proceeds explicitly and not splitting them again in the remainder, the model ensures no double-counting occurs. This is enforced in both the math and the diagrams.</span></li>
+        <li><b>Q78.</b> What are the final receipts for each son in a forced sale?<br><span class="q-answer">Final receipts are: Son1 ~₹1.61–1.70 cr, Son2 ~₹2.14–2.24 cr (including loan), Son3 ~₹2.45–2.46 cr, depending on the scenario and calculation method.</span></li>
+        <li><b>Q79.</b> How does the mermaid diagram illustrate the forced sale process?<br><span class="q-answer">The diagram shows the sequence of deductions, allocation of Arshee uplift, and final distribution to each son, making the process transparent and easy to audit.</span></li>
+        <li><b>Q80.</b> Are there any alternative approaches to handling forced sales in this model?<br><span class="q-answer">Alternative approaches could include negotiated buyouts or structured payouts, but the model demonstrates that forced sales are always value-destructive and should be avoided if possible.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -768,16 +765,16 @@ flowchart TD
       <h2 id="scenario-4-title">Scenario 4: Partial Sale (505+506 Sold, Others Retained)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q81.</b> What is a partial sale, and when might it be used?</li>
-        <li><b>Q82.</b> How are the proceeds from a partial sale allocated?</li>
-        <li><b>Q83.</b> How does the model handle the sale of Natasha (estate 50%) only?</li>
-        <li><b>Q84.</b> What are the tax and discount implications of a partial sale?</li>
-        <li><b>Q85.</b> How does a partial sale compare to internal retention of assets?</li>
-        <li><b>Q86.</b> What are the risks of partial sales in terms of value leakage?</li>
-        <li><b>Q87.</b> How are equalisation payments affected by a partial sale?</li>
-        <li><b>Q88.</b> How does the mermaid diagram represent a partial sale?</li>
-        <li><b>Q89.</b> What happens to the unsold assets in a partial sale scenario?</li>
-        <li><b>Q90.</b> Can you provide a step-by-step calculation for the partial sale example?</li>
+        <li><b>Q81.</b> What is a partial sale, and when might it be used?<br><span class="q-answer">A partial sale involves selling only some estate assets (e.g., 505+506) while retaining others. It may be used to raise liquidity or accommodate differing preferences among heirs.</span></li>
+        <li><b>Q82.</b> How are the proceeds from a partial sale allocated?<br><span class="q-answer">Proceeds are distributed as cash to the entitled son(s), while the remaining assets are allocated as property. The model ensures all entitlements are reconciled via equalisation payments.</span></li>
+        <li><b>Q83.</b> How does the model handle the sale of Natasha (estate 50%) only?<br><span class="q-answer">If only Natasha (estate 50%) is sold, the proceeds are included in the estate pool and distributed according to entitlements, with the rest of the assets allocated as property.</span></li>
+        <li><b>Q84.</b> What are the tax and discount implications of a partial sale?<br><span class="q-answer">Partial sales may still incur market discounts and tax drag on the sold assets, reducing the net proceeds available for distribution.</span></li>
+        <li><b>Q85.</b> How does a partial sale compare to internal retention of assets?<br><span class="q-answer">Internal retention generally preserves more value, as partial sales introduce value leakage through discounts and taxes. The model quantifies this difference in each scenario.</span></li>
+        <li><b>Q86.</b> What are the risks of partial sales in terms of value leakage?<br><span class="q-answer">Risks include suboptimal timing, distressed pricing, and tax drag, all of which reduce the estate’s net value compared to internal settlement.</span></li>
+        <li><b>Q87.</b> How are equalisation payments affected by a partial sale?<br><span class="q-answer">Equalisation payments are recalculated based on the new mix of cash and property, ensuring all sons receive their correct entitlement after all adjustments.</span></li>
+        <li><b>Q88.</b> How does the mermaid diagram represent a partial sale?<br><span class="q-answer">The diagram shows the flow of sale proceeds, allocation of property, and direction of equalisation payments, making the process clear and auditable.</span></li>
+        <li><b>Q89.</b> What happens to the unsold assets in a partial sale scenario?<br><span class="q-answer">Unsold assets are allocated as property to the entitled sons, with their value included in the entitlement reconciliation.</span></li>
+        <li><b>Q90.</b> Can you provide a step-by-step calculation for the partial sale example?<br><span class="q-answer">Yes. The model details the value of sold assets, deducts discounts and taxes, allocates proceeds, and reconciles entitlements with the value of retained property, ensuring all steps are explicit.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -867,16 +864,15 @@ flowchart TD
       <h2 id="scenario-5-title">Scenario 5: Son1 owns 505+506, Son2 owns Arshee, Son3 owns Natasha (estate 50% only)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q91.</b> How are the properties allocated in this scenario?</li>
-        <li><b>Q92.</b> What are the entitlements and equalisation payments for each son?</li>
-        <li><b>Q93.</b> How is the loan to Son2 handled here?</li>
-        <li><b>Q94.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
-        <li><b>Q95.</b> How does the escrow affect the final distribution?</li>
-        <li><b>Q96.</b> Are there any adjacency or break-up penalties in this scenario?</li>
-        <li><b>Q97.</b> How does the mermaid diagram represent the flows?</li>
-        <li><b>Q98.</b> What are the over/under entitlements for each son?</li>
-        <li><b>Q99.</b> How are disputes or disagreements resolved in this scenario?</li>
-        <li><b>Q100.</b> Can you provide a summary of the key differences between Scenario 5 and the earlier scenarios?</li>
+        <li><b>Q91.</b> How are the properties allocated in this scenario?<br><span class="q-answer">Son1 receives 505+506, Son2 receives Arshee, and Son3 receives Natasha (estate 50% only). Each son is assigned a distinct property, with values based on stressed internal settlement figures.</span></li>
+        <li><b>Q92.</b> What are the entitlements and equalisation payments for each son?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
+        <li><b>Q94.</b> What is the impact of the 50% Arshee uplift on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+        <li><b>Q95.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
+        <li><b>Q96.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
+        <li><b>Q97.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
+        <li><b>Q98.</b> What are the over/under entitlements for each son?<br><span class="q-answer">Over/under entitlements are calculated by comparing each son’s property received to their entitlement. Over-entitled sons pay the difference to under-entitled sons.</span></li>
+        <li><b>Q99.</b> How are disputes or disagreements resolved in this scenario?<br><span class="q-answer">Disputes are minimized by explicit, stepwise math and transparent reconciliation. Any disagreements are resolved by referring to the audit-grade calculations and fixed parameters.</span></li>
+        <li><b>Q100.</b> Can you provide a summary of the key differences between Scenario 5 and the earlier scenarios?<br><span class="q-answer">The main difference is the allocation of properties among the sons. The underlying math, loan and escrow treatment, and reconciliation process are consistent across all scenarios.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -966,16 +962,15 @@ flowchart TD
         <h2 id="scenario-6-title">Scenario 6: Son1 owns Arshee, Son2 owns 505+506, Son3 owns Natasha (estate 50% only)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q101.</b> How does this property allocation differ from previous scenarios?</li>
-        <li><b>Q102.</b> What are the entitlements and equalisation payments in this scenario?</li>
-        <li><b>Q103.</b> How is the loan to Son2 handled here?</li>
-        <li><b>Q104.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
-        <li><b>Q105.</b> How does the escrow affect the final distribution?</li>
-        <li><b>Q106.</b> Are there any adjacency or break-up penalties in this scenario?</li>
-        <li><b>Q107.</b> How does the mermaid diagram represent the flows?</li>
-        <li><b>Q108.</b> What are the over/under entitlements for each son?</li>
-        <li><b>Q109.</b> How are disputes or disagreements resolved in this scenario?</li>
-        <li><b>Q110.</b> Can you provide a summary of the key differences between Scenario 6 and the earlier scenarios?</li>
+        <li><b>Q101.</b> How does this property allocation differ from previous scenarios?<br><span class="q-answer">In Scenario 6, Son1 receives Arshee, Son2 receives 505+506, and Son3 receives Natasha (estate 50% only). The allocation is rotated, but the entitlement math and reconciliation process remain the same.</span></li>
+        <li><b>Q102.</b> What are the entitlements and equalisation payments in this scenario?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
+        <li><b>Q104.</b> What is the impact of the 50% Arshee uplift on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+        <li><b>Q105.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
+        <li><b>Q106.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
+        <li><b>Q107.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
+        <li><b>Q108.</b> What are the over/under entitlements for each son?<br><span class="q-answer">Over/under entitlements are calculated by comparing each son’s property received to their entitlement. Over-entitled sons pay the difference to under-entitled sons.</span></li>
+        <li><b>Q109.</b> How are disputes or disagreements resolved in this scenario?<br><span class="q-answer">Disputes are minimized by explicit, stepwise math and transparent reconciliation. Any disagreements are resolved by referring to the audit-grade calculations and fixed parameters.</span></li>
+        <li><b>Q110.</b> Can you provide a summary of the key differences between Scenario 6 and the earlier scenarios?<br><span class="q-answer">The main difference is the allocation of properties among the sons. The underlying math, loan and escrow treatment, and reconciliation process are consistent across all scenarios.</span></li>
       </ul>
     </details>
         <div class="scenario-details">
@@ -1064,16 +1059,15 @@ flowchart TD
       <h2 id="scenario-7-title">Scenario 7: Son2 owns Natasha (estate 50% only), Son3 owns Arshee, Son1 owns 505+506</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q111.</b> How are the properties allocated in this scenario?</li>
-        <li><b>Q112.</b> What are the entitlements and equalisation payments for each son?</li>
-        <li><b>Q113.</b> How is the loan to Son2 handled here?</li>
-        <li><b>Q114.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
-        <li><b>Q115.</b> How does the escrow affect the final distribution?</li>
-        <li><b>Q116.</b> Are there any adjacency or break-up penalties in this scenario?</li>
-        <li><b>Q117.</b> How does the mermaid diagram represent the flows?</li>
-        <li><b>Q118.</b> What are the over/under entitlements for each son?</li>
-        <li><b>Q119.</b> How are disputes or disagreements resolved in this scenario?</li>
-        <li><b>Q120.</b> Can you provide a summary of the key differences between Scenario 7 and the earlier scenarios?</li>
+        <li><b>Q111.</b> How are the properties allocated in this scenario?<br><span class="q-answer">Son1 receives 505+506, Son2 receives Natasha (estate 50% only), and Son3 receives Arshee. Each son is assigned a distinct property, with values based on stressed internal settlement figures.</span></li>
+        <li><b>Q112.</b> What are the entitlements and equalisation payments for each son?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
+        <li><b>Q114.</b> What is the impact of the 50% Arshee uplift on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+        <li><b>Q115.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
+        <li><b>Q116.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
+        <li><b>Q117.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
+        <li><b>Q118.</b> What are the over/under entitlements for each son?<br><span class="q-answer">Over/under entitlements are calculated by comparing each son’s property received to their entitlement. Over-entitled sons pay the difference to under-entitled sons.</span></li>
+        <li><b>Q119.</b> How are disputes or disagreements resolved in this scenario?<br><span class="q-answer">Disputes are minimized by explicit, stepwise math and transparent reconciliation. Any disagreements are resolved by referring to the audit-grade calculations and fixed parameters.</span></li>
+        <li><b>Q120.</b> Can you provide a summary of the key differences between Scenario 7 and the earlier scenarios?<br><span class="q-answer">The main difference is the allocation of properties among the sons. The underlying math, loan and escrow treatment, and reconciliation process are consistent across all scenarios.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -1162,16 +1156,16 @@ flowchart TD
     <h2 id="advisory-guidance-title">7. Advisory Guidance (Neutral)</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q121.</b> What are the main recommendations for each son in this settlement?</li>
-        <li><b>Q122.</b> How should the family avoid fragmentation and forced sales?</li>
-        <li><b>Q123.</b> What is the best way to document and execute equalisation payments?</li>
-        <li><b>Q124.</b> How should the escrow be managed and redistributed if unused?</li>
-        <li><b>Q125.</b> What are the risks of not following the model’s hard rules?</li>
-        <li><b>Q126.</b> How can the family ensure compliance with adjacency constraints?</li>
-        <li><b>Q127.</b> What is the recommended process for property transfers and buyouts?</li>
-        <li><b>Q128.</b> How should disputes be resolved to avoid litigation?</li>
-        <li><b>Q129.</b> What is the 30/60/90-day activation checklist, and how should it be used?</li>
-        <li><b>Q130.</b> Can you summarize the minimal success criteria for this settlement?</li>
+        <li><b>Q121.</b> What are the main recommendations for each son in this settlement?<br><span class="q-answer">Each son should accept the property allocation that matches their entitlement, ensure all equalisation payments are documented and executed, and avoid actions that trigger forced sales or fragmentation.</span></li>
+        <li><b>Q122.</b> How should the family avoid fragmentation and forced sales?<br><span class="q-answer">By keeping 505+506 together, avoiding partial-unit scenarios, and settling entitlements via ledger-based payments, the family can preserve estate value and avoid value-destructive forced sales.</span></li>
+        <li><b>Q123.</b> What is the best way to document and execute equalisation payments?<br><span class="q-answer">All payments should be documented in a formal settlement agreement, with clear schedules and receipts. Payments may be lump-sum or structured, but must be transparent and auditable.</span></li>
+        <li><b>Q124.</b> How should the escrow be managed and redistributed if unused?<br><span class="q-answer">Escrow is held at the estate level for final expenses. Any unused balance should be redistributed among the sons according to their entitlements (e.g., 30:30:40 or as per the model).</span></li>
+        <li><b>Q125.</b> What are the risks of not following the model’s hard rules?<br><span class="q-answer">Ignoring hard rules can lead to disputes, litigation, value leakage, and loss of auditability. Strict adherence ensures fairness and preserves family wealth.</span></li>
+        <li><b>Q126.</b> How can the family ensure compliance with adjacency constraints?<br><span class="q-answer">By explicitly excluding any scenario where Son1 and Son2 or Son1 and Son3 would be next-door neighbors (505 vs 506), the family ensures compliance and avoids future conflict.</span></li>
+        <li><b>Q127.</b> What is the recommended process for property transfers and buyouts?<br><span class="q-answer">Transfers and buyouts should be executed via registered sale deeds or gift deeds, with all payments routed through escrow or bank transfer for traceability.</span></li>
+        <li><b>Q128.</b> How should disputes be resolved to avoid litigation?<br><span class="q-answer">Disputes should be resolved by referring to the explicit, audit-grade math and fixed parameters in the model. Mediation or family meetings are recommended before considering legal action.</span></li>
+        <li><b>Q129.</b> What is the 30/60/90-day activation checklist, and how should it be used?<br><span class="q-answer">The checklist is a timeline for executing key steps: 30 days for agreement, 60 days for documentation and payments, 90 days for property transfer and closure. Following it ensures timely, orderly settlement.</span></li>
+        <li><b>Q130.</b> Can you summarize the minimal success criteria for this settlement?<br><span class="q-answer">All sons receive their full entitlement, no forced sales or litigation occur, and the estate is settled transparently and efficiently, preserving maximum value for the family.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
