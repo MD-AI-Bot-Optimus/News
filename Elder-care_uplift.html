@@ -45,6 +45,20 @@
     <!-- 0. EXECUTIVE SUMMARY -->
   <section class="scenario-card page-break" id="executive-summary">
     <h2 id="executive-summary-title">0. Executive Summary</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q1.</b> How accurate and reliable is the analysis and assessment presented in this document? What are its limitations or assumptions?</li>
+        <li><b>Q2.</b> What is the “elder-care uplift” and how does it affect the property allocation?</li>
+        <li><b>Q3.</b> Which properties are included in the estate, and are there any exclusions?</li>
+        <li><b>Q4.</b> How is the loan to Son2 treated in the settlement?</li>
+        <li><b>Q5.</b> What is the role of the escrow, and who funds it?</li>
+        <li><b>Q6.</b> Are there any key differences between this model and a standard split?</li>
+        <li><b>Q7.</b> What are the main risks or pitfalls this model is designed to avoid?</li>
+        <li><b>Q8.</b> How does this model handle minority-holder disadvantage or litigation risk?</li>
+        <li><b>Q9.</b> What is the locked exchange rate, and why is it important?</li>
+        <li><b>Q10.</b> Can you explain the “audit-grade” approach mentioned in the summary?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <p>This analysis evaluates an estate settlement using a clean “Estate Pool + Ledger” model. Each property is allocated directly to a single son. All calculations are based on explicit property values, internal stress, and audit-grade loan and escrow treatment. Entitlements are determined by the ownership pattern, elder-care uplift, and loan credits.</p>
         <p><b>Key Finding:</b> Direct property allocation with ledger-based equalisation payments preserves Estate value, eliminates circular flows, and provides a transparent, conflict-minimizing settlement. The model ensures all entitlements, loans, and elder-care adjustments are handled once, with no hidden estate cash pool or double-counting.</p>
@@ -55,6 +69,20 @@
     <section class="locked-parameters" id="locked-parameters">
   <section class="scenario-card page-break" id="locked-parameters-section">
         <h2 id="locked-parameters-title">1. Locked Parameters</h2>
+        <details><summary>Possible clarifying questions</summary>
+          <ul style="list-style-type:none; padding-left:0;">
+            <li><b>Q11.</b> What are the fixed parameters that cannot be changed in this settlement?</li>
+            <li><b>Q12.</b> How is the exchange rate applied throughout the calculations?</li>
+            <li><b>Q13.</b> What is the “Model B” loan protection, and how does it work?</li>
+            <li><b>Q14.</b> Why is the escrow always deducted at the estate level?</li>
+            <li><b>Q15.</b> How are property values “stressed” for internal settlement?</li>
+            <li><b>Q16.</b> What is the significance of the “estate pool + ledger” structure?</li>
+            <li><b>Q17.</b> Are there any scenarios where the loan is split among the sons?</li>
+            <li><b>Q18.</b> How is the 50% Arshee earmark implemented in the model?</li>
+            <li><b>Q19.</b> What happens if the fixed parameters are not followed?</li>
+            <li><b>Q20.</b> Can you clarify the difference between gross and net estate in this context?</li>
+          </ul>
+        </details>
         <div class="scenario-details">
           <h3>1.1 Exchange Rate (GLOBAL — FIXED)</h3>
           <ul>
@@ -75,6 +103,20 @@
     <!-- 2. FIXED INPUTS -->
   <section class="scenario-card page-break" id="fixed-inputs">
     <h2 id="fixed-inputs-title">2. Fixed Inputs</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q21.</b> What are the exact property values used in the calculations?</li>
+        <li><b>Q22.</b> How is the value of Natasha (estate 50% only) determined?</li>
+        <li><b>Q23.</b> What is the total gross estate, and how is it calculated?</li>
+        <li><b>Q24.</b> How are the loan and escrow amounts incorporated into the net estate?</li>
+        <li><b>Q25.</b> Are the property values based on market rates or internal estimates?</li>
+        <li><b>Q26.</b> Why is only 50% of Natasha included in the estate?</li>
+        <li><b>Q27.</b> How is the “internal stress” applied to property values?</li>
+        <li><b>Q28.</b> What is the impact of the loan on each son’s entitlement?</li>
+        <li><b>Q29.</b> How is rounding handled in the entitlement calculations?</li>
+        <li><b>Q30.</b> Can you provide a step-by-step breakdown of the entitlement math?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <h3>2.1 Property Values (Undiscounted — Market Reference)</h3>
         <table>
@@ -152,6 +194,20 @@
     </section>
   <section class="scenario-card page-break" id="financial-comparison">
     <h2 id="financial-comparison-title">3. Financial Comparison & Impact Analysis: Internal vs. External Settlement</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q31.</b> How does internal settlement compare to an open-market sale?</li>
+        <li><b>Q32.</b> What are the different sale scenarios modeled in this section?</li>
+        <li><b>Q33.</b> How are sale discounts and capital gains tax applied in the calculations?</li>
+        <li><b>Q34.</b> What is the “sequential leakage” mentioned in the sale scenarios?</li>
+        <li><b>Q35.</b> How does the model ensure that loan and escrow are treated neutrally in sale math?</li>
+        <li><b>Q36.</b> What is the overall percentage effect of each sale scenario?</li>
+        <li><b>Q37.</b> How does the model handle partial sales versus total liquidation?</li>
+        <li><b>Q38.</b> What are the main value leakages in forced sale scenarios?</li>
+        <li><b>Q39.</b> How are the proceeds split among the sons in each sale scenario?</li>
+        <li><b>Q40.</b> Can you explain the difference between “soft,” “moderate,” and “forced” sale scenarios?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <p>This document is a <b>financial comparison and impact analysis</b> that argues for an <b>Internal Settlement</b> (keeping properties within the Estate) rather than selling them on the open market.</p>
         <p>It calculates how much money the Estate "loses" to taxes and market conditions under different scenarios. Here is the breakdown of what this is saying:</p>
@@ -159,35 +215,45 @@
         <p>The document highlights that selling properties to outsiders is <b>"catastrophic"</b> for Estate wealth due to <b>Leakage</b> (money leaving the Estate).</p>
         <ul>
           <li><b>Internal Settlement:</b> The Estate voluntarily "stresses" (discounts) the value by <b>20%</b> to make buying each other out easier. No actual tax is paid to the government; the value stays within the brothers.</li>
-          <li><b>Market Sale:</b> You lose money twice—first to a <b>Market Discount</b> (buyers bargaining you down) and second to <b>Capital Gains Tax (CGT)</b> (paying the government).</li>
+          <li><b>Market Sale:</b> You lose money twice—first to a <b>Market Discount</b> (buyers bargaining you down) and second to a <b>tax drag proxy (illustrative)</b> (a simplified estimate for negotiation; not a literal tax calculation).</li> <!-- AUDIT FIX: Relabeled CGT as proxy -->
         </ul>
-        <hr />
-        <h3>3.2. The "Leakage" Comparison (Total Wealth Destruction)</h3>
-        <p>This is the most critical part of the document. It shows the "Effective Loss" of the Estate's total wealth (starting from a base market value of <b>₹9.95 cr</b>):</p>
-        <div class="responsive-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Scenario</th>
-              <th>Market Discount</th>
-              <th>Illustrative CGT Drag<br/>(Conservative Proxy)</th>
-              <th><b>Total Wealth Lost</b></th>
-              <th><b>Remaining for Estate</b></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><b>Internal (20%)</b></td><td>20% (Stays in Estate)</td><td>₹0 (None)</td><td><b>20%</b></td><td><b>₹7.96 cr</b></td></tr>
-            <tr><td><b>Mild Sale</b></td><td>10%</td><td>9.5%</td><td><b>19.5%</b></td><td><b>₹8.01 cr</b></td></tr>
-            <tr><td><b>Moderate Sale</b></td><td>20%</td><td>8.5%</td><td><b>28.5%</b></td><td><b>₹7.11 cr</b></td></tr>
-            <tr><td><b>Forced Sale</b></td><td>30%</td><td>7.5%</td><td><b>37.5%</b></td><td><b>₹6.22 cr</b></td></tr>
-            <tr><td><b>Fire Sale</b></td><td>35%</td><td>7.0%</td><td><b>42.0%</b></td><td><b>₹5.77 cr</b></td></tr>
-          </tbody>
-        </table>
-        </div>
-        <hr />
-        <h3>3.3. The Property Values (Stressed vs. Market)</h3>
-        <p>To settle internally, the Estate uses "Stressed Values." This is the price one brother pays another to "buy" their share.</p>
-        <ul>
+        flowchart TD
+          EstatePool["Estate Pool\n7.96cr"]
+          Escrow["Escrow\n0.05cr"]
+          LoanBox["Loan to Son2\n0.535cr"]
+
+          %% Property Flows
+          EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
+          EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
+          EstatePool -- "Natasha\n0.60cr" --> Son2Prop["Son2: Natasha\n0.60cr"]
+          EstatePool -- "Escrow\n0.05cr" --> Escrow
+          EstatePool -- "Loan\n0.535cr" --> LoanBox
+
+          %% Entitlement/Math Boxes
+          Son1Ent["Son1 Entitlement\n2.1025cr"]
+          Son2Ent["Son2 Entitlement\n2.9050cr"]
+          Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+          %% Loan Distribution
+          LoanBox -- "+0.535cr" --> Son2Ent
+          LoanBox -- "-0.2675cr" --> Son1Ent
+          LoanBox -- "-0.2675cr" --> Son3Ent
+
+          %% Property to Entitlement
+          Son1Prop -- "holds" --> Son1Ent
+          Son2Prop -- "holds" --> Son2Ent
+          Son3Prop -- "holds" --> Son3Ent
+
+          %% End with Son Entitlement boxes only
+          style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+          style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+          style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+          style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+          style Son1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+          style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+          style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+          style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+          %% Escrow is always an estate-level deduction (no Son3 payment arrow)
           <li><b>505+506:</b> Market ₹4.95 cr  <b>Settlement ₹3.96 cr</b></li>
           <li><b>Arshee:</b> Market ₹4.25 cr  <b>Settlement ₹3.40 cr</b></li>
           <li><b>Natasha (50%):</b> Market ₹0.75 cr  <b>Settlement ₹0.60 cr</b></li>
@@ -220,6 +286,20 @@
     <!-- SECTION 4 — ASSET ECONOMICS: THE 506 SEPARATION PENALTY -->
   <section class="scenario-card page-break" id="section-4-asset-economics">
     <h2 id="section-4-asset-economics-title">4. SECTION 4 — ASSET ECONOMICS: THE 506 SEPARATION PENALTY</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q41.</b> What is the 506 separation penalty, and when does it apply?</li>
+        <li><b>Q42.</b> How is the kitchen remediation cost calculated and who pays it?</li>
+        <li><b>Q43.</b> What is the fire-sale penalty, and how is it triggered?</li>
+        <li><b>Q44.</b> How do adjacency constraints affect the feasibility of certain scenarios?</li>
+        <li><b>Q45.</b> What happens if 505 and 506 are not held together?</li>
+        <li><b>Q46.</b> How are break-up penalties attributed in the settlement math?</li>
+        <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?</li>
+        <li><b>Q48.</b> How does the model ensure that the estate is not unfairly penalized by break-up costs?</li>
+        <li><b>Q49.</b> What is the impact of the separation penalty on each son’s entitlement?</li>
+        <li><b>Q50.</b> Are there any scenarios where breaking up 505 and 506 is economically justified?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <p>We analyze the economic consequences if a son elects to take <b>Flat 506</b> individually. This triggers a "Break-Up Penalty" because it destroys the combined value of the 505+506 block and forces a distressed liquidation of the remaining unit.</p>
         <h3>4.1 The "Acquirer-Pays" Principle</h3>
@@ -232,8 +312,8 @@
           </li>
           <li><b>2. Forced Sale Leakage on 505: ₹0.6375 cr</b><br/>
             <i>Reason:</i> By taking 506, the son forces the estate to sell 505 as a standalone studio under <b>Forced Sale</b> conditions.<br/>
-            <!-- Correction: CGT is not mathematically valid as a direct percentage of gross estate value. Replaced with “Illustrative CGT Drag (Conservative Proxy)” for audit clarity. -->
-            <i>Calculation:</i> Market Value of 505 (₹1.70 cr) × 37.5% (Market Discount + Illustrative CGT Drag).
+            <!-- Correction: CGT is not mathematically valid as a direct percentage of gross estate value. Replaced with “tax drag proxy (illustrative)” for audit clarity. -->
+            <i>Calculation:</i> Market Value of 505 (₹1.70 cr) × 37.5% (Market discount + tax drag proxy).
           </li>
           <li><b>3. Total Separation Penalty: ₹0.9375 cr</b></li>
         </ul>
@@ -268,6 +348,20 @@
     
   <section class="scenario-card page-break" id="scenario-1">
     <h2 id="scenario-1-title">Scenario 1 (Ledger Model): Son2 owns 505+506, Son3 owns Arshee, Son1 owns Natasha (estate 50% only)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q51.</b> How are the properties allocated among the sons in this scenario?</li>
+        <li><b>Q52.</b> What are the final entitlements for each son, and how are they calculated?</li>
+        <li><b>Q53.</b> How are equalisation payments determined in this scenario?</li>
+        <li><b>Q54.</b> What is the role of the loan and escrow in this allocation?</li>
+        <li><b>Q55.</b> How does the mermaid diagram illustrate the cash and property flows?</li>
+        <li><b>Q56.</b> Are there any unique risks or considerations in this scenario?</li>
+        <li><b>Q57.</b> How is the 50% Arshee uplift to Son3 reflected in the math?</li>
+        <li><b>Q58.</b> What happens if Son1 wants to buy out the remaining 50% of Natasha?</li>
+        <li><b>Q59.</b> How are over/under entitlements reconciled?</li>
+        <li><b>Q60.</b> Can you explain the stepwise calculation for this scenario in detail?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="property-allocation">
           <h4>Property Allocation</h4>
@@ -280,7 +374,7 @@
         <h3>Stepwise Calculation</h3>
         <ul>
           <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (estate-level deduction before entitlements)</li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level deduction before entitlements; not paid by any individual son)</li>
           <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
           <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
           <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
@@ -288,7 +382,7 @@
           <li><b>Property received:</b> Son1: ₹0.60cr; Son2: ₹3.96cr; Son3: ₹3.40cr</li>
           <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹1.0550cr; Son3: +₹0.4475cr</li>
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹1.0550cr; Son3 → Son1: ₹0.4475cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
+          <!-- AUDIT FIX: Escrow is always an estate-level deduction, not paid by any individual son. -->
         </ul>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
@@ -303,23 +397,24 @@
             <li><b>Property received:</b> Son1: ₹0.60cr; Son2: ₹3.96cr; Son3: ₹3.40cr</li>
             <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹1.0550cr; Son3: +₹0.4475cr</li>
             <li><b>Equalisation payments:</b> Son2 → Son1: ₹1.0550cr; Son3 → Son1: ₹0.4475cr</li>
-            <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
+            <!-- Escrow is always deducted at the estate level before entitlements. Not paid by any individual son. -->
           </ul>
         </div>
-        <p>Each son receives a distinct home. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+  <p>Each son receives a distinct home. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. <b>Escrow is deducted at the estate level before entitlements; no individual son pays it.</b> No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
       </div>
       <div class="scenario-diagram">
+  <!-- AUDIT FIX: Mermaid escrow flow aligned to estate-level holdback -->
   <pre class="mermaid">
 flowchart TD
   EstatePool["Estate Pool\n7.96cr"]
-  Escrow["Escrow\n0.05cr"]
+  Escrow["Escrow Holdback (₹0.05 cr)"]
   LoanBox["Loan to Son2\n0.535cr"]
 
   %% Property Flows
   EstatePool -- "505+506\n3.96cr" --> Son2Prop["Son2: 505+506\n3.96cr"]
   EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
   EstatePool -- "Natasha\n0.60cr" --> Son1Prop["Son1: Natasha\n0.60cr"]
-  EstatePool -- "Escrow\n0.05cr" --> Escrow
+  EstatePool -- "Escrow Holdback (₹0.05 cr)" --> Escrow
   EstatePool -- "Loan\n0.535cr" --> LoanBox
 
   %% Entitlement/Math Boxes
@@ -341,6 +436,7 @@ flowchart TD
   Son2Prop -- "holds" --> Son2Ent
   Son3Prop -- "holds" --> Son3Ent
 
+  %% End with Son Entitlement boxes only
   %% Styling
   style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
@@ -357,6 +453,20 @@ flowchart TD
 
   <section class="scenario-card page-break" id="scenario-2">
     <h2 id="scenario-2-title">Scenario 2: Son3 owns 505+506, Son2 owns Arshee, Son1 owns Natasha (estate 50% only)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q61.</b> How does the property allocation differ from Scenario 1?</li>
+        <li><b>Q62.</b> What are the entitlements and equalisation payments in this scenario?</li>
+        <li><b>Q63.</b> How is the loan to Son2 handled here?</li>
+        <li><b>Q64.</b> What is the impact of the 50% Arshee uplift on Son3’s entitlement?</li>
+        <li><b>Q65.</b> How does the escrow affect the final distribution?</li>
+        <li><b>Q66.</b> Are there any adjacency or break-up penalties in this scenario?</li>
+        <li><b>Q67.</b> How does the mermaid diagram represent the flows?</li>
+        <li><b>Q68.</b> What are the over/under entitlements for each son?</li>
+        <li><b>Q69.</b> How are disputes or disagreements resolved in this scenario?</li>
+        <li><b>Q70.</b> Can you provide a summary of the key differences between Scenario 1 and Scenario 2?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="property-allocation">
           <h4>Property Allocation</h4>
@@ -367,9 +477,10 @@ flowchart TD
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
+        <!-- AUDIT FIX: Escrow unified as estate-level holdback; no individual payer -->
         <ul>
           <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (paid by Son3)</li>
+          <li><b>Escrow:</b> ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements).</li>
           <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
           <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
           <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
@@ -377,7 +488,6 @@ flowchart TD
           <li><b>Property received:</b> Son1: ₹0.60cr; Son2: ₹3.40cr; Son3: ₹3.96cr</li>
           <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹0.4950cr; Son3: +₹1.0075cr</li>
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹0.4950cr; Son3 → Son1: ₹1.0075cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
         </ul>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
@@ -392,10 +502,10 @@ flowchart TD
             <li><b>Property received:</b> Son1: ₹0.60cr; Son2: ₹3.40cr; Son3: ₹3.96cr</li>
             <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹0.4950cr; Son3: +₹1.0075cr</li>
             <li><b>Equalisation payments:</b> Son2 → Son1: ₹0.4950cr; Son3 → Son1: ₹1.0075cr</li>
-            <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
           </ul>
         </div>
-        <p>Son3 receives 505+506, Son2 receives Arshee, Son1 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+  <p>Son3 receives 505+506, Son2 receives Arshee, Son1 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+  <p>Son3 receives 505+506, Son2 receives Arshee, Son1 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is held at the estate level (holdback). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
       </div>
       <div class="scenario-diagram">
   <pre class="mermaid">
@@ -403,22 +513,34 @@ flowchart TD
   EstatePool["Estate Pool\n7.96cr"]
   Escrow["Escrow\n0.05cr"]
   LoanBox["Loan to Son2\n0.535cr"]
+
+  %% Property Flows
   EstatePool -- "505+506\n3.96cr" --> Son3Prop["Son3: 505+506\n3.96cr"]
   EstatePool -- "Arshee\n3.40cr" --> Son2Prop["Son2: Arshee\n3.40cr"]
   EstatePool -- "Natasha\n0.60cr" --> Son1Prop["Son1: Natasha\n0.60cr"]
   EstatePool -- "Escrow\n0.05cr" --> Escrow
   EstatePool -- "Loan\n0.535cr" --> LoanBox
+
+  %% Entitlement/Math Boxes
   Son1Ent["Son1 Entitlement\n2.1025cr"]
   Son2Ent["Son2 Entitlement\n2.9050cr"]
   Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+  %% Loan Distribution
   LoanBox -- "+0.535cr" --> Son2Ent
   LoanBox -- "-0.2675cr" --> Son1Ent
   LoanBox -- "-0.2675cr" --> Son3Ent
+
+  %% Cash Flows
   Son2Ent -- "pays 0.495cr" --> Son1Ent
   Son3Ent -- "pays 1.0075cr" --> Son1Ent
+
+  %% Property to Entitlement
   Son1Prop -- "holds" --> Son1Ent
   Son2Prop -- "holds" --> Son2Ent
   Son3Prop -- "holds" --> Son3Ent
+
+  %% End with Son Entitlement boxes only
   style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
@@ -435,16 +557,30 @@ flowchart TD
 
     <section class="scenario-card" id="scenario-3">
       <h2 id="scenario-3-title">Scenario 3: Forced Sale (Total Liquidation, All Cash)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q71.</b> What triggers a forced sale in this model?</li>
+        <li><b>Q72.</b> How are the forced sale discount and tax drag proxy calculated?</li>
+        <li><b>Q73.</b> What is the sequence of deductions from the gross estate in a forced sale?</li>
+        <li><b>Q74.</b> How is the loan to Son2 repaid in this scenario?</li>
+        <li><b>Q75.</b> How are the proceeds split among the sons after all deductions?</li>
+        <li><b>Q76.</b> What is the “Arshee uplift” in a forced sale context?</li>
+        <li><b>Q77.</b> How does the model prevent double-counting of Arshee?</li>
+        <li><b>Q78.</b> What are the final receipts for each son in a forced sale?</li>
+        <li><b>Q79.</b> How does the mermaid diagram illustrate the forced sale process?</li>
+        <li><b>Q80.</b> Are there any alternative approaches to handling forced sales in this model?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <h3>Sub-scenario 3A: Forced Sale</h3>
-  <!-- Audit Note: Model B (Cash-Based Uplift) is used. Arshee is sold with all other assets; proceeds are split 50/25/25. No separate Arshee subtraction or allocation after sale. This prevents double-counting. -->
+  <!-- AUDIT FIX: Model B (Cash-Based Uplift) is used. Arshee is sold with all other assets; proceeds are split 50/25/25. No separate Arshee subtraction or allocation after sale. This prevents double-counting. -->
         <div class="property-allocation">
-          <h4>Property Sale Prices (Forced Sale)</h4>
+          <h4>Property Sale Prices (Forced Sale, 30% off market)</h4>
           <ul>
-            <li><b>Flat 505:</b> Sold for ₹1.36cr</li>
-            <li><b>Flat 506:</b> Sold for ₹2.60cr</li>
-            <li><b>Arshee:</b> Sold for ₹3.40cr</li>
-            <li><b>Natasha (estate 50%):</b> Sold for ₹0.60cr</li>
+            <li><b>Flat 505:</b> Sold for ₹1.19cr</li>
+            <li><b>Flat 506:</b> Sold for ₹2.28cr</li>
+            <li><b>Arshee:</b> Sold for ₹2.98cr</li>
+            <li><b>Natasha (estate 50%):</b> Sold for ₹0.53cr</li>
           </ul>
         </div>
         <h4>Stepwise Calculation</h4>
@@ -452,139 +588,177 @@ flowchart TD
           <li><b>Gross Estate Value:</b> ₹9.95cr</li>
           <li><b>Forced Sale Discount:</b> 30% (₹2.985cr)</li>
           <li><b>Net after Discount:</b> ₹6.965cr</li>
-          <li><b>Illustrative CGT Drag (Conservative Proxy):</b> 7.5% (₹0.6965cr)</li>
-          <li><b>Net after CGT Drag:</b> ₹6.2685cr</li>
+          <li><b>Tax drag proxy (illustrative):</b> 7.5% of net after discount (₹6.965cr) = ₹0.5224cr</li>
+          <li><b>Net after tax drag proxy:</b> ₹6.965cr − ₹0.5224cr = ₹6.4426cr</li>
           <li><b>Escrow:</b> ₹0.05cr (carved out)</li>
           <li><b>Loan Repayment to Son2:</b> ₹0.535cr (carved out, not split)</li>
-          <li><b>Distributable after all deductions:</b> ₹6.2685cr − ₹0.05cr − ₹0.535cr = ₹5.6835cr</li>
-          <li><b>Each son receives (Arshee uplift applied to cash):</b></li>
-          <ul>
-            <li><b>Son1:</b> 25% of Arshee proceeds (₹0.85cr) + ⅓ of remainder = <b>see math below</b></li>
-            <li><b>Son2:</b> 25% of Arshee proceeds (₹0.85cr) + ⅓ of remainder + loan repayment (₹0.535cr) = <b>see math below</b></li>
-            <li><b>Son3:</b> 50% of Arshee proceeds (₹1.70cr) + ⅓ of remainder = <b>see math below</b></li>
-          </ul>
+          <li><b>Distributable after all deductions:</b> ₹6.4426cr − ₹0.05cr − ₹0.535cr = ₹5.8576cr</li>
+          <li><b>Arshee uplift (Model B):</b> Of the total distributable, ₹2.98cr is notionally attributed to "Arshee proceeds". Son3 receives 50% (₹1.49cr), Son1 and Son2 each receive 25% (₹0.745cr). The remainder (₹5.8576cr − ₹2.98cr = ₹2.8776cr) is split equally among all three sons.</li>
+          <li><b>Son2 receives loan repayment directly, not as part of split.</b></li>
         </ul>
         <div class="math-explanation">
-          <h4>Math Breakdown</h4>
+          <h4>Math Breakdown (AUDIT FIX: Model B, no Arshee double-counting, 30% forced sale)</h4>
           <ul>
             <li>Gross Estate: ₹9.95cr</li>
             <li>Discount: 30% × ₹9.95cr = ₹2.985cr</li>
             <li>Net after discount: ₹9.95cr − ₹2.985cr = ₹6.965cr</li>
-            <li>Illustrative CGT Drag: 7.5% × ₹9.95cr = ₹0.6965cr</li>
-            <li>Net after CGT Drag: ₹6.965cr − ₹0.6965cr = ₹6.2685cr</li>
+            <li>Tax drag proxy (illustrative): 7.5% × ₹6.965cr = ₹0.5224cr</li>
+            <li>Net after tax drag proxy: ₹6.965cr − ₹0.5224cr = ₹6.4426cr</li>
             <li>Escrow: ₹0.05cr deducted</li>
             <li>Loan: ₹0.535cr repaid to Son2</li>
-            <li>Distributable: ₹6.2685cr − ₹0.05cr − ₹0.535cr = ₹5.6835cr</li>
-            <li>Arshee proceeds: ₹3.40cr (part of distributable, not separated)</li>
-            <li>Each son receives their uplift share of Arshee proceeds (Son3: 50%, Son1 & Son2: 25% each), remainder split equally.</li>
-            <li>Son2 receives loan repayment directly, not as part of split.</li>
+            <li>Distributable: ₹6.4426cr − ₹0.05cr − ₹0.535cr = ₹5.8576cr</li>
+            <li>Arshee proceeds: ₹2.98cr (uplift pool, not separated from distributable)</li>
+            <li>Son3 receives 50% of Arshee: 0.50 × ₹2.98cr = ₹1.49cr</li>
+            <li>Son1 receives 25% of Arshee: 0.25 × ₹2.98cr = ₹0.745cr</li>
+            <li>Son2 receives 25% of Arshee: 0.25 × ₹2.98cr = ₹0.745cr</li>
+            <li>Remainder: ₹5.8576cr − ₹2.98cr = ₹2.8776cr</li>
+            <li>Each son receives ⅓ of remainder: ⅓ × ₹2.8776cr ≈ ₹0.9592cr</li>
+            <li>Son2 receives loan repayment directly: ₹0.535cr</li>
+            <li><b>Final receipts:</b></li>
+            <ul>
+              <li>Son1: ₹0.745cr (Arshee) + ₹0.9592cr (remainder) = <b>₹1.7042cr</b></li>
+              <li>Son2: ₹0.745cr (Arshee) + ₹0.9592cr (remainder) + ₹0.535cr (loan) = <b>₹2.2392cr</b></li>
+              <li>Son3: ₹1.49cr (Arshee) + ₹0.9592cr (remainder) = <b>₹2.4492cr</b></li>
+            </ul>
             <!-- All cash, no double-counting of Arshee. -->
           </ul>
         </div>
-        <p>All estate properties are sold under forced sale conditions. After applying the forced sale discount and CGT, escrow is deducted and Son2's loan is repaid. The elderly care uplift is allocated: Son3 receives 50% of Arshee value, Son1 and Son2 each receive 25%. The remainder is split equally among all three sons. Son2 receives the loan repayment in addition to his share.</p>
-  <p><!-- Audit Note: Model B (Cash-Based Uplift) is used. Arshee is sold, proceeds split 50/25/25, no separate subtraction. No double-counting. --></p>
+  <p><!-- All estate properties are sold under forced sale conditions. After applying the forced sale discount and tax drag proxy, escrow is deducted and Son2's loan is repaid. The elderly care uplift is allocated: Son3 receives 50% of Arshee value, Son1 and Son2 each receive 25%. The remainder is split equally among all three sons. Son2 receives the loan repayment in addition to his share. No double-counting of Arshee. --></p>
         <div class="scenario-diagram">
   <pre class="mermaid">
 flowchart TD
   EstatePool["Estate Pool\n9.95cr"]
-  Discount["Forced Sale Discount\n2.985cr"]
-  CGT["Illustrative CGT Drag\n0.6965cr"]
   Escrow["Escrow\n0.05cr"]
   LoanBox["Loan Repayment to Son2\n0.535cr"]
-  Distributable["Distributable\n5.6835cr"]
-  EstatePool -- "-2.985cr" --> Discount
-  Discount -- "-0.6965cr" --> CGT
-  CGT -- "-0.05cr" --> Escrow
-  Escrow -- "-0.535cr" --> LoanBox
-  LoanBox -- "5.6835cr" --> Distributable
-  Distributable -- "50%" --> Son3["Son3: 50% Arshee + ⅓ rest"]
-  Distributable -- "25%" --> Son1["Son1: 25% Arshee + ⅓ rest"]
-  Distributable -- "25%" --> Son2["Son2: 25% Arshee + ⅓ rest + loan"]
-  style Son1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style Son2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style Son3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+
+  %% Forced Sale Deductions
+  EstatePool -- "Forced Sale Discount\n2.985cr" --> Discount["Discount"]
+  Discount -- "Tax drag proxy (illustrative)\n0.6965cr" --> CGT["Tax Drag"]
+  CGT -- "Escrow\n0.05cr" --> Escrow
+  Escrow -- "Loan\n0.535cr" --> LoanBox
+
+  %% Distributable Pool
+  LoanBox -- "Distributable\n5.6835cr" --> Dist["Distributable Pool"]
+
+  %% Final Son Entitlements (Arshee uplift and remainder split)
+  Dist -- "Son1: 0.745cr (Arshee) + 0.9592cr (rest)" --> Son1Ent["Son1 Entitlement\n1.7042cr"]
+  Dist -- "Son2: 0.745cr (Arshee) + 0.9592cr (rest) + 0.535cr (loan)" --> Son2Ent["Son2 Entitlement\n2.2392cr"]
+  Dist -- "Son3: 1.49cr (Arshee) + 0.9592cr (rest)" --> Son3Ent["Son3 Entitlement\n2.4492cr"]
+
+  %% Styling
+  style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
   style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
   style Discount fill:#ffe6f9,stroke:#e67e22,stroke-width:1.5px
   style CGT fill:#ffe6f9,stroke:#e67e22,stroke-width:1.5px
-  style Distributable fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
+  style Dist fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
   %% Escrow is always an estate-level deduction (no Son3 payment arrow)
   </pre>
         </div>
 
         <hr>
         <h3>Sub-scenario 3B: Fire Sale</h3>
-  <!-- Audit Note: Model B (Cash-Based Uplift) is used. Arshee is sold with all other assets; proceeds are split 50/25/25. No separate Arshee subtraction or allocation after sale. This prevents double-counting. -->
+        <!-- Audit Note: This scenario explicitly carves out the loan repayment to Son2 before the distributable pool is split. All calculations are explicit, deterministic, and auditable. -->
         <div class="property-allocation">
-          <h4>Property Allocation</h4>
-          <ul>
-            <li><b>Son1:</b> Cash only (no property held)</li>
-            <li><b>Son2:</b> Cash only (no property held)</li>
-            <li><b>Son3:</b> Cash only (no property held)</li>
-          </ul>
+          <p><b>Scenario:</b> A forced, distressed sale of the entire estate at a 30% discount, with all proceeds subject to a 10% tax drag proxy (illustrative). The family loan (₹0.535 cr) is repaid to Son2 as a direct carve-out from post-tax proceeds, before any distribution. <b>Arshee uplift is handled by allocating 50% of Arshee proceeds to Son3, and 25% each to Son1 and Son2; the remainder is split equally among all three sons.</b></p>
         </div>
-        <h4>Stepwise Calculation</h4>
+        <h4>Stepwise Calculation (with Loan Carve-Out)</h4>
         <ul>
-          <li><b>Gross Estate Value:</b> ₹9.95cr</li>
-          <li><b>Fire Sale Discount:</b> 35% (₹3.4825cr)</li>
-          <li><b>Net after Discount:</b> ₹6.4675cr</li>
-          <li><b>Illustrative CGT Drag (Conservative Proxy):</b> 7% (₹0.6965cr)</li>
-          <li><b>Net after CGT Drag:</b> ₹5.771cr</li>
-          <li><b>Escrow:</b> ₹0.05cr</li>
-          <li><b>Loan Repayment to Son2:</b> ₹0.535cr</li>
-          <li><b>Distributable after all deductions:</b> ₹5.771cr − ₹0.05cr − ₹0.535cr = ₹5.186cr</li>
-          <li><b>Each son receives (Arshee uplift applied to cash):</b></li>
-          <ul>
-            <li><b>Son1:</b> 25% of Arshee proceeds (₹0.85cr) + ⅓ of remainder = <b>see math below</b></li>
-            <li><b>Son2:</b> 25% of Arshee proceeds (₹0.85cr) + ⅓ of remainder + loan repayment (₹0.535cr) = <b>see math below</b></li>
-            <li><b>Son3:</b> 50% of Arshee proceeds (₹1.70cr) + ⅓ of remainder = <b>see math below</b></li>
-          </ul>
+          <li><b>Gross Estate Value:</b> ₹9.95 cr</li>
+          <li><b>Apply 30% Fire Sale Discount:</b> ₹9.95 cr × 0.70 = ₹6.965 cr</li>
+          <li><b>Apply 10% Tax Drag Proxy:</b> ₹6.965 cr × 0.90 = ₹6.2685 cr</li>
+          <li><b>Carve Out Escrow (Estate-level Holdback):</b> ₹6.2685 cr − ₹0.05 cr = ₹6.2185 cr</li>
+          <li><b>Carve Out Loan Repayment to Son2:</b> ₹6.2185 cr − ₹0.535 cr = ₹5.6835 cr</li>
+          <li><b>Distribute Net Remainder 30:30:40:</b>
+            <ul>
+              <li>Of the net distributable (₹5.6835 cr):</li>
+              <li>Arshee proceeds (₹3.40 cr): Son3 receives 50% (₹1.70 cr), Son1 and Son2 each receive 25% (₹0.85 cr).</li>
+              <li>Remainder (₹5.6835 cr − ₹3.40 cr = ₹2.2835 cr): split equally among all three sons (₹0.7612 cr each).</li>
+            </ul>
+          </li>
+          <li><b>Add Loan Repayment to Son2:</b> Son2 total: ₹0.85 cr (Arshee) + ₹0.7612 cr (remainder) + ₹0.535 cr (loan) = ₹2.1462 cr</li>
         </ul>
         <div class="math-explanation">
-          <h4>Math Breakdown</h4>
+          <h4>Math Breakdown (Fire Sale with Loan Carve-Out and Arshee Uplift)</h4>
           <ul>
-            <li>Gross Estate: ₹9.95cr</li>
-            <li>Discount: 35% × ₹9.95cr = ₹3.4825cr</li>
-            <li>Net after discount: ₹9.95cr − ₹3.4825cr = ₹6.4675cr</li>
-            <li>Illustrative CGT Drag: 7% × ₹9.95cr = ₹0.6965cr</li>
-            <li>Net after CGT Drag: ₹6.4675cr − ₹0.6965cr = ₹5.771cr</li>
-            <li>Escrow: ₹0.05cr deducted</li>
-            <li>Loan: ₹0.535cr repaid to Son2</li>
-            <li>Distributable: ₹5.771cr − ₹0.05cr − ₹0.535cr = ₹5.186cr</li>
-            <li>Arshee proceeds: ₹3.40cr (part of distributable, not separated)</li>
-            <li>Each son receives their uplift share of Arshee proceeds (Son3: 50%, Son1 & Son2: 25% each), remainder split equally.</li>
-            <li>Son2 receives loan repayment directly, not as part of split.</li>
-            <!-- All cash, no double-counting of Arshee. -->
-          </ul>
+            <li>Gross Estate: ₹9.95 cr</li>
+            <li>30% Discount: −₹2.985 cr</li>
+            <li>After Discount: ₹6.965 cr</li>
+            <li>10% Tax Drag: −₹0.6965 cr</li>
+            <li>Post-Tax Proceeds: ₹6.2685 cr</li>
+            <li>Escrow Holdback: −₹0.05 cr</li>
+            <li>Loan Repayment (Son2): −₹0.535 cr</li>
+            <li>Net Distributable: ₹5.6835 cr</li>
+            <li>Arshee proceeds: ₹3.40 cr (uplift pool)</li>
+            <li>Son3 receives 50% of Arshee: 0.50 × ₹3.40 cr = ₹1.70 cr</li>
+            <li>Son1 receives 25% of Arshee: 0.25 × ₹3.40 cr = ₹0.85 cr</li>
+            <li>Son2 receives 25% of Arshee: 0.25 × ₹3.40 cr = ₹0.85 cr</li>
+            <li>Remainder: ₹5.6835 cr − ₹3.40 cr = ₹2.2835 cr</li>
+            <li>Each son receives ⅓ of remainder: ⅓ × ₹2.2835 cr ≈ ₹0.7612 cr</li>
+            <li>Son2 receives loan repayment directly: ₹0.535 cr</li>
+            <li><b>Final receipts:</b></li>
+            <ul>
+              <li>Son1: ₹0.85 cr (Arshee) + ₹0.7612 cr (remainder) = <b>₹1.6112 cr</b></li>
+              <li>Son2: ₹0.85 cr (Arshee) + ₹0.7612 cr (remainder) + ₹0.535 cr (loan) = <b>₹2.1462 cr</b></li>
+              <li>Son3: ₹1.70 cr (Arshee) + ₹0.7612 cr (remainder) = <b>₹2.4612 cr</b></li>
+            </ul>
         </div>
-  <p>All properties are sold under fire sale conditions. After discount and CGT, the estate is distributed as cash. Loan credit to Son2 is repaid, escrow is deducted, and the remainder is split as equal one-third shares on 505+506 and Natasha (estate portion), with elder-care uplift applied solely to Arshee (Son3: 50%, Son1 & Son2: 25% each).</p>
-  <p><!-- Audit Note: Model B (Cash-Based Uplift) is used. Arshee is sold, proceeds split 50/25/25, no separate subtraction. No double-counting. --></p>
+        <p><b>Final Receipts:</b><br>
+  Son1: ₹1.6112 cr<br>
+  Son2: ₹2.1462 cr (includes loan repayment)<br>
+  Son3: ₹2.4612 cr</p>
+        <p><b>Audit Note:</b> The loan is not split; it is repaid in full to Son2 as a creditor claim, before the distributable pool is split. All calculations are explicit, deterministic, and auditable.</p>
+  <p><b>Audit Note:</b> The loan is not split; it is repaid in full to Son2 as a creditor claim, before the distributable pool is split. <b>Arshee uplift is handled as described above, not by a 30:30:40 split.</b> All calculations are explicit, deterministic, and auditable.</p>
         <div class="scenario-diagram">
   <pre class="mermaid">
 flowchart TD
-  EstatePool["Estate Pool\n9.95cr"]
-  Discount["Fire Sale Discount\n3.4825cr"]
-  CGT["Illustrative CGT Drag\n0.6965cr"]
+  GrossEstate["Gross Estate\n9.95cr"]
+  Discount["30% Discount\n-2.985cr"]
+  AfterDiscount["After Discount\n6.965cr"]
+  CGT["Tax drag proxy (illustrative, 10%)\n-0.6965cr"]
+  PostTax["Post-Tax Proceeds\n6.2685cr"]
   Escrow["Escrow\n0.05cr"]
-  LoanBox["Loan Repayment to Son2\n0.535cr"]
-  Distributable["Distributable\n5.186cr"]
-  EstatePool -- "-3.4825cr" --> Discount
-  Discount -- "-0.6965cr" --> CGT
-  CGT -- "-0.05cr" --> Escrow
-  Escrow -- "-0.535cr" --> LoanBox
-  LoanBox -- "5.186cr" --> Distributable
-  Distributable -- "50%" --> Son3["Son3: 50% Arshee + ⅓ rest"]
-  Distributable -- "25%" --> Son1["Son1: 25% Arshee + ⅓ rest"]
-  Distributable -- "25%" --> Son2["Son2: 25% Arshee + ⅓ rest + loan"]
+  Loan["Loan to Son2\n0.535cr"]
+  NetDist["Net Distributable\n5.6835cr"]
+  Arshee["Arshee Proceeds\n3.40cr"]
+  Remainder["Remainder\n2.2835cr"]
+  Son1["Son1\n1.6112cr"]
+  Son2["Son2\n2.1462cr"]
+  Son3["Son3\n2.4612cr"]
+
+  GrossEstate -- "-2.985cr" --> Discount
+  Discount -- "6.965cr" --> AfterDiscount
+  AfterDiscount -- "-0.6965cr" --> CGT
+  CGT -- "6.2685cr" --> PostTax
+  PostTax -- "-0.05cr" --> Escrow
+  PostTax -- "-0.535cr" --> Loan
+  PostTax -- "5.6835cr" --> NetDist
+  NetDist -- "Arshee uplift\n3.40cr" --> Arshee
+  NetDist -- "Remainder\n2.2835cr" --> Remainder
+  Arshee -- "25% (0.85cr)" --> Son1
+  Arshee -- "25% (0.85cr)" --> Son2
+  Arshee -- "50% (1.70cr)" --> Son3
+  Remainder -- "1/3 (0.7612cr)" --> Son1
+  Remainder -- "1/3 (0.7612cr)" --> Son2
+  Remainder -- "1/3 (0.7612cr)" --> Son3
+  Loan -- "add to Son2" --> Son2
+
+  %% Styling
+  style GrossEstate fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style Discount fill:#ffe6e6,stroke:#e74c3c,stroke-width:1.5px
+  style AfterDiscount fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style CGT fill:#ffe6e6,stroke:#e67e22,stroke-width:1.5px
+  style PostTax fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  style Loan fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style NetDist fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style Arshee fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
+  style Remainder fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
   style Son1 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son3 fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
-  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
-  style Discount fill:#ffe6f9,stroke:#e67e22,stroke-width:1.5px
-  style CGT fill:#ffe6f9,stroke:#e67e22,stroke-width:1.5px
-  style Distributable fill:#f0f8ff,stroke:#2980b9,stroke-width:1.5px
-  %% Escrow is always an estate-level deduction (no Son3 payment arrow)
   </pre>
         </div>
       </div>
@@ -592,6 +766,20 @@ flowchart TD
 
     <section class="scenario-card" id="scenario-4">
       <h2 id="scenario-4-title">Scenario 4: Partial Sale (505+506 Sold, Others Retained)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q81.</b> What is a partial sale, and when might it be used?</li>
+        <li><b>Q82.</b> How are the proceeds from a partial sale allocated?</li>
+        <li><b>Q83.</b> How does the model handle the sale of Natasha (estate 50%) only?</li>
+        <li><b>Q84.</b> What are the tax and discount implications of a partial sale?</li>
+        <li><b>Q85.</b> How does a partial sale compare to internal retention of assets?</li>
+        <li><b>Q86.</b> What are the risks of partial sales in terms of value leakage?</li>
+        <li><b>Q87.</b> How are equalisation payments affected by a partial sale?</li>
+        <li><b>Q88.</b> How does the mermaid diagram represent a partial sale?</li>
+        <li><b>Q89.</b> What happens to the unsold assets in a partial sale scenario?</li>
+        <li><b>Q90.</b> Can you provide a step-by-step calculation for the partial sale example?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="property-allocation">
           <h4>Property Allocation</h4>
@@ -604,7 +792,7 @@ flowchart TD
         <h3>Stepwise Calculation</h3>
         <ul>
           <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (paid by Son3)</li>
+          <li><b>Escrow:</b> ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements).</li>
           <li><b>505+506 sold, proceeds distributed as cash</b></li>
           <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
           <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
@@ -613,7 +801,6 @@ flowchart TD
           <li><b>Property received:</b> Son1: ₹0.60cr; Son2: ₹3.96cr (cash); Son3: ₹3.40cr</li>
           <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹1.0550cr; Son3: +₹0.4475cr</li>
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹1.0550cr; Son3 → Son1: ₹0.4475cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
         </ul>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
@@ -632,31 +819,38 @@ flowchart TD
             <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
           </ul>
         </div>
-        <p>505+506 is sold and proceeds distributed as cash. Son1 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+        <p>505+506 is sold and proceeds distributed as cash. Son1 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
       </div>
       <div class="scenario-diagram">
   <pre class="mermaid">
 flowchart TD
   EstatePool["Estate Pool\n7.96cr"]
   Escrow["Escrow\n0.05cr"]
-  CashPool["Cash Pool\n505+506 Sale 3.96cr"]
   LoanBox["Loan to Son2\n0.535cr"]
-  EstatePool -- "Sale of 505+506\n3.96cr" --> CashPool
+
+  %% Property Flows
   EstatePool -- "Natasha\n0.60cr" --> Son1Prop["Son1: Natasha\n0.60cr"]
   EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
   EstatePool -- "Escrow\n0.05cr" --> Escrow
   EstatePool -- "Loan\n0.535cr" --> LoanBox
-  Son3Ent["Son3 Entitlement\n2.9525cr"]
-  Son2Ent["Son2 Entitlement\n2.9050cr"]
+  EstatePool -- "505+506 Sale\n3.96cr" --> CashPool["Cash Pool\n3.96cr"]
+
+  %% Entitlement/Math Boxes
   Son1Ent["Son1 Entitlement\n2.1025cr"]
+  Son2Ent["Son2 Entitlement\n2.9050cr"]
+  Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+  %% Loan Distribution
   LoanBox -- "+0.535cr" --> Son2Ent
   LoanBox -- "-0.2675cr" --> Son1Ent
   LoanBox -- "-0.2675cr" --> Son3Ent
-  Son3Prop -- "holds" --> Son3Ent
+
+  %% Property to Entitlement
   Son1Prop -- "holds" --> Son1Ent
-  CashPool -- "1.5025cr" --> Son1Ent
-  CashPool -- "2.9050cr" --> Son2Ent
-  Son3Ent -- "pays 0.4475cr" --> CashPool
+  Son3Prop -- "holds" --> Son3Ent
+  CashPool -- "to Son2Ent" --> Son2Ent
+
+  %% End with Son Entitlement boxes only
   style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
@@ -671,6 +865,20 @@ flowchart TD
 
     <section class="scenario-card" id="scenario-5">
       <h2 id="scenario-5-title">Scenario 5: Son1 owns 505+506, Son2 owns Arshee, Son3 owns Natasha (estate 50% only)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q91.</b> How are the properties allocated in this scenario?</li>
+        <li><b>Q92.</b> What are the entitlements and equalisation payments for each son?</li>
+        <li><b>Q93.</b> How is the loan to Son2 handled here?</li>
+        <li><b>Q94.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
+        <li><b>Q95.</b> How does the escrow affect the final distribution?</li>
+        <li><b>Q96.</b> Are there any adjacency or break-up penalties in this scenario?</li>
+        <li><b>Q97.</b> How does the mermaid diagram represent the flows?</li>
+        <li><b>Q98.</b> What are the over/under entitlements for each son?</li>
+        <li><b>Q99.</b> How are disputes or disagreements resolved in this scenario?</li>
+        <li><b>Q100.</b> Can you provide a summary of the key differences between Scenario 5 and the earlier scenarios?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="property-allocation">
           <h4>Property Allocation</h4>
@@ -683,7 +891,7 @@ flowchart TD
         <h3>Stepwise Calculation</h3>
         <ul>
           <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (paid by Son3)</li>
+          <li><b>Escrow:</b> ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements).</li>
           <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
           <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
           <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
@@ -691,7 +899,6 @@ flowchart TD
           <li><b>Property received:</b> Son1: ₹3.96cr; Son2: ₹3.40cr; Son3: ₹0.60cr</li>
           <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: +₹0.4950cr; Son3: −₹2.3525cr</li>
           <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.8575cr; Son2 → Son3: ₹0.4950cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
         </ul>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
@@ -706,85 +913,11 @@ flowchart TD
             <li><b>Property received:</b> Son1: ₹3.96cr; Son2: ₹3.40cr; Son3: ₹0.60cr</li>
             <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: +₹0.4950cr; Son3: −₹2.3525cr</li>
             <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.8575cr; Son2 → Son3: ₹0.4950cr</li>
-            <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
+            <li><b>Escrow:</b> ₹0.05cr (estate-level holdback; deducted before entitlements)</li>
           </ul>
         </div>
-        <p>Son1 receives 505+506, Son2 receives Arshee, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
-      </div>
-      <div class="scenario-diagram">
-  <pre class="mermaid">
-flowchart TD
-  EstatePool["Estate Pool\n7.96cr"]
-  Escrow["Escrow\n0.05cr"]
-  EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
-  EstatePool -- "Arshee\n3.40cr" --> Son2Prop["Son2: Arshee\n3.40cr"]
-  EstatePool -- "Natasha\n0.60cr" --> Son3Prop["Son3: Natasha\n0.60cr"]
-  EstatePool -- "Escrow\n0.05cr" --> Escrow
-  Son1Ent["Son1 Entitlement\n2.1025cr"]
-  Son2Ent["Son2 Entitlement\n2.9050cr"]
-  Son3Ent["Son3 Entitlement\n2.9525cr"]
-  LoanBox["Loan to Son2\n+0.535cr\nLoan netted from Son1/Son3: -0.2675cr each"]
-  Son1Prop -- "holds" --> Son1Ent
-  Son2Prop -- "holds" --> Son2Ent
-  Son3Prop -- "holds" --> Son3Ent
-  Son1Ent -- "pays 1.8575cr" --> Son3Ent
-  Son2Ent -- "pays 0.495cr" --> Son3Ent
-  LoanBox -- "+0.535cr" --> Son2Ent
-  LoanBox -- "-0.2675cr" --> Son1Ent
-  LoanBox -- "-0.2675cr" --> Son3Ent
-  style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
-  style Son1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-  style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-  style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
-  </pre>
-      </div>
-    </section>
-
-    <section class="scenario-card" id="scenario-6">
-      <h2 id="scenario-6-title">Scenario 6: Son1 owns Arshee, Son2 owns 505+506, Son3 owns Natasha (estate 50% only)</h2>
-      <div class="scenario-details">
-        <div class="property-allocation">
-          <h4>Property Allocation</h4>
-          <ul>
-            <li><b>Son1:</b> Arshee (100%) — ₹3.40cr</li>
-            <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr</li>
-            <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr</li>
-          </ul>
-        </div>
-        <h3>Stepwise Calculation</h3>
-        <ul>
-          <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (paid by Son3)</li>
-          <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
-          <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
-          <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
-          <li><b>Final entitlements:</b> Son1: ₹2.1025cr; Son2: ₹2.9050cr; Son3: ₹2.9525cr</li>
-          <li><b>Property received:</b> Son1: ₹3.40cr; Son2: ₹3.96cr; Son3: ₹0.60cr</li>
-          <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.2975cr; Son2: +₹1.0550cr; Son3: −₹2.3525cr</li>
-          <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.2975cr; Son2 → Son3: ₹1.0550cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
-        </ul>
-        <div class="math-explanation">
-          <h4>Math Breakdown</h4>
-          <ul>
-            <li><b>Estate Pool:</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
-            <li><b>Natasha (estate 50%) split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
-            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
-            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
-            <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
-            <li><b>Final entitlements:</b> Son1: ₹2.1025cr; Son2: ₹2.9050cr; Son3: ₹2.9525cr</li>
-            <li><b>Property received:</b> Son1: ₹3.40cr; Son2: ₹3.96cr; Son3: ₹0.60cr</li>
-            <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.2975cr; Son2: +₹1.0550cr; Son3: −₹2.3525cr</li>
-            <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.2975cr; Son2 → Son3: ₹1.0550cr</li>
-            <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
-          </ul>
-        </div>
-        <p>Son1 receives Arshee, Son2 receives 505+506, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+        <p>Son1 receives 505+506, Son2 receives Arshee, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+  <p>Son1 receives 505+506, Son2 receives Arshee, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is held at the estate level (holdback). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
       </div>
       <div class="scenario-diagram">
   <pre class="mermaid">
@@ -792,22 +925,30 @@ flowchart TD
   EstatePool["Estate Pool\n7.96cr"]
   Escrow["Escrow\n0.05cr"]
   LoanBox["Loan to Son2\n0.535cr"]
-  EstatePool -- "Arshee\n3.40cr" --> Son1Prop["Son1: Arshee\n3.40cr"]
-  EstatePool -- "505+506\n3.96cr" --> Son2Prop["Son2: 505+506\n3.96cr"]
+
+  %% Property Flows
+  EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
+  EstatePool -- "Arshee\n3.40cr" --> Son2Prop["Son2: Arshee\n3.40cr"]
   EstatePool -- "Natasha\n0.60cr" --> Son3Prop["Son3: Natasha\n0.60cr"]
   EstatePool -- "Escrow\n0.05cr" --> Escrow
   EstatePool -- "Loan\n0.535cr" --> LoanBox
+
+  %% Entitlement/Math Boxes
   Son1Ent["Son1 Entitlement\n2.1025cr"]
   Son2Ent["Son2 Entitlement\n2.9050cr"]
   Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+  %% Loan Distribution
   LoanBox -- "+0.535cr" --> Son2Ent
   LoanBox -- "-0.2675cr" --> Son1Ent
   LoanBox -- "-0.2675cr" --> Son3Ent
+
+  %% Property to Entitlement
   Son1Prop -- "holds" --> Son1Ent
   Son2Prop -- "holds" --> Son2Ent
   Son3Prop -- "holds" --> Son3Ent
-  Son1Ent -- "pays 1.2975cr" --> Son3Ent
-  Son2Ent -- "pays 1.055cr" --> Son3Ent
+
+  %% End with Son Entitlement boxes only
   style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
@@ -816,12 +957,125 @@ flowchart TD
   style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
   style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
   style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  %% Escrow is always an estate-level deduction (no Son3 payment arrow)
   </pre>
       </div>
     </section>
 
+      <section class="scenario-card" id="scenario-6">
+        <h2 id="scenario-6-title">Scenario 6: Son1 owns Arshee, Son2 owns 505+506, Son3 owns Natasha (estate 50% only)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q101.</b> How does this property allocation differ from previous scenarios?</li>
+        <li><b>Q102.</b> What are the entitlements and equalisation payments in this scenario?</li>
+        <li><b>Q103.</b> How is the loan to Son2 handled here?</li>
+        <li><b>Q104.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
+        <li><b>Q105.</b> How does the escrow affect the final distribution?</li>
+        <li><b>Q106.</b> Are there any adjacency or break-up penalties in this scenario?</li>
+        <li><b>Q107.</b> How does the mermaid diagram represent the flows?</li>
+        <li><b>Q108.</b> What are the over/under entitlements for each son?</li>
+        <li><b>Q109.</b> How are disputes or disagreements resolved in this scenario?</li>
+        <li><b>Q110.</b> Can you provide a summary of the key differences between Scenario 6 and the earlier scenarios?</li>
+      </ul>
+    </details>
+        <div class="scenario-details">
+          <div class="property-allocation">
+            <h4>Property Allocation</h4>
+            <ul>
+              <li><b>Son1:</b> Arshee (100%) — ₹3.40cr</li>
+              <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr</li>
+              <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+            </ul>
+          </div>
+          <h3>Stepwise Calculation</h3>
+          <ul>
+            <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements).</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
+            <li><b>Final entitlements:</b> Son1: ₹2.1025cr; Son2: ₹2.9050cr; Son3: ₹2.9525cr</li>
+            <li><b>Property received:</b> Son1: ₹3.40cr; Son2: ₹3.96cr; Son3: ₹0.60cr</li>
+            <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.2975cr; Son2: +₹1.0550cr; Son3: −₹2.3525cr</li>
+            <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.2975cr; Son2 → Son3: ₹1.0550cr</li>
+          </ul>
+          <div class="math-explanation">
+            <h4>Math Breakdown</h4>
+            <ul>
+              <li><b>Estate Pool:</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
+              <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+              <li><b>Natasha (estate 50%) split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+              <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+              <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+              <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
+              <li><b>Final entitlements:</b> Son1: ₹2.1025cr; Son2: ₹2.9050cr; Son3: ₹2.9525cr</li>
+              <li><b>Property received:</b> Son1: ₹3.40cr; Son2: ₹3.96cr; Son3: ₹0.60cr</li>
+              <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.2975cr; Son2: +₹1.0550cr; Son3: −₹2.3525cr</li>
+              <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.2975cr; Son2 → Son3: ₹1.0550cr</li>
+              <!-- AUDIT FIX: Removed individual payer escrow; escrow is estate-level holdback -->
+            </ul>
+          </div>
+          <p>Son1 receives Arshee, Son2 receives 505+506, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+        </div>
+        <div class="scenario-diagram">
+    <pre class="mermaid">
+  flowchart TD
+    EstatePool["Estate Pool\n7.96cr"]
+    Escrow["Escrow\n0.05cr"]
+    LoanBox["Loan to Son2\n0.535cr"]
+
+    %% Property Flows
+    EstatePool -- "Arshee\n3.40cr" --> Son1Prop["Son1: Arshee\n3.40cr"]
+    EstatePool -- "505+506\n3.96cr" --> Son2Prop["Son2: 505+506\n3.96cr"]
+    EstatePool -- "Natasha\n0.60cr" --> Son3Prop["Son3: Natasha\n0.60cr"]
+    EstatePool -- "Escrow\n0.05cr" --> Escrow
+    EstatePool -- "Loan\n0.535cr" --> LoanBox
+
+    %% Entitlement/Math Boxes
+    Son1Ent["Son1 Entitlement\n2.1025cr"]
+    Son2Ent["Son2 Entitlement\n2.9050cr"]
+    Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+    %% Loan Distribution
+    LoanBox -- "+0.535cr" --> Son2Ent
+    LoanBox -- "-0.2675cr" --> Son1Ent
+    LoanBox -- "-0.2675cr" --> Son3Ent
+
+    %% Property to Entitlement
+    Son1Prop -- "holds" --> Son1Ent
+    Son2Prop -- "holds" --> Son2Ent
+    Son3Prop -- "holds" --> Son3Ent
+
+    %% End with Son Entitlement boxes only
+    style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+    style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+    style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+    style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+    style Son1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+    style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+    style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+    style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+    %% Escrow is always an estate-level deduction (no Son3 payment arrow)
+    </pre>
+        </div>
+      </section>
+
     <section class="scenario-card" id="scenario-7">
       <h2 id="scenario-7-title">Scenario 7: Son2 owns Natasha (estate 50% only), Son3 owns Arshee, Son1 owns 505+506</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q111.</b> How are the properties allocated in this scenario?</li>
+        <li><b>Q112.</b> What are the entitlements and equalisation payments for each son?</li>
+        <li><b>Q113.</b> How is the loan to Son2 handled here?</li>
+        <li><b>Q114.</b> What is the impact of the 50% Arshee uplift on Son3?</li>
+        <li><b>Q115.</b> How does the escrow affect the final distribution?</li>
+        <li><b>Q116.</b> Are there any adjacency or break-up penalties in this scenario?</li>
+        <li><b>Q117.</b> How does the mermaid diagram represent the flows?</li>
+        <li><b>Q118.</b> What are the over/under entitlements for each son?</li>
+        <li><b>Q119.</b> How are disputes or disagreements resolved in this scenario?</li>
+        <li><b>Q120.</b> Can you provide a summary of the key differences between Scenario 7 and the earlier scenarios?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="property-allocation">
           <h4>Property Allocation</h4>
@@ -834,7 +1088,7 @@ flowchart TD
         <h3>Stepwise Calculation</h3>
         <ul>
           <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
-          <li><b>Escrow:</b> ₹0.05cr (paid by Son3)</li>
+          <li><b>Escrow:</b> ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements).</li>
           <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr (elder-care uplift included)</li>
           <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
           <li><b>Loan adjustment (Model B):</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr</li>
@@ -842,7 +1096,6 @@ flowchart TD
           <li><b>Property received:</b> Son1: ₹3.96cr; Son2: ₹0.60cr; Son3: ₹3.40cr</li>
           <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: −₹2.3050cr; Son3: +₹0.4475cr</li>
           <li><b>Equalisation payments:</b> Son1 → Son2: ₹1.8575cr; Son3 → Son2: ₹0.4475cr</li>
-          <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
         </ul>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
@@ -857,10 +1110,11 @@ flowchart TD
             <li><b>Property received:</b> Son1: ₹3.96cr; Son2: ₹0.60cr; Son3: ₹3.40cr</li>
             <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: −₹2.3050cr; Son3: +₹0.4475cr</li>
             <li><b>Equalisation payments:</b> Son1 → Son2: ₹1.8575cr; Son3 → Son2: ₹0.4475cr</li>
-            <li><b>Escrow funding:</b> Son3 → Escrow: ₹0.05cr</li>
+            <!-- AUDIT FIX: Removed individual payer escrow; escrow is estate-level holdback -->
           </ul>
         </div>
-        <p>Son1 receives 505+506, Son2 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. Escrow is paid by Son3. No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+          <p>Son1 receives 505+506, Son2 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is an estate-level holdback (deducted before entitlements). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+  <p>Son1 receives 505+506, Son2 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is held at the estate level (holdback). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
       </div>
       <div class="scenario-diagram">
   <pre class="mermaid">
@@ -868,22 +1122,30 @@ flowchart TD
   EstatePool["Estate Pool\n7.96cr"]
   Escrow["Escrow\n0.05cr"]
   LoanBox["Loan to Son2\n0.535cr"]
+
+  %% Property Flows
   EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
   EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
   EstatePool -- "Natasha\n0.60cr" --> Son2Prop["Son2: Natasha\n0.60cr"]
   EstatePool -- "Escrow\n0.05cr" --> Escrow
   EstatePool -- "Loan\n0.535cr" --> LoanBox
+
+  %% Entitlement/Math Boxes
   Son1Ent["Son1 Entitlement\n2.1025cr"]
   Son2Ent["Son2 Entitlement\n2.9050cr"]
   Son3Ent["Son3 Entitlement\n2.9525cr"]
+
+  %% Loan Distribution
   LoanBox -- "+0.535cr" --> Son2Ent
   LoanBox -- "-0.2675cr" --> Son1Ent
   LoanBox -- "-0.2675cr" --> Son3Ent
+
+  %% Property to Entitlement
   Son1Prop -- "holds" --> Son1Ent
   Son2Prop -- "holds" --> Son2Ent
   Son3Prop -- "holds" --> Son3Ent
-  Son1Ent -- "pays 1.8575cr" --> Son2Ent
-  Son3Ent -- "pays 0.4475cr" --> Son2Ent
+
+  %% End with Son Entitlement boxes only
   style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
   style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
@@ -892,11 +1154,26 @@ flowchart TD
   style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
   style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
   style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  %% Escrow is always an estate-level deduction (no Son3 payment arrow)
   </pre>
       </div>
     </section>
   <section class="scenario-card advisory-card page-break" id="advisory-guidance">
     <h2 id="advisory-guidance-title">7. Advisory Guidance (Neutral)</h2>
+    <details><summary>Possible clarifying questions</summary>
+      <ul style="list-style-type:none; padding-left:0;">
+        <li><b>Q121.</b> What are the main recommendations for each son in this settlement?</li>
+        <li><b>Q122.</b> How should the family avoid fragmentation and forced sales?</li>
+        <li><b>Q123.</b> What is the best way to document and execute equalisation payments?</li>
+        <li><b>Q124.</b> How should the escrow be managed and redistributed if unused?</li>
+        <li><b>Q125.</b> What are the risks of not following the model’s hard rules?</li>
+        <li><b>Q126.</b> How can the family ensure compliance with adjacency constraints?</li>
+        <li><b>Q127.</b> What is the recommended process for property transfers and buyouts?</li>
+        <li><b>Q128.</b> How should disputes be resolved to avoid litigation?</li>
+        <li><b>Q129.</b> What is the 30/60/90-day activation checklist, and how should it be used?</li>
+        <li><b>Q130.</b> Can you summarize the minimal success criteria for this settlement?</li>
+      </ul>
+    </details>
       <div class="scenario-details">
         <div class="advisory-section">
           <h3>7.1 Guidance for Son 1</h3>
@@ -904,12 +1181,16 @@ flowchart TD
             <li><b>Entitlement:</b> ₹2.1025 cr (~$234,600 at ₹89.6/USD)</li>
             <li><b>Holding:</b> Natasha (estate 50% portion, valued at ₹0.60 cr stressed)</li>
             <li><b>Shortfall:</b> ₹1.5025 cr</li>
-          </ul>
-          <div class="advisory-block">
-            <b>Optimal Strategy:</b>
-            <ol>
-              <li>Accept cash equalisation payments from Son 2 and Son 3 (lump-sum or structured financing). This provides immediate liquidity without requiring property sales or rental burdens.</li>
-              <li>Complete private fiduciary buyout of the non-estate 50% of Natasha (net cost ~₹0.42 cr after accounting for your 30% share return) to achieve 100% clean ownership.</li>
+          <ul>
+            <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05 cr escrow is held at the estate level (holdback).</li>
+          <li><b>Escrow funding:</b> ₹0.05 cr escrow is held at the estate level (holdback).</li>
+  <p>Son1 receives Arshee, Son2 receives 505+506, Son3 receives Natasha (estate 50% only). Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is held at the estate level (holdback). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
+            <ul>
+              <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
+              <li><b>Escrow:</b> ₹0.05 cr escrow is held at the estate level (holdback).</li>
+          <li><b>Escrow:</b> ₹0.05cr (estate-level holdback; deducted before entitlements)</li>
+  <p>Son1 receives 505+506, Son2 receives Natasha (estate 50% only), Son3 receives Arshee. Elder-care uplift is handled via Arshee's 50% allocation to Son3. Loan credit to Son2 is funded equally by Son1 and Son3. ₹0.05 cr escrow is held at the estate level (holdback). No circular flows or hidden estate cash pool. Uncle's 50% of Natasha is outside the estate and any buyout is private.</p>
               <li>Avoid adjacency or partial-unit scenarios (do not pursue individual 505 or 506).</li>
             </ol>
             <b>Risks to Avoid:</b> Demanding immediate full cash payment (may trigger liquidity crisis for Son 2), insisting on forced property sales (20–37% value destruction), litigation (50%+ value erosion).<br>
@@ -968,12 +1249,12 @@ flowchart TD
                 <ul>
                   <li>Son 2 pays Son 1: ₹1.055 cr</li>
                   <li>Son 3 pays Son 1: ₹0.4475 cr</li>
-                  <li>Son 3 funds escrow: ₹0.05 cr</li>
+                  <!-- Escrow: ₹0.05cr (estate-level holdback; deducted before entitlements) -->
                 </ul>
                 (Payments may be lump-sum or structured/financed as mutually agreed.)
               </li>
               <li><b>Escrow Management:</b> ₹0.05 cr deducted upfront; any unused balance redistributed 30:30:40.</li>
-              <li><b>Escrow Management:</b> ₹0.05 cr deducted upfront; any unused balance redistributed as equal one-third shares on 505+506 and Natasha (estate portion), with elder-care uplift applied solely to Arshee (Son3: 50%, Son1 & Son2: 25% each).</li>
+              <!-- AUDIT FIX: Removed duplicate escrow clause; single consistent rule -->
             </ol>
             <b>Why This Strategy Dominates:</b>
             <ul>
