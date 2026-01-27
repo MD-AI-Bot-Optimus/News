@@ -200,6 +200,127 @@
 		  .scenario-card { padding: 1.2rem 0.5rem 1rem 0.5rem; }
 		}
 	</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elder-Care Insurance Payment | Estate Settlement: All Combinations</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</head>
+
+  <body>
+  <div class="floating-toc" id="floating-toc">
+    <nav aria-label="Table of Contents">
+      <h3 class="toc-title">Contents</h3>
+      <ul class="toc-list">
+        <li><a href="#executive-summary">0. Executive Summary</a></li>
+        <li><a href="#locked-parameters">1. Locked Parameters</a></li>
+        <li><a href="#fixed-inputs">2. Fixed Inputs</a></li>
+        <li><a href="#financial-comparison">3. Financial Comparison & Impact Analysis</a></li>
+        <li><a href="#section-4-asset-economics">4. Asset Economics: 506 Separation Penalty</a></li>
+        <li><a href="#scenario-1">Scenario 1: Son2 505+506, Son3 Arshee, Son1 Natasha</a></li>
+        <li><a href="#scenario-2">Scenario 2: Son3 505+506, Son2 Arshee, Son1 Natasha</a></li>
+        <li><a href="#scenario-3">Scenario 3: Forced Sale</a></li>
+        <li><a href="#scenario-4">Scenario 4: Partial Sale</a></li>
+        <li><a href="#scenario-5">Scenario 5: Son1 505+506, Son2 Arshee, Son3 Natasha</a></li>
+        <li><a href="#scenario-6">Scenario 6: Son1 Arshee, Son2 505+506, Son3 Natasha</a></li>
+        <li><a href="#scenario-7">Scenario 7: Son2 Natasha, Son3 Arshee, Son1 505+506</a></li>
+        <li><a href="#advisory-guidance">7. Advisory Guidance</a></li>
+      </ul>
+    </nav>
+  </div>
+  <button class="toc-hamburger" id="toc-hamburger" aria-label="Open Table of Contents">
+    <span></span><span></span><span></span>
+  </button>
+  <header class="modern-header">
+    <div class="modern-header-inner">
+  <h1>Elder-Care Insurance Payment | Estate Settlement</h1>
+  <p class="subtitle">All scenarios, stepwise math, property allocation, and explicit payment flows. <span class="tag">Jan 2026</span></p>
+    </div>
+  </header>
+  <main class="modern-content" role="main">
+    <!-- 0. EXECUTIVE SUMMARY -->
+    ...full content from Elder-care_uplift.html...
+  </main>
+<script>
+// Hamburger menu toggle for mobile (robust version)
+(function() {
+  const tocHamburger = document.getElementById('toc-hamburger');
+  const floatingToc = document.getElementById('floating-toc');
+  let overlayDiv = null;
+  function openMobileToc() {
+    floatingToc.classList.add('toc-open');
+    document.body.classList.add('toc-overlay');
+    document.body.style.overflow = 'hidden';
+    // Add overlay div for click-to-close
+    if (!overlayDiv) {
+      overlayDiv = document.createElement('div');
+      overlayDiv.className = 'toc-mobile-overlay';
+      overlayDiv.style.position = 'fixed';
+      overlayDiv.style.top = '0';
+      overlayDiv.style.left = '0';
+      overlayDiv.style.right = '0';
+      overlayDiv.style.bottom = '0';
+      overlayDiv.style.background = 'rgba(0,0,0,0.18)';
+      overlayDiv.style.zIndex = '1199';
+      overlayDiv.addEventListener('click', closeMobileToc);
+      document.body.appendChild(overlayDiv);
+    } else {
+      overlayDiv.style.display = 'block';
+    }
+  }
+  function closeMobileToc() {
+    floatingToc.classList.remove('toc-open');
+    document.body.classList.remove('toc-overlay');
+    document.body.style.overflow = '';
+    if (overlayDiv) overlayDiv.style.display = 'none';
+  }
+  if (tocHamburger && floatingToc) {
+    tocHamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (floatingToc.classList.contains('toc-open')) {
+        closeMobileToc();
+      } else {
+        openMobileToc();
+      }
+    });
+    // Prevent menu click from closing
+    floatingToc.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+    // Close on resize to desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 1000) closeMobileToc();
+    });
+    // Also close on navigation (anchor click)
+    floatingToc.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 1000) closeMobileToc();
+      });
+    });
+    // Defensive: close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && floatingToc.classList.contains('toc-open')) closeMobileToc();
+    });
+  }
+  // Desktop: show TOC on hover (if hidden by default)
+  if (window.matchMedia('(min-width: 1000px)').matches) {
+    floatingToc.addEventListener('mouseenter', function() {
+      floatingToc.classList.add('toc-hover');
+    });
+    floatingToc.addEventListener('mouseleave', function() {
+      floatingToc.classList.remove('toc-hover');
+    });
+  }
+})();
+</script>
+</body>
+</html>
 </head>
 <body>
 	<!-- Floating TOC (left sidebar) -->
