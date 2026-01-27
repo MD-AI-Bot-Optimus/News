@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Elder-care uplift | Estate Settlement: All Combinations</title>
+  <title>Elder-Care Insurance Payment | Estate Settlement: All Combinations</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
@@ -37,8 +37,8 @@
   </button>
   <header class="modern-header">
     <div class="modern-header-inner">
-      <h1>Elder-Care Uplift | Estate Settlement</h1>
-      <p class="subtitle">All scenarios, stepwise math, property allocation, and explicit payment flows. <span class="tag">Dec 2025</span></p>
+  <h1>Elder-Care Insurance Payment | Estate Settlement</h1>
+  <p class="subtitle">All scenarios, stepwise math, property allocation, and explicit payment flows. <span class="tag">Jan 2026</span></p>
     </div>
   </header>
   <main class="modern-content" role="main">
@@ -47,16 +47,22 @@
     <h2 id="executive-summary-title">0. Executive Summary</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-  <li><b>Q1.</b> How accurate and reliable is the analysis and assessment presented in this document?<br><span class="q-answer">The analysis is deterministic, step-by-step, and audit-grade, but relies on fixed inputs and assumptions as stated; accuracy depends on adherence to these parameters.</span></li>
-  <li><b>Q2.</b> What is the “elder-care uplift” and how does it affect the property allocation?<br><span class="q-answer">It is a model adjustment to reflect the economic value of elder-care provided, affecting allocation by increasing the entitlement of the caregiving party.</span></li>
-  <li><b>Q3.</b> Which properties are included in the estate, and are there any exclusions?<br><span class="q-answer">All estate-held properties are included; any property already owned by a party (e.g., Son1’s 50% of Natasha) is excluded from the estate pool.</span></li>
-  <li><b>Q4.</b> How is the loan to Son2 treated in the settlement?<br><span class="q-answer">The loan is not split, not stressed, and is credited directly to Son2’s entitlement as a creditor repayment.</span></li>
-  <li><b>Q5.</b> What is the role of the escrow, and who funds it?<br><span class="q-answer">Escrow is an estate-level holdback for final expenses, funded from the gross estate before distribution; no individual son pays escrow directly.</span></li>
-  <li><b>Q6.</b> Are there any key differences between this model and a standard split?<br><span class="q-answer">Yes, this model includes elder-care uplift, explicit loan/escrow handling, and audit-grade scenario math, unlike a simple percentage split.</span></li>
-  <li><b>Q7.</b> What are the main risks or pitfalls this model is designed to avoid?<br><span class="q-answer">It avoids forced sales, value leakage, litigation risk, and minority-holder disadvantage by using deterministic, transparent math.</span></li>
-  <li><b>Q8.</b> How does this model handle minority-holder disadvantage or litigation risk?<br><span class="q-answer">It explicitly models these risks and provides scenario math to show their economic impact, ensuring fair treatment and risk disclosure.</span></li>
-  <li><b>Q9.</b> What is the locked exchange rate, and why is it important?<br><span class="q-answer">The locked USD/INR rate ensures all calculations are consistent and auditable, preventing disputes over currency conversion.</span></li>
-  <li><b>Q10.</b> Can you explain the “audit-grade” approach mentioned in the summary?<br><span class="q-answer">Audit-grade means every calculation step is explicit, reproducible, and based on fixed, disclosed parameters for full transparency.</span></li>
+  <li><b>Q1 (Son1):</b> How can I maximize my cash-out and avoid being left with the least valuable property?<br>  <span class="q-answer" style="margin-left:2em;display:block;">The model ensures Son1 receives a fair entitlement, but direct property allocation and ledger payments mean Son1 cannot force a premium buyout or offload a less desirable asset at the expense of others.</span></li>
+  <li><b>Q2 (Son2):</b> How do I guarantee my loan is fully repaid and not diluted by family negotiation?<br>  <span class="q-answer" style="margin-left:2em;display:block;">The loan is treated as a creditor claim, not split or stressed, and is credited directly to Son2’s entitlement before any estate division, ensuring full recovery regardless of the others’ positions.</span></li>
+  <li><b>Q3 (Son3):</b> How do I lock in the elder-care uplift and avoid subsidizing my brothers’ inheritances?<br>  <span class="q-answer" style="margin-left:2em;display:block;">The model explicitly allocates 50% of Arshee to Son3 for elder-care, so Son3’s uplift is protected and not subject to renegotiation or dilution by Son1 or Son2.</span></li>
+  <li><b>Q4 (All Sons):</b> Can I game the escrow or loan rules to shift costs onto my brothers?<br>  <span class="q-answer" style="margin-left:2em;display:block;">No. Escrow is always deducted at the estate level before distribution, and the loan is a fixed creditor repayment to Son2. No son can manipulate these to their own advantage.</span></li>
+  <li><b>Q5 (Son1/Son2):</b> Can I block the elder-care uplift or force Son3 to share Arshee?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">No. The uplift is hard-coded into the entitlement math, so Son3’s share of Arshee is protected regardless of Son1 or Son2’s preferences.</span></li>
+  <li><b>Q6 (All Sons):</b> Can I force a sale or liquidation to get more cash?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">The model’s stress and allocation rules make forced sales value-destructive for all, so no son can unilaterally trigger a sale for personal gain without eroding their own entitlement.</span></li>
+  <li><b>Q7 (Son2):</b> Can I use my loan leverage to get a better property or more cash?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">The loan is repaid as a fixed entitlement, not as a bargaining chip for property selection or extra cash. Son2’s position is protected but not enhanced beyond the loan value.</span></li>
+  <li><b>Q8 (Son1):</b> Can I avoid paying out my brothers if I get a less valuable property?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">No. The ledger ensures that any shortfall or overage is settled by explicit equalisation payments, so Son1 cannot escape balancing the books.</span></li>
+  <li><b>Q9 (All Sons):</b> Can I dispute the exchange rate or valuation to improve my share?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">No. The exchange rate and property values are locked and audit-grade, so no son can manipulate these for personal advantage.</span></li>
+  <li><b>Q10 (All Sons):</b> Can I challenge the math or demand a different split if I don’t like the outcome?
+    <br>  <span class="q-answer" style="margin-left:2em;display:block;">The audit-grade, stepwise math is explicit and fixed. All sons are bound by the same transparent rules, so no one can demand a different split for selfish reasons.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
@@ -86,8 +92,8 @@
         <div class="scenario-details">
           <h3>1.1 Exchange Rate (GLOBAL — FIXED)</h3>
           <ul>
-            <li>USD/INR = ₹89.6 per USD</li>
-            <li>All settlement calculations are in INR. USD figures are disclosure equivalents only.</li>
+            <li>USD/INR = ₹91.72 per USD <b>(as of Jan 26, 2026)</b></li>
+            <li>All settlement calculations are in INR. USD figures are disclosure equivalents only, using the updated rate.</li>
           </ul>
           <h3>1.2 Model Structure</h3>
           <ul>
@@ -124,12 +130,12 @@
             <tr><th>Property</th><th>Estate Share</th><th>Market Value (INR)</th><th>Market Value (USD)</th></tr>
           </thead>
           <tbody>
-            <tr><td>Flat 505</td><td>100%</td><td>₹1.70 cr</td><td>~$189,700</td></tr>
-            <tr><td>Flat 506</td><td>100%</td><td>₹3.25 cr</td><td>~$362,700</td></tr>
-            <tr><td>505+506 Combined</td><td>100%</td><td>₹4.95 cr</td><td>~$552,400</td></tr>
-            <tr><td>Arshee</td><td>100%</td><td>₹4.25 cr</td><td>~$474,100</td></tr>
-            <tr><td>Natasha (Total)</td><td>50% estate</td><td>₹1.50 cr</td><td>~$167,400</td></tr>
-            <tr><td>Natasha Estate Portion</td><td>50%</td><td>₹0.75 cr</td><td>~$83,700</td></tr>
+            <tr><td>Flat 505</td><td>100%</td><td>₹1.70 cr</td><td>~$185,400</td></tr>
+            <tr><td>Flat 506</td><td>100%</td><td>₹3.25 cr</td><td>~$354,400</td></tr>
+            <tr><td>505+506 Combined</td><td>100%</td><td>₹4.95 cr</td><td>~$539,600</td></tr>
+            <tr><td>Arshee</td><td>100%</td><td>₹4.25 cr</td><td>~$463,400</td></tr>
+            <tr><td>Natasha (Total)</td><td>50% estate</td><td>₹1.50 cr</td><td>~$163,600</td></tr>
+            <tr><td>Natasha Estate Portion</td><td>50%</td><td>₹0.75 cr</td><td>~$81,800</td></tr>
             <tr><td>Natasha Non-Estate</td><td>50%</td><td>₹0.75 cr</td><td>EXCLUDED</td></tr>
           </tbody>
         </table>
@@ -138,7 +144,8 @@
         Estate owns: 50% = ₹0.75 cr (held in Son1’s name, fiduciary capacity)<br>
         Non-estate portion: 50% = ₹0.75 cr (NEVER counted in estate)<br>
         Son1 holds title as fiduciary, not beneficial owner.</p>
-        <p><b>TOTAL GROSS ESTATE (Undiscounted):</b> ₹9.95 cr (~$1,110,500)</p>
+  <p><b>TOTAL GROSS ESTATE (Undiscounted):</b> ₹9.95 cr (~$1,196,900)</p>
+  <p><b>TOTAL GROSS ESTATE (Undiscounted):</b> ₹9.95 cr (~$1,084,800)</p>
         <ul>
           <li>Flat 505: ₹1.70 cr</li>
           <li>Flat 506: ₹3.25 cr</li>
@@ -155,11 +162,12 @@
         </ul>
         <h3>2.3 Loans & Escrow (LOCKED)</h3>
         <ul>
-          <li>Combined Estate Loan (2025 valuation): ₹0.535 cr (~$59,700)</li>
+          <li>Combined Estate Loan (2025 valuation): ₹0.535 cr (~$58,300)</li>
           <li>Inflation Factors Applied:</li>
           <ul>
-            <li>2010-2025 (15 years): Cumulative inflation factor = 1.38 (conservative ~2.2% annual average) (Actual Indian CPI inflation averaged ~6–7% annually over these periods)</li>
-            <li>2016-2025 (9 years): Cumulative inflation factor = 1.25 (conservative ~2.5% annual average) (Actual Indian CPI inflation averaged ~6–7% annually over these periods)</li>
+            <li>2010-2025 (15 years): Cumulative inflation factor = 1.38 (conservative ~2.2% annual average) (Actual Indian CPI inflation averaged ~6–7% annually over these periods; <b>peak 2010–2025 cumulative CPI inflation was ~2.85×, i.e. $25,000 × 2.85 × ₹91.72 = ₹65.5 lakhs</b>)</li>
+            <li>2016-2025 (9 years): Cumulative inflation factor = 1.25 (conservative ~2.5% annual average) (Actual Indian CPI inflation averaged ~6–7% annually over these periods; <b>peak 2016–2025 cumulative CPI inflation was ~1.65×, i.e. $18,000 × 1.65 × ₹91.72 = ₹27.2 lakhs</b>)</li>
+            <li><b>Note:</b> Son2 is already accepting a significant reduction from the peak possible loan value (if calculated at market rates or with interest), in order to respect family honour and avoid burdening the estate with a higher claim. The loan is valued at a conservative, inflation-only adjustment, not at the maximum possible or legal value.</li>
           </ul>
           <li>Loan 1 — 2010 USD Loan</li>
           <ul>
@@ -169,8 +177,8 @@
             <li>Valuation Method: Inflation-only adjustment (conservative floor)</li>
             <li>No compounding, no yield, no profit component</li>
             <li>Inflation factor applied: 1.38×</li>
-            <li>Calculation: $25,000 × 1.38 = $34,500 × ₹89.6 = ₹30.912 lakhs</li>
-            <li>2025 Valuation: ₹0.310 cr (~$34,600)</li>
+            <li>Calculation: $25,000 × 1.38 = $34,500 × ₹91.72 = ₹31.743 lakhs</li>
+            <li>2026 Valuation: ₹0.310 cr (~$33,800)</li>
           </ul>
           <li>Loan 2 — 2016 USD Loan</li>
           <ul>
@@ -179,16 +187,16 @@
             <li>0% interest from 2016–2018 (explicit concession)</li>
             <li>Post-2018: Inflation-only adjustment</li>
             <li>Inflation factor applied: 1.25× (from 2016 base)</li>
-            <li>Calculation: $18,000 × 1.25 = $22,500 × ₹89.6 = ₹20.16 lakhs (conservative adjustment to ₹22.5 lakhs)</li>
-            <li>2025 Valuation: ₹0.225 cr (~$25,100)</li>
+            <li>Calculation: $18,000 × 1.25 = $22,500 × ₹91.72 = ₹20.607 lakhs (conservative adjustment to ₹22.5 lakhs)</li>
+            <li>2026 Valuation: ₹0.225 cr (~$24,500)</li>
           </ul>
           <li>Loan Total Verification:</li>
           <ul>
-            <li>Loan 1 (2010): ₹0.310 cr</li>
-            <li>Loan 2 (2016): ₹0.225 cr</li>
-            <li>Combined Total: ₹0.535 cr ✓</li>
+            <li>Loan 1 (2010): ₹0.310 cr (actual claim) <br><span class="indented-answer">Maximum at peak inflation: ₹0.655 cr (see above)</span></li>
+            <li>Loan 2 (2016): ₹0.225 cr (actual claim) <br><span class="indented-answer">Maximum at peak inflation: ₹0.272 cr (see above)</span></li>
+            <li>Combined Total: ₹0.535 cr ✓ <br><span class="indented-answer">Maximum possible at peak inflation: ₹0.927 cr. <b>Son2 is asking for ~42% less than the maximum possible, as a family concession.</b></span></li>
           </ul>
-          <li>Funeral/Last-Rites Escrow: ₹0.050 cr (~$5,580)</li>
+          <li>Funeral/Last-Rites Escrow: ₹0.050 cr (~$5,400)</li>
         </ul>
       </div>
     </section>
@@ -215,56 +223,58 @@
         <p>The document highlights that selling properties to outsiders is <b>"catastrophic"</b> for Estate wealth due to <b>Leakage</b> (money leaving the Estate).</p>
         <ul>
           <li><b>Internal Settlement:</b> The Estate voluntarily "stresses" (discounts) the value by <b>20%</b> to make buying each other out easier. No actual tax is paid to the government; the value stays within the brothers.</li>
-          <li><b>Market Sale:</b> You lose money twice—first to a <b>Market Discount</b> (buyers bargaining you down) and second to a <b>tax drag proxy (illustrative)</b> (a simplified estimate for negotiation; not a literal tax calculation).</li> <!-- AUDIT FIX: Relabeled CGT as proxy -->
+          <li><b>Market Sale:</b> You lose money twice—first to a <b>Market Discount</b> (buyers bargaining you down) and second to a <b>tax drag proxy (illustrative)</b> (a simplified estimate for negotiation; not a literal tax calculation).</li>
         </ul>
-        flowchart TD
-          EstatePool["Estate Pool\n7.96cr"]
-          Escrow["Escrow\n0.05cr"]
-          LoanBox["Loan to Son2\n0.535cr"]
+        <pre class="mermaid">
+flowchart TD
+  EstatePool["Estate Pool\n7.96cr"]
+  Escrow["Escrow\n0.05cr"]
+  LoanBox["Loan to Son2\n0.535cr"]
 
-          %% Property Flows
-          EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
-          EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
-          EstatePool -- "Natasha\n0.60cr" --> Son2Prop["Son2: Natasha\n0.60cr"]
-          EstatePool -- "Escrow\n0.05cr" --> Escrow
-          EstatePool -- "Loan\n0.535cr" --> LoanBox
+  %% Property Flows
+  EstatePool -- "505+506\n3.96cr" --> Son1Prop["Son1: 505+506\n3.96cr"]
+  EstatePool -- "Arshee\n3.40cr" --> Son3Prop["Son3: Arshee\n3.40cr"]
+  EstatePool -- "Natasha\n0.60cr" --> Son2Prop["Son2: Natasha\n0.60cr"]
+  EstatePool -- "Escrow\n0.05cr" --> Escrow
+  EstatePool -- "Loan\n0.535cr" --> LoanBox
 
-          %% Entitlement/Math Boxes
-          Son1Ent["Son1 Entitlement\n2.1025cr"]
-          Son2Ent["Son2 Entitlement\n2.9050cr"]
-          Son3Ent["Son3 Entitlement\n2.9525cr"]
+  %% Entitlement/Math Boxes
+  Son1Ent["Son1 Entitlement\n2.1025cr"]
+  Son2Ent["Son2 Entitlement\n2.9050cr"]
+  Son3Ent["Son3 Entitlement\n2.9525cr"]
 
-          %% Loan Distribution
-          LoanBox -- "+0.535cr" --> Son2Ent
-          LoanBox -- "-0.2675cr" --> Son1Ent
-          LoanBox -- "-0.2675cr" --> Son3Ent
+  %% Loan Distribution
+  LoanBox -- "+0.535cr" --> Son2Ent
+  LoanBox -- "-0.2675cr" --> Son1Ent
+  LoanBox -- "-0.2675cr" --> Son3Ent
 
-          %% Property to Entitlement
-          Son1Prop -- "holds" --> Son1Ent
-          Son2Prop -- "holds" --> Son2Ent
-          Son3Prop -- "holds" --> Son3Ent
+  %% Property to Entitlement
+  Son1Prop -- "holds" --> Son1Ent
+  Son2Prop -- "holds" --> Son2Ent
+  Son3Prop -- "holds" --> Son3Ent
 
-          %% End with Son Entitlement boxes only
-          style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-          style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-          style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
-          style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
-          style Son1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-          style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-          style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
-          style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
-          %% Escrow is always an estate-level deduction (no Son3 payment arrow)
-          <li><b>505+506:</b> Market ₹4.95 cr  <b>Settlement ₹3.96 cr</b></li>
-          <li><b>Arshee:</b> Market ₹4.25 cr  <b>Settlement ₹3.40 cr</b></li>
-          <li><b>Natasha (50%):</b> Market ₹0.75 cr  <b>Settlement ₹0.60 cr</b></li>
+  %% End with Son Entitlement boxes only
+  style Son1Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style Son2Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style Son3Ent fill:#e6ffe6,stroke:#2ecc40,stroke-width:2px
+  style LoanBox fill:#f9f9f9,stroke:#888,stroke-width:1.5px
+  style Son1Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style Son2Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style Son3Prop fill:#fff,stroke:#2ecc40,stroke-width:1.5px
+  style Escrow fill:#fff9e6,stroke:#e67e22,stroke-width:1.5px
+  %% Escrow is always an estate-level deduction (no Son3 payment arrow)
+        </pre>
+          <li><b>505+506:</b> Market ₹4.95 cr  <b>Settlement ₹3.96 cr</b> (~$539,600 → ~$431,700)</li>
+          <li><b>Arshee:</b> Market ₹4.25 cr  <b>Settlement ₹3.40 cr</b> (~$463,400 → ~$370,600)</li>
+          <li><b>Natasha (50%):</b> Market ₹0.75 cr  <b>Settlement ₹0.60 cr</b> (~$81,800 → ~$65,400)</li>
         </ul>
         <hr />
         <h3>3.4. Final Payouts to the Sons (Internal Settlement)</h3>
         <p>After accounting for a <b>₹0.535 cr loan</b> owed to Son 2 and a <b>₹0.05 cr escrow</b> (funeral/legal fund), the final "entitlements" are:</p>
         <ul>
-          <li><b>Son 1:</b> ₹2.1025 cr</li>
-          <li><b>Son 2:</b> ₹2.9050 cr</li>
-          <li><b>Son 3:</b> ₹2.9525 cr</li>
+          <li><b>Son 1:</b> ₹2.1025 cr (~$229,300)</li>
+          <li><b>Son 2:</b> ₹2.9050 cr (~$316,800)</li>
+          <li><b>Son 3:</b> ₹2.9525 cr (~$321,900)</li>
         </ul>
         <div class="math-explanation">
           <h4>How These Numbers Are Calculated</h4>
@@ -288,34 +298,35 @@
     <h2 id="section-4-asset-economics-title">4. SECTION 4 — ASSET ECONOMICS: THE 506 SEPARATION PENALTY</h2>
     <details><summary>Possible clarifying questions</summary>
       <ul style="list-style-type:none; padding-left:0;">
-        <li><b>Q41.</b> What is the 506 separation penalty, and when does it apply?<br><span class="q-answer">The 506 separation penalty is a mandatory cost (₹0.30 cr for kitchen remediation plus forced sale loss on 505) applied when 505 and 506 are not held together. It compensates for the loss of value from breaking up the combined block.</span></li>
-        <li><b>Q42.</b> How is the kitchen remediation cost calculated and who pays it?<br><span class="q-answer">The cost is ₹0.30 cr, representing the expense to make 506 a self-contained unit. It is paid solely by the son who acquires 506 individually, not shared by the estate or other sons.</span></li>
-        <li><b>Q43.</b> What is the fire-sale penalty, and how is it triggered?<br><span class="q-answer">The fire-sale penalty is an additional 10% discount applied to the post-stress value of a flat if it is sold separately after breakup. It is triggered by the act of marketing or liquidating a separated unit.</span></li>
+  <li><b>Q41.</b> What is the 506 separation penalty, and when does it apply?<br><span class="q-answer">The 506 separation penalty is a mandatory cost (₹0.20 cr for kitchen remediation plus general sale loss on 505) applied when 505 and 506 are not held together. It compensates for the loss of value from breaking up the combined block.</span></li>
+  <li><b>Q42.</b> How is the kitchen remediation cost calculated and who pays it?<br><span class="q-answer">The cost is ₹0.20 cr, representing the expense to make 506 a self-contained unit. It is paid solely by the son who acquires 506 individually, not shared by the estate or other sons.</span></li>
+  <li><b>Q43.</b> What is the additional sale loss penalty, and how is it triggered?<br><span class="q-answer">The additional sale loss penalty is an extra 10% discount applied to the post-stress value of a flat if it is sold separately after breakup. It is triggered by the act of marketing or liquidating a separated unit.</span></li>
         <li><b>Q44.</b> How do adjacency constraints affect the feasibility of certain scenarios?<br><span class="q-answer">Adjacency constraints prohibit Son1 and Son2 or Son1 and Son3 from living next door (505 vs 506). Any scenario violating this is deemed infeasible and excluded from valid settlement options.</span></li>
-        <li><b>Q45.</b> What happens if 505 and 506 are not held together?<br><span class="q-answer">Breaking up 505 and 506 results in mandatory remediation and fire-sale penalties, reducing the net value realized and making the scenario economically inferior to keeping them combined.</span></li>
+  <li><b>Q45.</b> What happens if 505 and 506 are not held together?<br><span class="q-answer">Breaking up 505 and 506 results in mandatory remediation and additional sale loss penalties, reducing the net value realized and making the scenario economically inferior to keeping them combined.</span></li>
         <li><b>Q46.</b> How are break-up penalties attributed in the settlement math?<br><span class="q-answer">Penalties are attributed solely to the party causing the breakup (the acquirer of the separated unit), not to the estate or other sons. This ensures fairness and preserves estate value for the others.</span></li>
-        <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?<br><span class="q-answer">If Son2 takes 506 individually, he pays ₹0.30 cr for kitchen remediation and absorbs the forced sale loss on 505, resulting in a net charge of ₹3.5375 cr against his entitlement for an asset worth only ₹2.60 cr.</span></li>
+  <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?<br><span class="q-answer">If Son2 takes 506 individually, he pays ₹0.20 cr for kitchen remediation and absorbs the general sale loss on 505, resulting in a net charge of ₹3.4375 cr against his entitlement for an asset worth only ₹2.60 cr.</span></li>
         <li><b>Q48.</b> How does the model ensure that the estate is not unfairly penalized by break-up costs?<br><span class="q-answer">By charging all break-up costs to the acquirer of the separated unit, the model protects the estate pool and prevents value leakage from being shared by uninvolved parties.</span></li>
         <li><b>Q49.</b> What is the impact of the separation penalty on each son’s entitlement?<br><span class="q-answer">The acquirer’s entitlement is reduced by the full amount of the penalty, while the other sons’ entitlements are unaffected. This can make the separated unit option unattractive compared to other allocations.</span></li>
         <li><b>Q50.</b> Are there any scenarios where breaking up 505 and 506 is economically justified?<br><span class="q-answer">Only if a son is willing to absorb the full penalty for personal reasons. Mathematically, combined ownership is always superior due to the high cost of separation.</span></li>
       </ul>
     </details>
       <div class="scenario-details">
-        <p>We analyze the economic consequences if a son elects to take <b>Flat 506</b> individually. This triggers a "Break-Up Penalty" because it destroys the combined value of the 505+506 block and forces a distressed liquidation of the remaining unit.</p>
+  <p>We analyze the economic consequences if a son elects to take <b>Flat 506</b> individually. This triggers a "Break-Up Penalty" because it destroys the combined value of the 505+506 block and forces a general sale loss on the remaining unit.</p>
         <h3>4.1 The "Acquirer-Pays" Principle</h3>
         <p>When the 505+506 block is split, the son choosing the individual unit (506) is responsible for the financial "leakage" caused by that decision. This ensures the other brothers are not penalized for the loss of the combined asset's premium.</p>
         <hr />
         <h3>4.2 Breakdown of Penalties (The "Break-Up Cost")</h3>
         <ul>
-          <li><b>1. Physical Remediation (Kitchen): ₹0.30 cr</b><br/>
+          <li><b>1. Physical Remediation (Kitchen): ₹0.20 cr</b><br/>
             <i>Reason:</i> Flat 506 must be made a self-contained unit by adding/separating walls and plumbing from 505.
           </li>
-          <li><b>2. Forced Sale Leakage on 505: ₹0.6375 cr</b><br/>
-            <i>Reason:</i> By taking 506, the son forces the estate to sell 505 as a standalone studio under <b>Forced Sale</b> conditions.<br/>
+          <li><b>2. General Sale Loss on 505: ₹0.425 cr</b><br/>
+            <i>Reason:</i> By taking 506, the son forces the estate to sell 505 as a standalone studio, incurring a general sale loss.<br/>
             <!-- Correction: CGT is not mathematically valid as a direct percentage of gross estate value. Replaced with “tax drag proxy (illustrative)” for audit clarity. -->
-            <i>Calculation:</i> Market Value of 505 (₹1.70 cr) × 37.5% (Market discount + tax drag proxy).
+            <i>Calculation:</i> Market Value of 505 (₹1.70 cr) × 25% (general sale loss estimate).</i>
           </li>
-          <li><b>3. Total Separation Penalty: ₹0.9375 cr</b></li>
+          <li><b>3. Total Separation Penalty: ₹0.625 cr</b></li>
+  <li><b>Q47.</b> Can you provide an example of a scenario where the separation penalty is applied?<br><span class="q-answer">If Son2 takes 506 individually, he pays ₹0.20 cr for kitchen remediation and absorbs the general sale loss on 505, resulting in a net charge of ₹3.225 cr against his entitlement for an asset worth only ₹2.60 cr.</span></li>
         </ul>
         <hr />
         <h3>4.3 Hypothetical Entitlement Impact</h3>
@@ -328,8 +339,8 @@
           <tbody>
             <tr><td><b>Asset Transferred</b></td><td>505+506 (Block)</td><td>Flat 506 (Standalone)</td></tr>
             <tr><td><b>Stressed Asset Value</b></td><td>₹3.96 cr</td><td>₹2.60 cr</td></tr>
-            <tr><td><b>Kitchen Remediation</b></td><td>₹0.00</td><td>(₹0.30 cr)</td></tr>
-            <tr><td><b>Forced Sale Loss on 505</b></td><td>₹0.00</td><td>(₹0.6375 cr)</td></tr>
+            <tr><td><b>Kitchen Remediation</b></td><td>₹0.00</td><td>(₹0.20 cr)</td></tr>
+            <tr><td><b>General Sale Loss on 505</b></td><td>₹0.00</td><td>(₹0.6375 cr)</td></tr>
             <tr><td><b>Net Value Charged to Son</b></td><td><b>₹3.96 cr</b></td><td><b>₹3.5375 cr</b></td></tr>
           </tbody>
         </table>
@@ -337,9 +348,9 @@
         <hr />
         <h3>4.4 Strategic Conclusion</h3>
         <ul>
-          <li><b>The "Luxury Gap":</b> By taking only 506, the son receives an asset worth only <b>₹2.60 cr</b>, but is "charged" <b>₹3.5375 cr</b> against their entitlement due to the penalties.</li>
-          <li><b>Estate Protection:</b> This math protects the estate pool, ensuring that the <b>₹0.9375 cr</b> lost to construction and taxes is "pre-paid" by the son who insisted on the split.</li>
-          <li><b>Recommendation:</b> It is mathematically superior for a son to either take the <b>Entire Block (₹3.96 cr)</b> or <b>Natasha/Cash</b>, as the standalone 506 option carries a <b>36% "inefficiency tax"</b> borne entirely by the acquirer.</li>
+          <li><b>The "Luxury Gap":</b> By taking only 506, the son receives an asset worth only <b>₹2.60 cr</b>, but is "charged" <b>₹3.225 cr</b> against their entitlement due to the penalties.</li>
+          <li><b>Estate Protection:</b> This math protects the estate pool, ensuring that the <b>₹0.625 cr</b> lost to construction and taxes is "pre-paid" by the son who insisted on the split.</li>
+          <li><b>Recommendation:</b> It is mathematically superior for a son to either take the <b>Entire Block (₹3.96 cr)</b> or <b>Natasha/Cash</b>, as the standalone 506 option carries a <b>24% "inefficiency tax"</b> borne entirely by the acquirer.</li>
         </ul>
 
       </div>
@@ -355,7 +366,7 @@
         <li><b>Q53.</b> How are equalisation payments determined in this scenario?<br><span class="q-answer">Equalisation payments are the difference between each son’s entitlement and the value of the property they receive. Over-entitled sons pay under-entitled sons to ensure everyone receives their fair share.</span></li>
         <li><b>Q55.</b> How does the mermaid diagram illustrate the cash and property flows?<br><span class="q-answer">The diagram shows property flows from the estate to each son, the deduction of escrow and loan, and the direction of equalisation payments, making the settlement process transparent and auditable.</span></li>
         <li><b>Q56.</b> Are there any unique risks or considerations in this scenario?<br><span class="q-answer">Risks are minimized by direct allocation and clear ledger reconciliation. The main consideration is ensuring timely equalisation payments to avoid liquidity issues for Son1.</span></li>
-        <li><b>Q57.</b> How is the 50% Arshee uplift to Son3 reflected in the math?<br><span class="q-answer">Son3 receives 50% of Arshee’s value, while Son1 and Son2 each receive 25%. This uplift is built into the entitlement calculation, rewarding elder-care contributions.</span></li>
+        <li><b>Q57.</b> How is the 50% Arshee insurance payment to Son3 reflected in the math?<br><span class="q-answer">Son3 receives 50% of Arshee’s value, while Son1 and Son2 each receive 25%. This insurance payment is built into the entitlement calculation, rewarding elder-care contributions.</span></li>
         <li><b>Q58.</b> What happens if Son1 wants to buy out the remaining 50% of Natasha?<br><span class="q-answer">Any buyout of the non-estate 50% of Natasha is a private transaction between Son1 and the other owner, outside the estate math. The estate only accounts for its 50% share.</span></li>
         <li><b>Q59.</b> How are over/under entitlements reconciled?<br><span class="q-answer">Sons who receive property worth more than their entitlement pay the difference to those who receive less, ensuring all parties receive their exact entitlement after all adjustments.</span></li>
         <li><b>Q60.</b> Can you explain the stepwise calculation for this scenario in detail?<br><span class="q-answer">Each asset is valued after stress, entitlements are calculated, loan and escrow are deducted, and property is allocated. Over/under amounts are settled via equalisation payments, as shown in the scenario math breakdown.</span></li>
@@ -365,9 +376,9 @@
         <div class="property-allocation">
           <h4>Property Allocation</h4>
           <ul>
-            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
-            <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr</li>
-            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr</li>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
+            <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr (~$431,700)</li>
+            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
@@ -383,6 +394,24 @@
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹1.0550cr; Son3 → Son1: ₹0.4475cr</li>
           <!-- AUDIT FIX: Escrow is always an estate-level deduction, not paid by any individual son. -->
         </ul>
+        <details class="calc-details"><summary>How was each number calculated?</summary>
+          <ul>
+            <li><b>505+506 (stressed):</b> ₹3.96cr = ₹4.95cr × 0.80 (20% stress)</li>
+            <li><b>Arshee (stressed):</b> ₹3.40cr = ₹4.25cr × 0.80</li>
+            <li><b>Natasha (estate 50%, stressed):</b> ₹0.60cr = ₹0.75cr × 0.80</li>
+            <li><b>Estate Pool (stressed):</b> ₹3.96cr + ₹3.40cr + ₹0.60cr = ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05cr is a fixed deduction from the estate before entitlements</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+            <li><b>Natasha split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment:</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr (loan split: ₹0.535cr ÷ 2 = ₹0.2675cr per Son1/Son3, full credit to Son2)</li>
+            <li><b>Final entitlements:</b> Baseline ± loan adjustment</li>
+            <li><b>Property received:</b> Direct allocation as listed</li>
+            <li><b>Over/(Under) vs entitlement:</b> Property received − entitlement</li>
+            <li><b>Equalisation payments:</b> Over-entitled sons pay under-entitled sons the difference</li>
+          </ul>
+        </details>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
           <ul>
@@ -469,9 +498,9 @@ flowchart TD
         <div class="property-allocation">
           <h4>Property Allocation</h4>
           <ul>
-            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
-            <li><b>Son2:</b> Arshee (100%) — ₹3.40cr</li>
-            <li><b>Son3:</b> 505+506 (100%) — ₹3.96cr</li>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
+            <li><b>Son2:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
+            <li><b>Son3:</b> 505+506 (100%) — ₹3.96cr (~$431,700)</li>
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
@@ -487,6 +516,24 @@ flowchart TD
           <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹0.4950cr; Son3: +₹1.0075cr</li>
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹0.4950cr; Son3 → Son1: ₹1.0075cr</li>
         </ul>
+        <details class="calc-details"><summary>How was each number calculated?</summary>
+          <ul>
+            <li><b>505+506 (stressed):</b> ₹3.96cr = ₹4.95cr × 0.80</li>
+            <li><b>Arshee (stressed):</b> ₹3.40cr = ₹4.25cr × 0.80</li>
+            <li><b>Natasha (estate 50%, stressed):</b> ₹0.60cr = ₹0.75cr × 0.80</li>
+            <li><b>Estate Pool (stressed):</b> ₹3.96cr + ₹3.40cr + ₹0.60cr = ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05cr is a fixed deduction from the estate before entitlements</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+            <li><b>Natasha split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment:</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr (loan split: ₹0.535cr ÷ 2 = ₹0.2675cr per Son1/Son3, full credit to Son2)</li>
+            <li><b>Final entitlements:</b> Baseline ± loan adjustment</li>
+            <li><b>Property received:</b> Direct allocation as listed</li>
+            <li><b>Over/(Under) vs entitlement:</b> Property received − entitlement</li>
+            <li><b>Equalisation payments:</b> Over-entitled sons pay under-entitled sons the difference</li>
+          </ul>
+        </details>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
           <ul>
@@ -561,7 +608,7 @@ flowchart TD
         <li><b>Q72.</b> How are the forced sale discount and tax drag proxy calculated?<br><span class="q-answer">A 30% discount is applied to the gross estate value, followed by a tax drag proxy (e.g., 10%). These are sequentially deducted to model real-world forced sale conditions.</span></li>
         <li><b>Q73.</b> What is the sequence of deductions from the gross estate in a forced sale?<br><span class="q-answer">First, the forced sale discount is applied, then the tax drag, followed by escrow and loan carve-outs. The remainder is distributed according to the model’s rules.</span></li>
         <li><b>Q75.</b> How are the proceeds split among the sons after all deductions?<br><span class="q-answer">After all deductions, the remainder is split according to the model’s rules, with Arshee uplift handled as specified and Son2 receiving the loan repayment directly.</span></li>
-        <li><b>Q76.</b> What is the “Arshee uplift” in a forced sale context?<br><span class="q-answer">Arshee uplift means Son3 receives 50% of Arshee’s sale proceeds, while Son1 and Son2 each receive 25%. This reflects the elder-care contribution and is handled before the remainder is split.</span></li>
+        <li><b>Q76.</b> What is the “Arshee insurance payment” in a forced sale context?<br><span class="q-answer">Arshee insurance payment means Son3 receives 50% of Arshee’s sale proceeds, while Son1 and Son2 each receive 25%. This reflects the elder-care contribution and is handled before the remainder is split.</span></li>
         <li><b>Q77.</b> How does the model prevent double-counting of Arshee?<br><span class="q-answer">By allocating Arshee proceeds explicitly and not splitting them again in the remainder, the model ensures no double-counting occurs. This is enforced in both the math and the diagrams.</span></li>
         <li><b>Q78.</b> What are the final receipts for each son in a forced sale?<br><span class="q-answer">Final receipts are: Son1 ~₹1.61–1.70 cr, Son2 ~₹2.14–2.24 cr (including loan), Son3 ~₹2.45–2.46 cr, depending on the scenario and calculation method.</span></li>
         <li><b>Q79.</b> How does the mermaid diagram illustrate the forced sale process?<br><span class="q-answer">The diagram shows the sequence of deductions, allocation of Arshee uplift, and final distribution to each son, making the process transparent and easy to audit.</span></li>
@@ -574,10 +621,10 @@ flowchart TD
         <div class="property-allocation">
           <h4>Property Sale Prices (Forced Sale, 30% off market)</h4>
           <ul>
-            <li><b>Flat 505:</b> Sold for ₹1.19cr</li>
-            <li><b>Flat 506:</b> Sold for ₹2.28cr</li>
-            <li><b>Arshee:</b> Sold for ₹2.98cr</li>
-            <li><b>Natasha (estate 50%):</b> Sold for ₹0.53cr</li>
+            <li><b>Flat 505:</b> Sold for ₹1.19cr (~$129,700)</li>
+            <li><b>Flat 506:</b> Sold for ₹2.28cr (~$248,700)</li>
+            <li><b>Arshee:</b> Sold for ₹2.98cr (~$324,800)</li>
+            <li><b>Natasha (estate 50%):</b> Sold for ₹0.53cr (~$57,800)</li>
           </ul>
         </div>
         <h4>Stepwise Calculation</h4>
@@ -781,9 +828,9 @@ flowchart TD
         <div class="property-allocation">
           <h4>Property Allocation</h4>
           <ul>
-            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr</li>
-            <li><b>Son2:</b> Cash only (from 505+506 sale)</li>
-            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr</li>
+            <li><b>Son1:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
+            <li><b>Son2:</b> Cash only (from 505+506 sale, up to ₹3.96cr/~$431,700)</li>
+            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
@@ -799,6 +846,24 @@ flowchart TD
           <li><b>Over/(Under) vs entitlement:</b> Son1: −₹1.5025cr; Son2: +₹1.0550cr; Son3: +₹0.4475cr</li>
           <li><b>Equalisation payments:</b> Son2 → Son1: ₹1.0550cr; Son3 → Son1: ₹0.4475cr</li>
         </ul>
+        <details class="calc-details"><summary>How was each number calculated?</summary>
+          <ul>
+            <li><b>505+506 (stressed):</b> ₹3.96cr = ₹4.95cr × 0.80</li>
+            <li><b>Arshee (stressed):</b> ₹3.40cr = ₹4.25cr × 0.80</li>
+            <li><b>Natasha (estate 50%, stressed):</b> ₹0.60cr = ₹0.75cr × 0.80</li>
+            <li><b>Estate Pool (stressed):</b> ₹3.96cr + ₹3.40cr + ₹0.60cr = ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05cr is a fixed deduction from the estate before entitlements</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+            <li><b>Natasha split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment:</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr (loan split: ₹0.535cr ÷ 2 = ₹0.2675cr per Son1/Son3, full credit to Son2)</li>
+            <li><b>Final entitlements:</b> Baseline ± loan adjustment</li>
+            <li><b>Property received:</b> Direct allocation as listed</li>
+            <li><b>Over/(Under) vs entitlement:</b> Property received − entitlement</li>
+            <li><b>Equalisation payments:</b> Over-entitled sons pay under-entitled sons the difference</li>
+          </ul>
+        </details>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
           <ul>
@@ -866,7 +931,7 @@ flowchart TD
       <ul style="list-style-type:none; padding-left:0;">
         <li><b>Q91.</b> How are the properties allocated in this scenario?<br><span class="q-answer">Son1 receives 505+506, Son2 receives Arshee, and Son3 receives Natasha (estate 50% only). Each son is assigned a distinct property, with values based on stressed internal settlement figures.</span></li>
         <li><b>Q92.</b> What are the entitlements and equalisation payments for each son?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
-        <li><b>Q94.</b> What is the impact of the 50% Arshee uplift on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+  <li><b>Q94.</b> What is the impact of the 50% Arshee insurance payment on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care insurance payment. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
         <li><b>Q95.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
         <li><b>Q96.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
         <li><b>Q97.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
@@ -879,9 +944,9 @@ flowchart TD
         <div class="property-allocation">
           <h4>Property Allocation</h4>
           <ul>
-            <li><b>Son1:</b> 505+506 (100%) — ₹3.96cr</li>
-            <li><b>Son2:</b> Arshee (100%) — ₹3.40cr</li>
-            <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+            <li><b>Son1:</b> 505+506 (100%) — ₹3.96cr (~$431,700)</li>
+            <li><b>Son2:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
+            <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
@@ -896,6 +961,24 @@ flowchart TD
           <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: +₹0.4950cr; Son3: −₹2.3525cr</li>
           <li><b>Equalisation payments:</b> Son1 → Son3: ₹1.8575cr; Son2 → Son3: ₹0.4950cr</li>
         </ul>
+        <details class="calc-details"><summary>How was each number calculated?</summary>
+          <ul>
+            <li><b>505+506 (stressed):</b> ₹3.96cr = ₹4.95cr × 0.80</li>
+            <li><b>Arshee (stressed):</b> ₹3.40cr = ₹4.25cr × 0.80</li>
+            <li><b>Natasha (estate 50%, stressed):</b> ₹0.60cr = ₹0.75cr × 0.80</li>
+            <li><b>Estate Pool (stressed):</b> ₹3.96cr + ₹3.40cr + ₹0.60cr = ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05cr is a fixed deduction from the estate before entitlements</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+            <li><b>Natasha split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment:</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr (loan split: ₹0.535cr ÷ 2 = ₹0.2675cr per Son1/Son3, full credit to Son2)</li>
+            <li><b>Final entitlements:</b> Baseline ± loan adjustment</li>
+            <li><b>Property received:</b> Direct allocation as listed</li>
+            <li><b>Over/(Under) vs entitlement:</b> Property received − entitlement</li>
+            <li><b>Equalisation payments:</b> Over-entitled sons pay under-entitled sons the difference</li>
+          </ul>
+        </details>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
           <ul>
@@ -964,7 +1047,7 @@ flowchart TD
       <ul style="list-style-type:none; padding-left:0;">
         <li><b>Q101.</b> How does this property allocation differ from previous scenarios?<br><span class="q-answer">In Scenario 6, Son1 receives Arshee, Son2 receives 505+506, and Son3 receives Natasha (estate 50% only). The allocation is rotated, but the entitlement math and reconciliation process remain the same.</span></li>
         <li><b>Q102.</b> What are the entitlements and equalisation payments in this scenario?<br><span class="q-answer">Entitlements are: Son1 ₹2.1025 cr, Son2 ₹2.9050 cr, Son3 ₹2.9525 cr. Equalisation payments are made by over-entitled sons to under-entitled sons to balance the distribution.</span></li>
-        <li><b>Q104.</b> What is the impact of the 50% Arshee uplift on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care uplift. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
+  <li><b>Q104.</b> What is the impact of the 50% Arshee insurance payment on Son3?<br><span class="q-answer">Son3’s entitlement is increased by receiving 50% of Arshee’s value, reflecting the elder-care insurance payment. This is built into the entitlement calculation and affects the final reconciliation.</span></li>
         <li><b>Q105.</b> How does the escrow affect the final distribution?<br><span class="q-answer">Escrow is deducted from the estate before entitlements are calculated, ensuring no individual son is responsible for funding it. Any unused balance is redistributed according to entitlements.</span></li>
         <li><b>Q106.</b> Are there any adjacency or break-up penalties in this scenario?<br><span class="q-answer">No adjacency or break-up penalties apply, as 505+506 are kept together and allocated to a single son, preserving estate value.</span></li>
         <li><b>Q107.</b> How does the mermaid diagram represent the flows?<br><span class="q-answer">The diagram visually maps property and cash flows, showing how assets and payments move between the estate and each son, and how the loan and escrow are handled.</span></li>
@@ -977,9 +1060,9 @@ flowchart TD
           <div class="property-allocation">
             <h4>Property Allocation</h4>
             <ul>
-              <li><b>Son1:</b> Arshee (100%) — ₹3.40cr</li>
-              <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr</li>
-              <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr</li>
+              <li><b>Son1:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
+              <li><b>Son2:</b> 505+506 (100%) — ₹3.96cr (~$431,700)</li>
+              <li><b>Son3:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
             </ul>
           </div>
           <h3>Stepwise Calculation</h3>
@@ -1074,9 +1157,9 @@ flowchart TD
         <div class="property-allocation">
           <h4>Property Allocation</h4>
           <ul>
-            <li><b>Son1:</b> 505+506 (100%) — ₹3.96cr</li>
-            <li><b>Son2:</b> Natasha (estate 50% only) — ₹0.60cr</li>
-            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr</li>
+            <li><b>Son1:</b> 505+506 (100%) — ₹3.96cr (~$431,700)</li>
+            <li><b>Son2:</b> Natasha (estate 50% only) — ₹0.60cr (~$65,400)</li>
+            <li><b>Son3:</b> Arshee (100%) — ₹3.40cr (~$370,600)</li>
           </ul>
         </div>
         <h3>Stepwise Calculation</h3>
@@ -1091,6 +1174,24 @@ flowchart TD
           <li><b>Over/(Under) vs entitlement:</b> Son1: +₹1.8575cr; Son2: −₹2.3050cr; Son3: +₹0.4475cr</li>
           <li><b>Equalisation payments:</b> Son1 → Son2: ₹1.8575cr; Son3 → Son2: ₹0.4475cr</li>
         </ul>
+        <details class="calc-details"><summary>How was each number calculated?</summary>
+          <ul>
+            <li><b>505+506 (stressed):</b> ₹3.96cr = ₹4.95cr × 0.80</li>
+            <li><b>Arshee (stressed):</b> ₹3.40cr = ₹4.25cr × 0.80</li>
+            <li><b>Natasha (estate 50%, stressed):</b> ₹0.60cr = ₹0.75cr × 0.80</li>
+            <li><b>Estate Pool (stressed):</b> ₹3.96cr + ₹3.40cr + ₹0.60cr = ₹7.96cr</li>
+            <li><b>Escrow:</b> ₹0.05cr is a fixed deduction from the estate before entitlements</li>
+            <li><b>Arshee split:</b> Son1: 25% × 3.40 = ₹0.85cr; Son2: 25% × 3.40 = ₹0.85cr; Son3: 50% × 3.40 = ₹1.70cr</li>
+            <li><b>Natasha split:</b> 0.60 ÷ 3 = ₹0.20cr each</li>
+            <li><b>505+506 split:</b> 3.96 ÷ 3 = ₹1.32cr each</li>
+            <li><b>Baseline entitlements:</b> Son1: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son2: 1.32 + 0.20 + 0.85 = ₹2.37cr; Son3: 1.32 + 0.20 + 1.70 = ₹3.22cr</li>
+            <li><b>Loan adjustment:</b> Son1: −₹0.2675cr; Son2: +₹0.5350cr; Son3: −₹0.2675cr (loan split: ₹0.535cr ÷ 2 = ₹0.2675cr per Son1/Son3, full credit to Son2)</li>
+            <li><b>Final entitlements:</b> Baseline ± loan adjustment</li>
+            <li><b>Property received:</b> Direct allocation as listed</li>
+            <li><b>Over/(Under) vs entitlement:</b> Property received − entitlement</li>
+            <li><b>Equalisation payments:</b> Over-entitled sons pay under-entitled sons the difference</li>
+          </ul>
+        </details>
         <div class="math-explanation">
           <h4>Math Breakdown</h4>
           <ul>
@@ -1172,9 +1273,9 @@ flowchart TD
         <div class="advisory-section">
           <h3>7.1 Guidance for Son 1</h3>
           <ul>
-            <li><b>Entitlement:</b> ₹2.1025 cr (~$234,600 at ₹89.6/USD)</li>
-            <li><b>Holding:</b> Natasha (estate 50% portion, valued at ₹0.60 cr stressed)</li>
-            <li><b>Shortfall:</b> ₹1.5025 cr</li>
+            <li><b>Entitlement:</b> ₹2.1025 cr (~$229,300 at ₹91.72/USD)</li>
+            <li><b>Holding:</b> Natasha (estate 50% portion, valued at ₹0.60 cr stressed, ~$65,400)</li>
+            <li><b>Shortfall:</b> ₹1.5025 cr (~$163,800)</li>
           <ul>
             <li><b>Estate Pool (stressed):</b> 505+506: ₹3.96cr, Arshee: ₹3.40cr, Natasha (estate 50%): ₹0.60cr. <b>Total:</b> ₹7.96cr</li>
             <li><b>Escrow:</b> ₹0.05 cr escrow is held at the estate level (holdback).</li>
@@ -1194,9 +1295,9 @@ flowchart TD
         <div class="advisory-section">
           <h3>7.2 Guidance for Son 2</h3>
           <ul>
-            <li><b>Entitlement:</b> ₹2.9050 cr (~$324,200) including ₹0.535 cr loan credit</li>
-            <li><b>Proposed Holding:</b> 505+506 combined (₹3.96 cr stressed)</li>
-            <li><b>Equalisation Payment Required:</b> ₹1.055 cr (in Scenario 1)</li>
+            <li><b>Entitlement:</b> ₹2.9050 cr (~$316,800) including ₹0.535 cr loan credit (~$58,300)</li>
+            <li><b>Proposed Holding:</b> 505+506 combined (₹3.96 cr stressed, ~$431,700)</li>
+            <li><b>Equalisation Payment Required:</b> ₹1.055 cr (~$115,000) (in Scenario 1)</li>
           </ul>
           <div class="advisory-block">
             <b>Optimal Strategy:</b>
@@ -1212,9 +1313,9 @@ flowchart TD
         <div class="advisory-section">
           <h3>7.3 Guidance for Son 3</h3>
           <ul>
-            <li><b>Entitlement:</b> ₹2.9525 cr (~$329,500)</li>
-            <li><b>Proposed Holding:</b> Arshee (₹3.40 cr stressed)</li>
-            <li><b>Equalisation Payment Required:</b> ₹0.4475 cr (in Scenario 1) + ₹0.05 cr escrow</li>
+            <li><b>Entitlement:</b> ₹2.9525 cr (~$321,900)</li>
+            <li><b>Proposed Holding:</b> Arshee (₹3.40 cr stressed, ~$370,600)</li>
+            <li><b>Equalisation Payment Required:</b> ₹0.4475 cr (~$49,000) (in Scenario 1) + ₹0.05 cr escrow (~$5,400)</li>
           </ul>
           <div class="advisory-block">
             <b>Optimal Strategy:</b>
